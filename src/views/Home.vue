@@ -1,6 +1,6 @@
 <template lang="pug">
   .home
-    img(src="../assets/MBt_crop.png", height="300px", width="300px")
+    img(src="../assets/MBt_crop_comp.png", height="320px", width="320px")
     HelloWorld(msg="Welcome to Mac's future Vue.js App")
 </template>
 
