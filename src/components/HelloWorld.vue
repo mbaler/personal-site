@@ -1,11 +1,11 @@
 <template lang="pug">
   .hello
-    h1 {{ msg }}
+    h1.title {{ msg }}
+    h3.subtitle.is-4(style="padding-top: 20px;") 🕑 Coming Soon™
     br
-    h3(style="font-size: 24px") 🕑 Coming Soon™
-    br
-    ul
-      li: a(href="https://www.linkedin.com/in/macbaler/", target="_blank", rel="noopener") LinkedIn
+    a.linkedin.button.is-link.is-large(href="https://www.linkedin.com/in/macbaler/", target="_blank", rel="noopener")
+      span.icon: i.fab.fa-linkedin
+      span LinkedIn
 </template>
 
 <script>
@@ -32,4 +32,7 @@ li
 
 a
   color: #42b983;
+
+.linkedin
+  margin-bottom: 20px;
 </style>

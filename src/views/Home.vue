@@ -19,4 +19,5 @@ export default {
 <style lang="sass">
   .home
     margin: auto;
+    text-align: center;
 </style>

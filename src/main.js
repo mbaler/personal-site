@@ -4,6 +4,9 @@ import router from "./router";
 
 Vue.config.productionTip = false;
 
+import "bulma/css/bulma.css";
+import "@fortawesome/fontawesome-free/css/all.css";
+
 new Vue({
   router,
   render: h => h(App)
