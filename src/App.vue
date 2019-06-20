@@ -3,7 +3,6 @@
     nav#nav.navbar.is-transparent
       .navbar-brand
         a.navbar-item.logo(href="#")
-          //- img(src="./assets/MBt_crop_comp.png", height="30px", width="30px")
           span
             | M
             span.rest ac&nbsp;
@@ -99,13 +98,28 @@ html
       background-size: 100% 96%;
 
 #nav
+  .navbar-menu
+    font-family: "Poppins";
+  padding: 30px;
+  a 
+    font-weight: bold;
+    color: #2c3e50;
+    &.router-link-exact-active 
+      color: #42b983;
+  @media screen and (max-width: 1024px)
+    .navbar-menu
+      width: 55%;
+      z-index: 9999;
+      position: absolute;
+      right: 15px;
+
   .navbar-brand .logo
     font-weight: 700;
     font-size: 22px;
     line-height: 1.1;
     // text-transform: uppercase;
     font-variant: small-caps;
-    transform: translateZ(0);
+    // transform: translateZ(0);
     outline: 0;
     box-shadow: none;
     text-decoration: none;
@@ -127,7 +141,7 @@ html
     // transition: all 175ms cubic-bezier(0.4, 0, 0.2, 1.0);
     // letter-spacing: 0.025em;
     letter-spacing: 0.040em;
-    animation: 5s cubic-bezier(0.4, 0, 0.2, 1.0) 1s infinite alternate-reverse lspacing;
+    animation: 5s cubic-bezier(0.4, 0, 0.2, 1.0) 0s infinite alternate-reverse lspacing;
 
     // &:hover
       // letter-spacing: 0.050em;
@@ -135,6 +149,7 @@ html
   @keyframes lspacing
     0%, 30%
       letter-spacing: 0.025em;
+      // letter-spacing: -0.14em;
     70%, 100%
       letter-spacing: 0.040em;
   
@@ -143,7 +158,7 @@ html
     // transition: all 175ms cubic-bezier(0.4, 0, 0.2, 1.0), opacity 125ms cubic-bezier(0.4, 0, 0.2, 1.0);
     // font-size: 0;
     // opacity: 0;
-    animation: 5s cubic-bezier(0.4, 0, 0.2, 1.0) 1s infinite alternate-reverse nameappear;
+    animation: 5s cubic-bezier(0.4, 0, 0.2, 1.0) 0s infinite alternate-reverse nameappear;
   
   @keyframes nameappear
     0%, 30%
@@ -157,32 +172,22 @@ html
   
   .navbar-brand .logo span.squished
     // margin-left: -10px;
+    margin-left: 0;
+    // transform: translateX(0);
     animation: 5s cubic-bezier(0.4, 0, 0.2, 1.0) 1s infinite alternate-reverse squishing;
   
   @keyframes squishing
     0%, 30%
-      margin-left: -10px;
+      // margin-left: -10px;
+      margin-left: -0.35em;
+      // transform: translateX(-10px);
     70%, 100%
       margin-left: 0;
+      // transform: translateX(0);
   
   // .navbar-brand .logo:hover span
     // opacity: 1;
     // font-size: 1em;
-
-
-
-  padding: 30px;
-  a 
-    font-weight: bold;
-    color: #2c3e50;
-    &.router-link-exact-active 
-      color: #42b983;
-  @media screen and (max-width: 1024px)
-    .navbar-menu
-      width: 55%;
-      z-index: 9999;
-      position: absolute;
-      right: 15px;
 
 .bottom.footer
   padding: 2rem 1.5rem 2rem 1.5rem;

@@ -4,6 +4,10 @@ import router from "./router";
 
 Vue.config.productionTip = false;
 
+// fonts
+import "./css/fonts.css";
+import "typeface-poppins";
+
 import "bulma/css/bulma.css";
 import "@fortawesome/fontawesome-free/css/all.css";
 

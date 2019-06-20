@@ -13,6 +13,7 @@
   "dependencies": {
     "bulma": "^0.7.5",
     "core-js": "^2.6.5",
+    "typeit": "^6.0.3",
     "vue": "^2.6.10",
     "vue-router": "^3.0.3"
   },
@@ -28,6 +29,7 @@
     "pug": "^2.0.4",
     "pug-plain-loader": "^1.0.0",
     "sass-loader": "^7.1.0",
+    "typeface-poppins": "0.0.72",
     "vue-template-compiler": "^2.6.10"
   }
 }

@@ -1,6 +1,7 @@
 <template lang="pug">
   .home
-    img(src="../assets/MBt_crop_comp.png", height="320px", width="320px")
+    figure(style="height: 320px; width: 320px; margin: auto;")
+      img(src="../assets/MBt_crop_comp.png", height="320px", width="320px")
     HelloWorld
 </template>
 
