@@ -1,7 +1,7 @@
 <template lang="pug">
   .home
     img(src="../assets/MBt_crop_comp.png", height="320px", width="320px")
-    HelloWorld(msg="Welcome to Mac's future Vue.js App")
+    HelloWorld
 </template>
 
 <script>

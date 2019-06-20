@@ -1,6 +1,9 @@
 <template lang="pug">
   .hello
-    h1.title {{ msg }}
+    h1.title
+      | Mac's 
+      span.magic-highlight personal
+      | &nbsp;site of the web...
     h3.subtitle.is-4(style="padding-top: 20px;") 🕑 Coming Soon™
     br
     a.linkedin.button.is-link.is-large(href="https://www.linkedin.com/in/macbaler/", target="_blank", rel="noopener")
@@ -11,9 +14,6 @@
 <script>
 export default {
   name: "HelloWorld",
-  props: {
-    msg: String
-  }
 }
 </script>
 
