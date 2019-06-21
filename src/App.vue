@@ -2,13 +2,13 @@
   #app
     nav#nav.navbar.is-transparent
       .navbar-brand
-        a.navbar-item.logo(href="#")
+        .navbar-item.logo(href="#")
           span
-            | M
-            span.rest ac&nbsp;
+            span M
+            span.rest AC&nbsp;
           span.squished
-            | B
-            span.rest aler
+            span B
+            span.rest ALER
         a.navbar-burger(data-target="navMenu")
           span
           span
@@ -16,7 +16,6 @@
       .navbar-menu#navMenu
         .navbar-start
         .navbar-end
-          a.navbar-item(href="#") Test A
           .navbar-item.has-dropdown.is-hoverable
             a.navbar-link DropTest
             .navbar-dropdown.is-boxed
@@ -28,6 +27,12 @@
             router-link.rlink(to="/") Home
           .navbar-item
             router-link.rlink(to="/about") About
+          .navbar-item
+            a(href="#projects") Projects
+          .navbar-item
+            a(href="/resume_6.20.19.pdf", target="_blank") Resume
+          .navbar-item
+            a(href="#contact") Contact
     router-view
     footer.footer.bottom
       .content.has-text-centered.is-size-5
@@ -98,14 +103,17 @@ html
       background-size: 100% 96%;
 
 #nav
-  .navbar-menu
-    font-family: "Poppins";
   padding: 30px;
+
   a 
     font-weight: bold;
     color: #2c3e50;
     &.router-link-exact-active 
       color: #42b983;
+
+  .navbar-menu
+    font-family: "Poppins";
+  
   @media screen and (max-width: 1024px)
     .navbar-menu
       width: 55%;
@@ -114,81 +122,36 @@ html
       right: 15px;
 
   .navbar-brand .logo
-    font-weight: 700;
-    font-size: 22px;
-    line-height: 1.1;
-    // text-transform: uppercase;
-    font-variant: small-caps;
-    // transform: translateZ(0);
-    outline: 0;
-    box-shadow: none;
-    text-decoration: none;
-    user-select: none;
-    color: red !important;
-
-    @media (min-width: 768px)
-      font-size: 28px;
-
-    &:hover
-      background: none;
-  
-
-
-  .navbar-brand .logo
-    width: 190px;
+    font-size: 28px;
+    font-weight: bold;
+    color: red;
     padding: 0;
 
-    // transition: all 175ms cubic-bezier(0.4, 0, 0.2, 1.0);
-    // letter-spacing: 0.025em;
-    letter-spacing: 0.040em;
-    animation: 5s cubic-bezier(0.4, 0, 0.2, 1.0) 0s infinite alternate-reverse lspacing;
-
-    // &:hover
-      // letter-spacing: 0.050em;
-    
-  @keyframes lspacing
-    0%, 30%
-      letter-spacing: 0.025em;
-      // letter-spacing: -0.14em;
-    70%, 100%
-      letter-spacing: 0.040em;
-  
-
   .navbar-brand .logo span.rest
-    // transition: all 175ms cubic-bezier(0.4, 0, 0.2, 1.0), opacity 125ms cubic-bezier(0.4, 0, 0.2, 1.0);
-    // font-size: 0;
-    // opacity: 0;
-    animation: 5s cubic-bezier(0.4, 0, 0.2, 1.0) 0s infinite alternate-reverse nameappear;
+    font-size: 18px;
+    animation: 8s cubic-bezier(.57,.06,.27,.84) 1s infinite alternate-reverse nameappear;
   
-  @keyframes nameappear
-    0%, 30%
-      font-size: 0;
-      opacity: 0;
-    35%
-      opacity: 0;
-    70%, 100%
-      font-size: 1em;
-      opacity: 1;
+    @keyframes nameappear
+      0%, 30%
+        font-size: 0;
+        opacity: 0;
+      38%
+        opacity: 0;
+      50%, 100%
+        font-size: 18px;
+        opacity: 1;
   
   .navbar-brand .logo span.squished
-    // margin-left: -10px;
     margin-left: 0;
-    // transform: translateX(0);
-    animation: 5s cubic-bezier(0.4, 0, 0.2, 1.0) 1s infinite alternate-reverse squishing;
+    animation: 8s cubic-bezier(.57,.06,.27,.84) 1s infinite alternate-reverse squishing;
   
-  @keyframes squishing
-    0%, 30%
-      // margin-left: -10px;
-      margin-left: -0.35em;
-      // transform: translateX(-10px);
-    70%, 100%
-      margin-left: 0;
-      // transform: translateX(0);
-  
-  // .navbar-brand .logo:hover span
-    // opacity: 1;
-    // font-size: 1em;
+    @keyframes squishing
+      0%, 30%
+        margin-left: -0.28em;
+      50%, 100%
+        margin-left: 0;
 
 .bottom.footer
-  padding: 2rem 1.5rem 2rem 1.5rem;
+  padding: 2rem 1.5rem 2rem 1.5rem
+
 </style>
