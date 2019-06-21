@@ -6,7 +6,8 @@
       | &nbsp;site of the web...
     h3.subtitle.is-4(style="padding-top: 20px;") 🕑 Coming Soon™
     br
-    #typingwrap(style="font-size:22px;")
+    #typingwrap
+      .typingcontainer1
     br
     a.linkedin.button.is-link.is-large(href="https://www.linkedin.com/in/macbaler/", target="_blank", rel="noopener")
       span.icon: i.fab.fa-linkedin
@@ -20,7 +21,7 @@ export default {
   name: "HelloWorld",
 
   mounted() {
-    new TypeIt("#typingwrap", {
+    new TypeIt(".typingcontainer1", {
       strings: ["Howdy there folks...", "Hold your horses..."],
       breakLines: false,
       loop: true,
@@ -33,7 +34,19 @@ export default {
 <!-- Add "scoped" attribute to limit CSS to this component only -->
 <style lang="sass" scoped>
 #typingwrap
-  font-family: "Poppins";
+  height: 80px;
+  padding: 10px 0;
+  display: flex;
+  justify-content: center;
+  align-items: center; 
+
+  .typingcontainer1
+    font-family: "Poppins";
+    font-size: 22px;
+
+  span
+    display: inline-block;
+    vertical-align: middle;
 
 h1.title
   font-family: "Roboto";
