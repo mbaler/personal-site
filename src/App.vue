@@ -14,15 +14,56 @@
     components: {
       Nav,
       Footer,
+    },
+
+    mounted() {
+      // ensure correct top and bottom backgrounds for mobile overscrolling
+      const topColor = "white";
+      const bottomColor = "#2f0000";
+      let ticking = false;
+
+      window.addEventListener("scroll", _checkScroll, { passive: true });
+      window.addEventListener("resize", _checkScroll, { passive: true });
+
+      _checkScroll();
+
+
+      function _checkScroll() {
+        if (!ticking) {
+          window.requestAnimationFrame(() => {
+            const scrollHeight = document.body.scrollHeight;
+            const innerHeight = window.innerHeight;
+            if (scrollHeight === innerHeight) {
+              _setBgColor(bottomColor);
+            } else {
+              _setBgColor(innerHeight - scrollHeight + 2 * window.scrollY < 0 ? topColor : bottomColor);
+            }
+            ticking = false;
+          });
+          ticking = true;
+        }
+      }
+
+      function _setBgColor(color) {
+        document.documentElement.style.background = color;
+      }
     }
 }
 </script>
 
 <style lang="sass">
 html
+  overscroll-behavior: none;
   overflow-y: auto !important;
   scroll-behavior: smooth;
-  min-width: 350px !important;
+  min-width: 350px !important
+
+// medium zoom
+.medium-zoom-image--opened, .medium-zoom-overlay
+  z-index: 9999999999999;
+
+.medium-zoom-image--opened
+  padding: 6px;
 
 #app
   font-family: "Avenir", Helvetica, Arial, sans-serif;
@@ -31,6 +72,11 @@ html
   color: #2c3e50;
   display: flex;
   flex-direction: column;
+
+  section:not(:first-of-type) .container
+    // &:not(:first-child)
+    padding-top: 30px;
+    padding-bottom: 30px;
 
   .magic-highlight
     //////// SIMPLE

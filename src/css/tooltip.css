@@ -10,7 +10,7 @@
     padding: 5px 10px 4px;
 
     /* custom */
-    opacity: 0.85;
+    opacity: 0.90;
 }
 
 .tooltip .tooltip-arrow {
@@ -23,7 +23,7 @@
     z-index: 1;
 
     /* custom */
-    opacity: 0.85;
+    opacity: 0.90;
 }
 
 .tooltip[x-placement^="top"] {

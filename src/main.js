@@ -6,12 +6,14 @@ Vue.config.productionTip = false;
 
 // tooltips
 import VTooltip from "v-tooltip";
+VTooltip.enabled = window.innerWidth > 768; // turn off on mobile
 Vue.use(VTooltip);
 import "./css/tooltip.css";
 
 // fonts
 import "./css/fonts.css";
 import "typeface-poppins";
+import "typeface-roboto";
 
 // bulma
 import "bulma/css/bulma.css";

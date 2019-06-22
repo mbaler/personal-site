@@ -33,20 +33,26 @@ export default {
 
 <!-- Add "scoped" attribute to limit CSS to this component only -->
 <style lang="sass" scoped>
-#typingwrap
-  height: 80px;
-  padding: 10px 0;
-  display: flex;
-  justify-content: center;
-  align-items: center; 
+.hello
+  @media screen and (min-width: 1025px)
+    margin-top: 30px;
+  @media screen and (max-width: 1024px)
+    margin-top: 5px;
 
-  .typingcontainer1
-    font-family: "Poppins";
-    font-size: 22px;
+  #typingwrap
+    height: 80px;
+    padding: 10px 0;
+    display: flex;
+    justify-content: center;
+    align-items: center; 
 
-  span
-    display: inline-block;
-    vertical-align: middle;
+    .typingcontainer1
+      font-family: "Poppins";
+      font-size: 22px;
+
+    span
+      display: inline-block;
+      vertical-align: middle;
 
 h1.title
   font-family: "Roboto";

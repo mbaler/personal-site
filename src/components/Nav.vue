@@ -15,13 +15,13 @@
       .navbar-menu#navMenu
         .navbar-start
         .navbar-end
-          .navbar-item.has-dropdown.is-hoverable
-            a.navbar-link DropTest
-            .navbar-dropdown.is-boxed
-              a.navbar-item Test1
-              a.navbar-item Test2
-              hr.navbar-divider
-              a.navbar-item Test3
+          //- .navbar-item.has-dropdown.is-hoverable
+          //-   a.navbar-link DropTest
+          //-   .navbar-dropdown.is-boxed
+          //-     a.navbar-item Test1
+          //-     a.navbar-item Test2
+          //-     hr.navbar-divider
+          //-     a.navbar-item Test3
           .navbar-item
             router-link.rlink(to="/") Home
           .navbar-item
@@ -31,9 +31,9 @@
           .navbar-item
             router-link.rlink(to="/#projects") Projects
           .navbar-item
-            a(href="/resume.pdf", target="_blank") Resume
-          .navbar-item
             router-link.rlink(to="/#contact") Contact
+          .navbar-item
+            a.rlink(href="/resume.pdf", target="_blank") Resume
 </template>
 
 <script>
@@ -79,8 +79,11 @@ export default {
 
 <style lang="sass" scoped>
 #nav
-  padding: 30px;
-  background-color: transparent !important;
+  padding: 20px 30px;
+  @media screen and (max-width: 1024px)
+    padding: 5px 15px;
+  // background-color: transparent !important;
+  background-color: #ffffffe6;
 
   a 
     font-weight: bold;
@@ -103,7 +106,7 @@ export default {
   .navbar-brand .logo
     font-size: 28px;
     font-weight: bold;
-    color: red;
+    color: #ff0000;
     padding: 0;
 
     span.rest

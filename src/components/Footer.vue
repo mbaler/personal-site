@@ -1,19 +1,19 @@
 <template lang="pug">
-    footer#contact.footer.bottom
+    footer.footer#contact
       .content.has-text-centered.is-size-5
         .foot-middle
             .contact-mail
-                .email
+                a.email.is-inline-block(href="mailto:howdy@macbaler.me", target="_blank")
                     span.icon.is-large
                         i.fas.fa-envelope.fa-2x
                     p howdy@macbaler.me
-                span Feel free to reach out and slide a message my way. 🙂
+                p 💬 Feel free to reach out and slide a message my way. 🙂
             
             .link-wrapper
                 .links
                     a.icon.is-large(
                         href="https://github.com/mbaler",
-                        v-tooltip="{content: 'GitHub', placement: 'bottom', delay: {show: 100, hide: 100}, offset: '2px', }",
+                        v-tooltip="{content: 'GitHub', placement: 'bottom', trigger: 'hover', delay: {show: 50, hide: 0}, offset: '2px', }",
                         alt="GitHub",
                         target="_blank",
                         rel="noopener"
@@ -21,7 +21,7 @@
                         i.fab.fa-github.fa-2x
                     a.icon.is-large(
                         href="https://www.linkedin.com/in/macbaler/",
-                        v-tooltip="{content: 'LinkedIn', placement: 'bottom', delay: {show: 100, hide: 100}, offset: '2px', }",
+                        v-tooltip="{content: 'LinkedIn', placement: 'bottom', trigger: 'hover', delay: {show: 50, hide: 0}, offset: '2px', }",
                         alt="LinkedIn",
                         target="_blank",
                         rel="noopener"
@@ -29,7 +29,7 @@
                         i.fab.fa-linkedin.fa-2x
                     a.icon.is-large(
                         href="https://twitter.com/Mackles93",
-                        v-tooltip="{content: 'Twitter', placement: 'bottom', delay: {show: 100, hide: 100}, offset: '2px', }",
+                        v-tooltip="{content: 'Twitter', placement: 'bottom', trigger: 'hover', delay: {show: 50, hide: 0}, offset: '2px', }",
                         alt="Twitter",
                         target="_blank",
                         rel="noopener"
@@ -37,10 +37,12 @@
                         i.fab.fa-twitter.fa-2x
         .foot-bottom
             .built-by
-                p This site was built with my own 🙌, utilizing:
+                p Built with my own 
+                    span(style="font-size: 20px") 🙌
+                    | , utilizing:
                 a(
                     href="https://vuejs.org/",
-                    v-tooltip="{content: 'Vue', placement: 'top', delay: {show: 100, hide: 100}, offset: '14px', }",
+                    v-tooltip="{content: 'Vue', placement: 'top', trigger: 'hover', delay: {show: 50, hide: 0}, offset: '14px', }",
                     alt="Vue",
                     target="_blank",
                     rel="noopener"
@@ -49,7 +51,7 @@
                 | · 
                 a(
                     href="https://bulma.io/",
-                    v-tooltip="{content: 'Bulma', placement: 'top', delay: {show: 100, hide: 100}, offset: '14px', }",
+                    v-tooltip="{content: 'Bulma', placement: 'top', trigger: 'hover', delay: {show: 50, hide: 0}, offset: '14px', }",
                     alt="Bulma",
                     target="_blank",
                     rel="noopener"
@@ -58,7 +60,7 @@
                 | ·
                 a(
                     href="https://babeljs.io/",
-                    v-tooltip="{content: 'Babel', placement: 'top', delay: {show: 100, hide: 100}, offset: '14px', }",
+                    v-tooltip="{content: 'Babel', placement: 'top', trigger: 'hover', delay: {show: 50, hide: 0}, offset: '14px', }",
                     alt="Babel",
                     target="_blank",
                     rel="noopener"
@@ -67,7 +69,7 @@
                 | · 
                 a(
                     href="https://webpack.js.org/",
-                    v-tooltip="{content: 'Webpack', placement: 'top', delay: {show: 100, hide: 100}, offset: '14px', }",
+                    v-tooltip="{content: 'Webpack', placement: 'top', trigger: 'hover', delay: {show: 50, hide: 0}, offset: '14px', }",
                     alt="Webpack",
                     target="_blank",
                     rel="noopener"
@@ -83,14 +85,14 @@ export default {
 
 <style lang="sass" scoped>
     footer
-        background-color: #620000;
+        background-color: #650000;
         color: white;
-        padding: 2rem 1.5rem 1rem 1.5rem
-
+        padding: 2rem 0 0 0;
         height: 400px;
+        @media screen and (max-width: 1024px)
+            height: 425px;
         width: 100%;
-        opacity: 0.8;
-        z-index: 1;
+        z-index: 0;
         position: sticky;
         bottom: 0;
 
@@ -98,17 +100,42 @@ export default {
             height: 100%;
 
             position: relative;
-            z-index: 2;
-            padding-left: 5%;
-            padding-right: 5%;
 
             .foot-middle
-                padding-top: 10px;
+                padding-top: 5px;
                 
                 .email
+                    position: relative;
+                    padding: 5px 0;
                     margin-bottom: 15px;
-                    .icon
-                        color: #0089ff;
+                    color: #00ff8b;
+                    &:hover
+                        color: #00e252;
+
+                    &::before, &::after
+                        content: '';
+                        position: absolute;
+                        left: 0;
+                        right: 0;
+                        height: 2px;
+                        background-color: #ff0000;
+                        transform: scaleX(0);
+                        transition: transform 0.5s ease;
+                    &::before
+                        top: 0;
+                        transform-origin: center right;
+                    
+                    &:hover::before
+                        transform-origin: center left;
+                        transform: scaleX(1);
+                    
+                    &::after
+                        bottom: 0;
+                        transform-origin: center left;
+
+                    &:hover::after
+                        transform-origin: center right;
+                        transform: scaleX(1);
 
                 .link-wrapper
                     margin: 40px 0 40px 0;
@@ -116,15 +143,20 @@ export default {
                     .links
                         a.icon
                             padding: 2px 31px;
-                            color: #0089ff;
+                            color: #32bdff;
+
+                            &:hover
+                                color: #0092d8;
 
             .foot-bottom
-                font-size: 16px;
                 position: absolute;
-                bottom: 5px;
-                width: 100%;
+                bottom: 0px;
                 left: 0;
                 right: 0;
+                font-size: 16px;
+                padding: 20px 0;
+                width: 100%;
+                background-color: #2f0000;
 
                 .built-by img
                     vertical-align: bottom;

@@ -28,8 +28,14 @@ export default new Router({
     }
 
     if (to.hash) {
+      if (to.hash === "#contact") {
+        // scroll to bottom
+        return {x: 0, y: document.body.scrollHeight};
+      }
+
       return {
-        selector: to.hash
+        selector: to.hash,
+        offset: {x: 0, y: 90}
       };
     }
 
