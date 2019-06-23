@@ -17,6 +17,7 @@ import "typeface-roboto";
 
 // bulma
 import "bulma/css/bulma.css";
+import "bulma-timeline/dist/css/bulma-timeline.min.css";
 
 // icons
 import "@fortawesome/fontawesome-free/css/all.css";

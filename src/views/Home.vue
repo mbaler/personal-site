@@ -7,9 +7,7 @@
             img.splash(src="../assets/circled.png")
         HelloWorld
     section.section.sec2
-      .container#about
-        h2.title.is-2 About
-        h3.subtitle.is-4 learn 'bout me
+        About
     section.section.sec3
       Projects
 </template>
@@ -18,22 +16,26 @@
 // @ is an alias to /src
 import HelloWorld from "@/components/HelloWorld.vue";
 import Projects from "@/components/Projects.vue";
+import About from "@/components/About.vue";
 
 export default {
   name: "home",
   components: {
     HelloWorld,
-    Projects
+    Projects,
+    About
   },
 
   mounted() {
     this.logo3D();
 
-
+    // prevent no image boxshadow flash on mobile
     const splashImage = document.querySelector("img.splash");
-    splashImage.onload = () => {
+
+    setTimeout(() => {
       splashImage.style.boxShadow = "0 0 0 0 rgba(0, 0, 0, 0), 10px 20px 4px 1px #ff000082 inset";
-    };
+    }, 1000);
+    
   },
 
   methods: {
@@ -101,10 +103,10 @@ export default {
       padding-top: 0;
     
     .sec2
-      background-color: #ffeedd;
+      background-color: #ce6600;
     
     .sec3
-      background-color: #ede0ff;
+      background-color: #ccd8ff;
 
     .imageoutside
       padding: 60px 0 40px 0;

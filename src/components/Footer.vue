@@ -102,43 +102,50 @@ export default {
             position: relative;
 
             .foot-middle
-                padding-top: 5px;
+                padding: 5px 0;
                 
                 .email
+                    width: 300px;
+                    background-color: #7d0000;
+                    border-radius: 10px;
+                    box-shadow: 0px 3px 5px 0px rgba(0, 0, 0, 0.5);
+
                     position: relative;
                     padding: 5px 0;
-                    margin-bottom: 15px;
-                    color: #00ff8b;
+                    margin-bottom: 20px;
+                    color: #fff;
+                    transition: all 0.2s ease-in-out;
                     &:hover
-                        color: #00e252;
+                        background-color: #fff;
+                        color: #7d0000;
 
-                    &::before, &::after
-                        content: '';
-                        position: absolute;
-                        left: 0;
-                        right: 0;
-                        height: 2px;
-                        background-color: #ff0000;
-                        transform: scaleX(0);
-                        transition: transform 0.5s ease;
-                    &::before
-                        top: 0;
-                        transform-origin: center right;
+                    // &::before, &::after
+                    //     content: '';
+                    //     position: absolute;
+                    //     left: 0;
+                    //     right: 0;
+                    //     height: 2px;
+                    //     background-color: #ff0000;
+                    //     transform: scaleX(0);
+                    //     transition: transform 0.5s ease;
+                    // &::before
+                    //     top: 0;
+                    //     transform-origin: center right;
                     
-                    &:hover::before
-                        transform-origin: center left;
-                        transform: scaleX(1);
+                    // &:hover::before
+                    //     transform-origin: center left;
+                    //     transform: scaleX(1);
                     
-                    &::after
-                        bottom: 0;
-                        transform-origin: center left;
+                    // &::after
+                    //     bottom: 0;
+                    //     transform-origin: center left;
 
-                    &:hover::after
-                        transform-origin: center right;
-                        transform: scaleX(1);
+                    // &:hover::after
+                    //     transform-origin: center right;
+                    //     transform: scaleX(1);
 
                 .link-wrapper
-                    margin: 40px 0 40px 0;
+                    margin: 28px 0 40px 0;
 
                     .links
                         a.icon
@@ -154,7 +161,7 @@ export default {
                 left: 0;
                 right: 0;
                 font-size: 16px;
-                padding: 20px 0;
+                padding: 20px 0 23px 0;
                 width: 100%;
                 background-color: #2f0000;
 

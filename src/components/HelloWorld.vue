@@ -8,10 +8,6 @@
     br
     #typingwrap
       .typingcontainer1
-    br
-    a.linkedin.button.is-link.is-large(href="https://www.linkedin.com/in/macbaler/", target="_blank", rel="noopener")
-      span.icon: i.fab.fa-linkedin
-      span LinkedIn
 </template>
 
 <script>

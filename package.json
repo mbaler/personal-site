@@ -12,6 +12,7 @@
   },
   "dependencies": {
     "bulma": "^0.7.5",
+    "bulma-timeline": "^3.0.4",
     "core-js": "^2.6.5",
     "medium-zoom": "^1.0.4",
     "typeit": "^6.0.3",
