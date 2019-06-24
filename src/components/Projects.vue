@@ -18,8 +18,15 @@
                         a(href="https://github.com/mbaler/webrtc-kun", alt="GitHub Repo", target="_blank", rel="noopener", style="display: inline-flex;")
                             span.icon.is-large: i.fab.fa-github.fa-3x
                     span.tech Tech Used:
-                    .toolwrap
-                        | {{ wrtcdcTech }}
+                    .techwrap
+                        .images
+                            img(src="@/assets/js_es6.png", alt="", v-tooltip="{content: 'JavaScript (ES6+)', placement: 'bottom', trigger: 'hover click', delay: {show: 50, hide: 0}, offset: '4px', }",)
+                            img(src="@/assets/peerjs.png", alt="", v-tooltip="{content: 'PeerJS', placement: 'bottom', trigger: 'hover', delay: {show: 50, hide: 0}, offset: '4px', }",)
+                            img(src="@/assets/pug.svg", alt="", v-tooltip="{content: 'Pug', placement: 'bottom', trigger: 'hover', delay: {show: 50, hide: 0}, offset: '4px', }",)
+                            .smallwrap: img(src="@/assets/gulp.png", alt="", v-tooltip="{content: 'Gulp', placement: 'bottom', trigger: 'hover', delay: {show: 50, hide: 0}, offset: '4px', }",)
+                            img(src="@/assets/webpack-logo.svg", alt="", v-tooltip="{content: 'Webpack', placement: 'bottom', trigger: 'hover', delay: {show: 50, hide: 0}, offset: '4px', }",)
+                            img(src="@/assets/babel-logo.png", alt="", v-tooltip="{content: 'Babel', placement: 'bottom', trigger: 'hover', delay: {show: 50, hide: 0}, offset: '4px', }",)
+                            img(src="@/assets/jquery.gif", alt="", v-tooltip="{content: 'jQuery', placement: 'bottom', trigger: 'hover', delay: {show: 50, hide: 0}, offset: '4px', }",)
             .proj.proj2.column.is-one-third
                 .box
                     a.projhead(href="https://github.com/mbaler/Medium-Code-Highlighter", alt="Medium Code Highlighter - Chrome Extension", target="_blank", rel="noopener")
@@ -35,8 +42,10 @@
                         a(href="https://github.com/mbaler/Medium-Code-Highlighter", alt="GitHub Repo", target="_blank", rel="noopener", style="display: inline-flex;")
                             span.icon.is-large: i.fab.fa-github.fa-3x
                     span.tech Tech Used:
-                    .toolwrap
-                        | {{ mchTech }}
+                    .techwrap
+                        .images.few
+                            img(src="@/assets/js_es6.png", alt="", v-tooltip="{content: 'JavaScript (ES6+)', placement: 'bottom', trigger: 'hover', delay: {show: 50, hide: 0}, offset: '4px', }",)
+                            img(src="@/assets/hljs.png", alt="", v-tooltip="{content: 'highlight.js', placement: 'bottom', trigger: 'hover', delay: {show: 50, hide: 0}, offset: '4px', }",)
             .proj.proj3.column.is-one-third
                 .box
                     .projhead
@@ -49,8 +58,17 @@
                         a(href="https://github.com/mbaler/personal-site", alt="GitHub Repo", target="_blank", rel="noopener", style="display: inline-flex;")
                             span.icon.is-large: i.fab.fa-github.fa-3x
                     span.tech Tech Used:
-                    .toolwrap
-                        | {{ websiteTech }}
+                    .techwrap(style="margin: 10px auto;")
+                        .images.many
+                            img(src="@/assets/js_es6.png", alt="", v-tooltip="{content: 'JavaScript (ES6+)', placement: 'bottom', trigger: 'hover', delay: {show: 50, hide: 0}, offset: '4px', }",)
+                            img(src="@/assets/vue-logo.png", alt="", v-tooltip="{content: 'Vue', placement: 'bottom', trigger: 'hover', delay: {show: 50, hide: 0}, offset: '4px', }",)
+                            .smallwrap: img(src="@/assets/bulma-logo-crop.png" alt="", v-tooltip="{content: 'Bulma', placement: 'bottom', trigger: 'hover', delay: {show: 50, hide: 0}, offset: '4px', }",)
+                            img(src="@/assets/sass.png", alt="", v-tooltip="{content: 'Sass', placement: 'bottom', trigger: 'hover', delay: {show: 50, hide: 0}, offset: '4px', }",)
+                            img(src="@/assets/pug.svg", alt="", v-tooltip="{content: 'Pug', placement: 'bottom', trigger: 'hover', delay: {show: 50, hide: 0}, offset: '4px', }",)
+                            img(src="@/assets/npm.png", alt="", v-tooltip="{content: 'npm', placement: 'bottom', trigger: 'hover', delay: {show: 50, hide: 0}, offset: '4px', }", style="width: 60px; height: auto;")
+                            img(src="@/assets/webpack-logo.svg", alt="", v-tooltip="{content: 'Webpack', placement: 'bottom', trigger: 'hover', delay: {show: 50, hide: 0}, offset: '4px', }",)
+                            img(src="@/assets/babel-logo.png", alt="", v-tooltip="{content: 'Babel', placement: 'bottom', trigger: 'hover', delay: {show: 50, hide: 0}, offset: '4px', }",)
+                            img(src="@/assets/netlify.png", alt="", v-tooltip="{content: 'Netlify', placement: 'bottom', trigger: 'hover', delay: {show: 50, hide: 0}, offset: '4px', }",)
         .comingsoon
             h3.subtitle.is-4
                 | More projects (and a 
@@ -69,7 +87,6 @@ export default {
             wrtcdcDesc: `Created while working at Weblio in Japan. Helps users test & troubleshoot their video/audio devices, as well as video/audio bandwidth settings.
             Allowed pre-emptive test of setup before entering online lesson room.
             Utilized a fork of PeerJS and manipulated the MediaStream API to create a WebRTC video call with oneself.`,
-            wrtcdcTech: `JS (ES6+), PeerJS (SkyWay), MediaStream API, Pug, Gulp, Webpack, Babel, jQuery, (WebRTC)`,
             mchDesc: `Chrome extension for adding simple and easy code syntax highlighting to Medium articles.
             Highlight theme can be changed on-the-fly, via popup UI, from a handful of popular themes.
             Works on all Medium articles, regardless of domain.`,
@@ -135,7 +152,6 @@ export default {
                 padding: 0 7px;
                 color: black;
 
-                // 
                 &:hover
                     animation: jelly 0.5s;
 
@@ -157,8 +173,42 @@ export default {
             width: 80%
             font-weight: bold;
 
-        .toolwrap
+        .techwrap
             font-size: 15px;
+            margin: auto;
+            height: 75px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+
+            .images
+                height: 65px;
+                display: flex;
+                align-items: center;
+                justify-content: center;
+                flex-wrap: wrap;
+
+                &.few img
+                    padding: 0 10px;
+                
+                &.many img
+                    padding: 0 6px;
+
+                .smallwrap
+                    width: 32px;
+                    padding: 0 3px;
+                    margin: 3px 0;
+
+                    img
+                        margin: 0 !important;
+                        vertical-align: middle;
+                        padding: 0 !important;
+
+                img
+                    height: 32px;
+                    width: auto;
+                    padding: 0 3px;
+                    margin: 3px 0;
 
         figure.iconpreview
             margin: 0 auto 10px auto;

@@ -11,29 +11,11 @@
             
             .link-wrapper
                 .links
-                    a.icon.is-large(
-                        href="https://github.com/mbaler",
-                        v-tooltip="{content: 'GitHub', placement: 'bottom', trigger: 'hover', delay: {show: 50, hide: 0}, offset: '2px', }",
-                        alt="GitHub",
-                        target="_blank",
-                        rel="noopener"
-                    )
+                    a.icon.is-large(href="https://github.com/mbaler", alt="GitHub", target="_blank", rel="noopener")
                         i.fab.fa-github.fa-2x
-                    a.icon.is-large(
-                        href="https://www.linkedin.com/in/macbaler/",
-                        v-tooltip="{content: 'LinkedIn', placement: 'bottom', trigger: 'hover', delay: {show: 50, hide: 0}, offset: '2px', }",
-                        alt="LinkedIn",
-                        target="_blank",
-                        rel="noopener"
-                    )
+                    a.icon.is-large(href="https://www.linkedin.com/in/macbaler/", alt="LinkedIn", target="_blank", rel="noopener")
                         i.fab.fa-linkedin.fa-2x
-                    a.icon.is-large(
-                        href="https://twitter.com/Mackles93",
-                        v-tooltip="{content: 'Twitter', placement: 'bottom', trigger: 'hover', delay: {show: 50, hide: 0}, offset: '2px', }",
-                        alt="Twitter",
-                        target="_blank",
-                        rel="noopener"
-                    )
+                    a.icon.is-large(href="https://twitter.com/Mackles93", alt="Twitter", target="_blank", rel="noopener")
                         i.fab.fa-twitter.fa-2x
         .foot-bottom
             .built-by

@@ -102,14 +102,24 @@ export default {
     section:first-of-type
       padding-top: 0;
     
+    .sec1
+      height: 100vh;
+
+      .container
+        height: 100%;
+        display: flex;
+        flex-direction: column;
+    
     .sec2
       background-color: #ce6600;
     
     .sec3
-      background-color: #ccd8ff;
+      background-color: #dfe6ff;
 
     .imageoutside
       padding: 60px 0 40px 0;
+      @media screen and (max-width: 1024px)
+        padding-top: 20px;
       perspective: 30px;
 
       figure

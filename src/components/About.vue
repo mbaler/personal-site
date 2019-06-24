@@ -2,21 +2,35 @@
     .container#about
         h2.title.is-2 About
         h3.subtitle.is-4 Learn 'bout me.
-        .columns
+        .columns.aboutwrap
             .column.selftext.is-half
                 h3.title.is-3 Mac Baler
                 .blurb1
-                    p
-                        | Just a knowledge-hungry bilingual Software Engineer floating through space-time.
-                        br
-                        | Spent a handful of years working in Japan, but am now back in the states, looking for work in the Boston area.
-            .column.portrait.is-half
-                figure
+                    span Just a knowledge-hungry bilingual Software Engineer floating through space-time.
+                    span Spent a handful of years working in Japan, but am now back in the states, looking for work in the Boston area.
+                    span Curious, precise, adaptable, communicative, collaborative, and reliable.
+                figure.d20
+                    img(src="@/assets/d20.png")
+            .column.photos.is-half
+                figure.portrait
                     img(src="@/assets/portrait.jpg")
                 figure.calligraphy
-                    img(src="@/assets/calligraphy1.gif")
-        br
+                    img(src="@/assets/calligraphy_vertical.gif").vertical
+                    img(src="@/assets/calligraphy.gif").horizontal
         .timeline.is-centered
+            header.timeline-header
+                span.tag.is-medium.is-danger 1993
+            .timeline-item
+                .timeline-marker
+                .timeline-content
+                    p.heading September
+                    p 👶🏻
+            header.timeline-header
+                span.tag.is-medium.is-danger ...
+            .timeline-item
+                .timeline-marker
+                .timeline-content
+                    p Livin' life...
             header.timeline-header
                 span.tag.is-medium.is-danger 2015
             .timeline-item
@@ -44,7 +58,7 @@
                 .timeline-content
                     p.heading August
                     p ⛩️ Move to Kyoto
-                    p 💻 Software &amp; Web Engineer @ Weblio
+                    p Software &amp; Web Engineer @ Weblio 💻
                     p.is-size-7 Kyoto, Kyoto Prefecture
             header.timeline-header
                 span.tag.is-medium.is-danger 2018
@@ -58,7 +72,7 @@
                 .timeline-marker
                 .timeline-content
                     p.heading July ~
-                    p 👋 Reuniting with Friends &amp; Family 👪
+                    p 👋 Reuniting with friends/family 👪
                     p 🚄 Travel
             header.timeline-header
                 span.tag.is-medium.is-danger 2019
@@ -71,13 +85,9 @@
                 .timeline-marker
                 .timeline-content
                     p.heading This Fall
-                    p 
-                        | 💻 Software Engineer @ 
-                        em: strong(style="color: #fff") &lt;YOUR COMPANY HERE&gt;
-            .timeline-item
-                .timeline-marker
-                .timeline-content
-                    p ???
+                    .sengwrap 
+                        span.seng 💻 Software Engineer @ 
+                        span.yourcompany: em: .typingcontainer2
             header.timeline-header
                 span.tag.is-medium.is-danger ...
             .timeline-item
@@ -85,15 +95,13 @@
                 .timeline-content
                     p ???
             .timeline-header
-                span.tag.is-medium.is-danger 💀⚰️
-        br
+                span.tag.is-medium.is-danger 💀 ⚰️
         .jobtext
             p Looking for a job that allows me to make a difference,
                 br
                 | as the onus is upon 
                 em us 
                 | as engineers to help shape our cosmos for the better.
-        br
         h3.subtitle.is-3(style="margin-top: 25px;") Check me out!
         .resumewrap
             a.resume.button.is-large(href="/resume.pdf", alt="Resume", target="_blank") Resume
@@ -107,8 +115,29 @@
 </template>
 
 <script>
+    import TypeIt from "typeit";
+
     export default {
         name: "About",
+
+        mounted() {
+          new TypeIt(".typingcontainer2", {
+            strings: [
+                "Your Company Here™",
+                "a company of smart, respectful, fun folks™",
+                "a place that helps people™",
+                "a company that works hard & plays hard™",
+                "a place with diverse humans & ideas™",
+                "the coolest most bestest company ever™",
+            ],
+            breakLines: false,
+            loop: true,
+            nextStringDelay: 2500,
+            waitUntilVisible: true,
+            speed: 135,
+            cursorChar: "<span style='color: white; font-style: normal !important; font-weight: 50;'>|</span>"
+          }).go();
+        }
     }
 </script>
 
@@ -116,37 +145,145 @@
     #about
         h2, h3, p
             color: #fff;
-        
-        .selftext
+
+        .aboutwrap
             display: flex;
-            flex-direction: column;
-            align-items: center;
-            justify-content: center;
-            font-size: 20px;
+            
+            margin: 55px 0 40px 0;
+            padding-top: 40px;
+            @media screen and (max-width: 1024px)
+                flex-direction: column-reverse;
+                padding-top: 0;
+                margin-top: 15px;
+        
+            .selftext
+                margin-top: -30px;
+                @media screen and (max-width: 1024px)
+                    margin-top: 0px;
+                font-size: 20px;
 
-            .blurb1
-                width: 82%
+                .blurb1
+                    margin: auto;
+                    color: white;
+                    @media screen and (min-width: 1025px)
+                        width: 82%
+                    
+                    span
+                        display: inline-block;
+                        padding: 10px 0;
 
-        .portrait
-            img
-                border-radius: 50%;
-                width: 350px;
+                .d20
+                    height: 160px;
+                    margin-top: 40px;
+                    img
+                        height: 160px;
 
-            .calligraphy
-                // background-color: #fff;
-                // width: 50%
+            .photos
+                @media screen and (min-width: 1025px)
+                    display: flex;
+                    align-items: center;
+                    justify-content: center;
+                @media screen and (max-width: 1024px)
+                    flex-direction: column;
+
+                figure
+                    display: inline-block;
+
+                .portrait
+                    img
+                        border-radius: 50%;
+                        width: 350px;
+                        box-shadow: 0px 7px 17px 2px rgba(0, 0, 0, 0.5);
+                        transition: transform 0.3s ease-in-out;
+
+                        &:hover
+                            transform: scale(1.1);
+
+                .calligraphy
+                    margin-left: 40px;
+                    height: 400px;
+                    width: auto;
+
+                    .horizontal
+                        display: none;
+                    
+                    img
+                        height: 400px;
+                        width: auto;
+                    
+                    @media screen and (max-width: 1024px)
+                        margin-left: 10px;
+                        height: auto;
+
+                        .horizontal
+                            display: block;
+                        .vertical
+                            display: none;
+                        img
+                            height: auto;
+                            width: 100%;
 
         .timeline
             text-align: left;
+            margin: 60px 0;
+            @media screen and (min-width: 1025px)
+                margin-top: 140px;
+
+            .tag
+                pointer-events: none;
 
             .timeline-item
                 padding-bottom: 1.5em !important;
+                
+                &::before
+                    background-color: #ff6281 !important;
+
+            .timeline-marker
+                background-color: #8fffd4 !important;
+                border-color: #8fffd4 !important;
 
             .flag
                 height: 36px;
                 width: 36px;
                 background: transparent !important;
                 border: none !important;
+
+            
+            .sengwrap
+                height: 30px;
+                @media screen and (max-width: 1024px)
+                    display: inline;
+
+                .seng
+                    color: white;
+                    @media screen and (min-width: 1025px)
+                        display: inline-block;
+
+                .yourcompany
+                    @media screen and (min-width: 1025px)
+                        display: inline-block;
+                    position: relative;
+                    top: 4%;
+
+                    height: 24px;
+                    line-height: 24px;
+
+                    padding-left: 5px;
+                    font-size: 20px;
+                    font-weight: 500;
+                    @media screen and (max-width: 1024px)
+                        font-size: 18px;
+                        padding-left: 0
+                    em
+                        color: #52feff;
+                
+                    @media screen and (max-width: 1024px)
+                        .typingcontainer2
+                            display: inline;
+
+        .jobtext
+            margin: 75px 0;
+            font-size: 20px;
 
         .about-buttons
             a
@@ -171,24 +308,20 @@
                 &:hover
                     background-color: #fff;
                     color: #000 !important;
-        
-        .jobtext
-            margin-top: 35px;
-            font-size: 18px;
 
         .resumewrap
-            margin: 25px 0 45px 0;
+            margin: 35px 0 45px 0;
             
-            .resume
+            a.resume.button
                 font-size: 2em;
-                background-color: #34af3c;
-                border-color: #34af3c;
+                background-color: #34af3c !important;
+                border-color: #34af3c !important;
                 color: #fff;
                 box-shadow: 0px 3px 5px 0px rgba(0, 0, 0, 0.5);
                 transition: all 0.25s ease-in-out;
 
                 &:hover
-                    background-color: #fff;
-                    border-color: #fff;
+                    background-color: #fff !important;
+                    border-color: #fff !important;
                     color: #34af3c !important;
 </style>

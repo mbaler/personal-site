@@ -24,8 +24,8 @@
           //-     a.navbar-item Test3
           .navbar-item
             router-link.rlink(to="/") Home
-          .navbar-item
-            router-link.rlink(to="/test") Test
+          //- .navbar-item
+          //-   router-link.rlink(to="/test") Test
           .navbar-item
             router-link.rlink(to="/#about") About
           .navbar-item
@@ -79,7 +79,7 @@ export default {
 
 <style lang="sass" scoped>
 #nav
-  padding: 20px 30px;
+  padding: 10px 30px;
   @media screen and (max-width: 1024px)
     padding: 5px 15px;
   // background-color: transparent !important;

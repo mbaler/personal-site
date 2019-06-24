@@ -92,5 +92,5 @@ html
     background-position: 0 96%;
     transition: background-size 0.2s ease-in-out;
     &:hover
-      background-size: 100% 96%;
+      background-size: 100% 105%;
 </style>
