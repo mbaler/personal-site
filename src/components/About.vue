@@ -81,13 +81,13 @@
                 .timeline-content
                     p Boston bound 
                         span(style="vertical-align: text-bottom;").is-inline-block 👍
-            .timeline-item
+            .timeline-item.yourcomapny_item
                 .timeline-marker
                 .timeline-content
                     p.heading This Fall
                     .sengwrap 
                         span.seng 💻 Software Engineer @ 
-                        span.yourcompany: em: .typingcontainer2
+                        span.yourcompany: em: .yourcompanyheretyping
             header.timeline-header
                 span.tag.is-medium.is-danger ...
             .timeline-item
@@ -121,7 +121,7 @@
         name: "About",
 
         mounted() {
-          new TypeIt(".typingcontainer2", {
+          new TypeIt(".yourcompanyheretyping", {
             strings: [
                 "Your Company Here™",
                 "a company of smart, respectful, fun folks™",
@@ -135,7 +135,7 @@
             nextStringDelay: 2500,
             waitUntilVisible: true,
             speed: 135,
-            cursorChar: "<span style='color: white; font-style: normal !important; font-weight: 50;'>|</span>"
+            cursorChar: "<span style='color: white; font-style: normal !important; font-weight: 400;'>|</span>"
           }).go();
         }
     }
@@ -149,7 +149,7 @@
         .aboutwrap
             display: flex;
             
-            margin: 55px 0 40px 0;
+            margin: 25px 0 40px 0;
             padding-top: 40px;
             @media screen and (max-width: 1024px)
                 flex-direction: column-reverse;
@@ -163,6 +163,7 @@
                 font-size: 20px;
 
                 .blurb1
+                    text-shadow: black 0px 0px 6px;
                     margin: auto;
                     color: white;
                     @media screen and (min-width: 1025px)
@@ -183,6 +184,7 @@
                     display: flex;
                     align-items: center;
                     justify-content: center;
+                    margin-top: -60px;
                 @media screen and (max-width: 1024px)
                     flex-direction: column;
 
@@ -224,6 +226,8 @@
                             width: 100%;
 
         .timeline
+            font-family: "Roboto";
+
             text-align: left;
             margin: 60px 0;
             @media screen and (min-width: 1025px)
@@ -231,12 +235,17 @@
 
             .tag
                 pointer-events: none;
+                background-color: #bd0000 !important;
 
             .timeline-item
                 padding-bottom: 1.5em !important;
                 
                 &::before
-                    background-color: #ff6281 !important;
+                    background-color: #c1004f !important;
+
+                &.yourcomapny_item
+                    @media screen and (max-width: 1024px)
+                        height: 180px;
 
             .timeline-marker
                 background-color: #8fffd4 !important;
@@ -278,7 +287,7 @@
                         color: #52feff;
                 
                     @media screen and (max-width: 1024px)
-                        .typingcontainer2
+                        .yourcompanyheretyping
                             display: inline;
 
         .jobtext

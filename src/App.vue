@@ -52,45 +52,51 @@
 </script>
 
 <style lang="sass">
-html
-  overscroll-behavior: none;
-  overflow-y: auto !important;
-  scroll-behavior: smooth;
-  min-width: 350px !important
+  html
+    overscroll-behavior: none;
+    overflow-y: auto !important;
+    scroll-behavior: smooth;
+    min-width: 350px !important
 
-// medium zoom
-.medium-zoom-image--opened, .medium-zoom-overlay
-  z-index: 9999999999999;
+    // custom cursor
+    // cursor: url("./assets/custom-cursor1.png") 25 25, auto; // custom image
+    // a:hover
+      // cursor: url("./assets/custom-cursor2.png") 25 25, auto; // larger
 
-.medium-zoom-image--opened
-  padding: 6px;
+  // medium zoom
+  .medium-zoom-image--opened, .medium-zoom-overlay
+    z-index: 9999999999999;
 
-#app
-  font-family: "Avenir", Helvetica, Arial, sans-serif;
-  -webkit-font-smoothing: antialiased;
-  -moz-osx-font-smoothing: grayscale;
-  color: #2c3e50;
-  display: flex;
-  flex-direction: column;
+  .medium-zoom-image--opened
+    padding: 6px;
 
-  section:not(:first-of-type) .container
-    // &:not(:first-child)
-    padding-top: 30px;
-    padding-bottom: 30px;
+  #app
+    font-family: "Avenir", Helvetica, Arial, sans-serif;
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+    color: #2c3e50;
+    display: flex;
+    flex-direction: column;
 
-  .magic-highlight
-    //////// SIMPLE
-    // transition: all .2s ease-in-out;
-    // box-shadow: inset 0 -0.2em 0 0 #2eec96;	
-    // &:hover
-    //   box-shadow: inset 0 -2em 0 0 #2eec96;
+    section:not(:first-of-type) .container
+      // &:not(:first-child)
+      padding-top: 30px;
+      padding-bottom: 30px;
 
-    //////// GRADIENT
-    background-image: linear-gradient(120deg, #cbffb0 0%, #ff9eb1 100%);
-    background-repeat: no-repeat;
-    background-size: 100% 0.25em;
-    background-position: 0 96%;
-    transition: background-size 0.2s ease-in-out;
-    &:hover
-      background-size: 100% 105%;
+    .magic-highlight
+      //////// SIMPLE
+      // transition: all .2s ease-in-out;
+      // box-shadow: inset 0 -0.2em 0 0 #2eec96;	
+      // &:hover
+      //   box-shadow: inset 0 -2em 0 0 #2eec96;
+
+      //////// GRADIENT
+      background-image: linear-gradient(180deg, rgba(255,252,0,0.5690651260504201) 0%, rgba(255,205,0,0.6250875350140056) 100%);
+      // background-image: linear-gradient(180deg, rgba(255,255,255,1) 0%, rgba(249,255,0,1) 0%);
+      background-repeat: no-repeat;
+      background-size: 100% 0.25em;
+      background-position: 0 96%;
+      transition: background-size 0.2s ease-in-out;
+      &:hover
+        background-size: 100% 105%;
 </style>

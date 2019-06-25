@@ -1,7 +1,10 @@
 <template lang="pug">
     .container#projects
         h2.title.is-2 Projects
-        h3.subtitle.is-4 Some little ditties of mine.
+        h3.subtitle.is-4 
+            | Some little 
+            span.magic-highlight ditties
+            | &nbsp;of mine.
         .showcase-wrapper.columns.is-centered.is-variable.is-7
             .proj.proj1.column.is-one-third
                 .box
@@ -72,8 +75,8 @@
         .comingsoon
             h3.subtitle.is-4
                 | More projects (and a 
-                strong: em blog
-                | ) coming soon...
+                strong.magic-highlight: em blog
+                | ) Coming Soon™ 🕑
 </template>
 
 <script>
@@ -241,5 +244,6 @@ export default {
 
     .comingsoon
         margin-top: 60px;
+        line-height: 1.5;
 
 </style>
