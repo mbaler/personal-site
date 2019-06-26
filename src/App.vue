@@ -66,6 +66,7 @@
         });
         ScrollReveal().reveal(".scrollio-hand", {
           origin: "top",
+          distance: "10px",
           delay: 1500,
         });
         ScrollReveal().reveal(".scrollio-about-portrait", {

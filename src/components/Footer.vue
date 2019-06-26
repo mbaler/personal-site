@@ -140,6 +140,8 @@ export default {
                             
                             svg
                                 filter: drop-shadow(0px 2px 5px #000);
+                                @media screen and (max-width: 1024px)
+                                    filter: none;
                                 
                     .link-wrapper
                         margin: 28px 0 40px 0;

@@ -248,7 +248,7 @@ export default {
                     font-size: 50px;
                 
             @media screen and (max-width: 1024px)
-                bottom: 40px;
+                bottom: 25px;
 
             #scrollbutton
                 position: relative;
@@ -268,7 +268,7 @@ export default {
                 color: #ff771e !important;
                 border: none;
                 padding: .5rem;
-                animation: scrollButton 1s cubic-bezier(.175,.885,.32,1.4) 1.4s infinite alternate;
+                animation: scrollButton 1s cubic-bezier(.175,.885,.32,1.4) 0s infinite alternate;
 
                 &:hover
                     color: #ff1e00 !important;
