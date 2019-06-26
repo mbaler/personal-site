@@ -79,11 +79,12 @@ export default {
 
 <style lang="sass" scoped>
 #nav
-  padding: 10px 30px;
+  padding: 3px 20px 3px 25px;
   @media screen and (max-width: 1024px)
-    padding: 5px 15px;
+    padding: 3px 10px 3px 15px;
   // background-color: transparent !important;
-  background-color: #ffffffe6;
+  // background-color: #ffffffe6;
+  background-color: #ffffff;
 
   a 
     font-weight: bold;

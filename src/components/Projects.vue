@@ -1,19 +1,19 @@
 <template lang="pug">
     .container#projects
-        h2.title.is-2 Projects
-        h3.subtitle.is-4 
+        h2.title.is-2.scrollio-immediate Projects
+        h3.subtitle.is-4.scrollio-immediate
             | Some little 
             span.magic-highlight ditties
             | &nbsp;of mine.
         .showcase-wrapper.columns.is-centered.is-variable.is-7
-            .proj.proj1.column.is-one-third
+            .proj.proj1.column.is-one-third.scrollio
                 .box
                     a.projhead(href="https://github.com/mbaler/webrtc-kun", alt="WebRTC Device Checker", target="_blank", rel="noopener")
                         figure.iconpreview
-                            img(src="../assets/wrtcdc/webrtclogocropW.png")
+                            img(:data-src="require(`@/assets/wrtcdc/webrtclogocropW.png`)").lazyload
                         h4.title.is-5 WebRTC Device Checker
                     figure.screenshot
-                        img(src="../assets/wrtcdc/ss.png", data-zoomable)
+                        img(:data-src="require(`@/assets/wrtcdc/ss.png`)", data-zoomable).lazyload
                     p.description.smidgeUp {{ wrtcdcDesc }}
                     .projlinks
                         a(href="https://eikaiwa.weblio.jp/device_checker?bandwidth", alt="Live Example", target="_blank", rel="noopener")
@@ -23,37 +23,37 @@
                     span.tech Tech Used:
                     .techwrap
                         .images
-                            img(src="@/assets/js_es6.png", alt="", v-tooltip="{content: 'JavaScript (ES6+)', placement: 'bottom', trigger: 'hover click', delay: {show: 50, hide: 0}, offset: '4px', }",)
-                            img(src="@/assets/peerjs.png", alt="", v-tooltip="{content: 'PeerJS', placement: 'bottom', trigger: 'hover', delay: {show: 50, hide: 0}, offset: '4px', }",)
-                            img(src="@/assets/pug.svg", alt="", v-tooltip="{content: 'Pug', placement: 'bottom', trigger: 'hover', delay: {show: 50, hide: 0}, offset: '4px', }",)
-                            .smallwrap: img(src="@/assets/gulp.png", alt="", v-tooltip="{content: 'Gulp', placement: 'bottom', trigger: 'hover', delay: {show: 50, hide: 0}, offset: '4px', }",)
-                            img(src="@/assets/webpack-logo.svg", alt="", v-tooltip="{content: 'Webpack', placement: 'bottom', trigger: 'hover', delay: {show: 50, hide: 0}, offset: '4px', }",)
-                            img(src="@/assets/babel-logo.png", alt="", v-tooltip="{content: 'Babel', placement: 'bottom', trigger: 'hover', delay: {show: 50, hide: 0}, offset: '4px', }",)
-                            img(src="@/assets/jquery.gif", alt="", v-tooltip="{content: 'jQuery', placement: 'bottom', trigger: 'hover', delay: {show: 50, hide: 0}, offset: '4px', }",)
-            .proj.proj2.column.is-one-third
+                            img(:data-src="require(`@/assets/js_es6.png`)", alt="JavaScript (ES6+)", v-tooltip="{content: 'JavaScript (ES6+)', placement: 'bottom', trigger: 'hover click', delay: {show: 50, hide: 0}, offset: '4px', }",).lazyload
+                            img(:data-src="require(`@/assets/peerjs.png`)", alt="PeerJS", v-tooltip="{content: 'PeerJS', placement: 'bottom', trigger: 'hover', delay: {show: 50, hide: 0}, offset: '4px', }",).lazyload
+                            img(:data-src="require(`@/assets/pug.svg`)", alt="Pug", v-tooltip="{content: 'Pug', placement: 'bottom', trigger: 'hover', delay: {show: 50, hide: 0}, offset: '4px', }",).lazyload
+                            .smallwrap: img(:data-src="require(`@/assets/gulp.png`)", alt="Gulp", v-tooltip="{content: 'Gulp', placement: 'bottom', trigger: 'hover', delay: {show: 50, hide: 0}, offset: '4px', }",).lazyload
+                            img(:data-src="require(`@/assets/webpack-logo.svg`)", alt="Webpack", v-tooltip="{content: 'Webpack', placement: 'bottom', trigger: 'hover', delay: {show: 50, hide: 0}, offset: '4px', }",).lazyload
+                            img(:data-src="require(`@/assets/babel-logo.png`)", alt="Babel", v-tooltip="{content: 'Babel', placement: 'bottom', trigger: 'hover', delay: {show: 50, hide: 0}, offset: '4px', }",).lazyload
+                            img(:data-src="require(`@/assets/jquery.gif`)", alt="jQuery", v-tooltip="{content: 'jQuery', placement: 'bottom', trigger: 'hover', delay: {show: 50, hide: 0}, offset: '4px', }",).lazyload
+            .proj.proj2.column.is-one-third.scrollio
                 .box
                     a.projhead(href="https://github.com/mbaler/Medium-Code-Highlighter", alt="Medium Code Highlighter - Chrome Extension", target="_blank", rel="noopener")
                         figure.iconpreview
-                            img(src="../assets/mch/mchicon.png")
+                            img(:data-src="require(`@/assets/mch/mchicon.png`)").lazyload
                         h4.title.is-5 Medium Code Highlighter
                     figure.screenshot
-                        img(src="../assets/mch/promo_gif.gif", data-zoomable)
+                        img(:data-src="require(`@/assets/mch/promo_gif.gif`)", data-zoomable).lazyload
                     p.description {{ mchDesc }}
                     .projlinks(style="margin-left: -10px;")
                         a(href="https://chrome.google.com/webstore/detail/medium-code-highlighter/apdaagmhepellbjjbnaljaocodjjjjfd", alt="Chrome Web Store", target="_blank", rel="noopener")
-                            img(src="@/assets/mch/ChromeWebStore.png")
+                            img(:data-src="require(`@/assets/mch/ChromeWebStore.png`)").lazyload
                         a(href="https://github.com/mbaler/Medium-Code-Highlighter", alt="GitHub Repo", target="_blank", rel="noopener", style="display: inline-flex;")
                             span.icon.is-large: i.fab.fa-github.fa-3x
                     span.tech Tech Used:
                     .techwrap
                         .images.few
-                            img(src="@/assets/js_es6.png", alt="", v-tooltip="{content: 'JavaScript (ES6+)', placement: 'bottom', trigger: 'hover', delay: {show: 50, hide: 0}, offset: '4px', }",)
-                            img(src="@/assets/hljs.png", alt="", v-tooltip="{content: 'highlight.js', placement: 'bottom', trigger: 'hover', delay: {show: 50, hide: 0}, offset: '4px', }",)
-            .proj.proj3.column.is-one-third
+                            img(:data-src="require(`@/assets/js_es6.png`)", alt="JavaScript (ES6+)", v-tooltip="{content: 'JavaScript (ES6+)', placement: 'bottom', trigger: 'hover', delay: {show: 50, hide: 0}, offset: '4px', }",).lazyload
+                            img(:data-src="require(`@/assets/hljs.png`)", alt="highlight.js", v-tooltip="{content: 'highlight.js', placement: 'bottom', trigger: 'hover', delay: {show: 50, hide: 0}, offset: '4px', }",).lazyload
+            .proj.proj3.column.is-one-third.scrollio
                 .box
                     .projhead
                         figure.iconpreview
-                            img(src="../assets/circled.png")
+                            img(:data-src="require(`@/assets/circled.png`)").lazyload
                         h4.title.is-5 This Website!
                     figure.screenshot
                         span.wink(style="text-shadow: 0px 5px 10px rgba(0, 0, 0, 0.35);") 😉
@@ -63,16 +63,16 @@
                     span.tech Tech Used:
                     .techwrap(style="margin: 10px auto;")
                         .images.many
-                            img(src="@/assets/js_es6.png", alt="", v-tooltip="{content: 'JavaScript (ES6+)', placement: 'bottom', trigger: 'hover', delay: {show: 50, hide: 0}, offset: '4px', }",)
-                            img(src="@/assets/vue-logo.png", alt="", v-tooltip="{content: 'Vue', placement: 'bottom', trigger: 'hover', delay: {show: 50, hide: 0}, offset: '4px', }",)
-                            .smallwrap: img(src="@/assets/bulma-logo-crop.png" alt="", v-tooltip="{content: 'Bulma', placement: 'bottom', trigger: 'hover', delay: {show: 50, hide: 0}, offset: '4px', }",)
-                            img(src="@/assets/sass.png", alt="", v-tooltip="{content: 'Sass', placement: 'bottom', trigger: 'hover', delay: {show: 50, hide: 0}, offset: '4px', }",)
-                            img(src="@/assets/pug.svg", alt="", v-tooltip="{content: 'Pug', placement: 'bottom', trigger: 'hover', delay: {show: 50, hide: 0}, offset: '4px', }",)
-                            img(src="@/assets/npm.png", alt="", v-tooltip="{content: 'npm', placement: 'bottom', trigger: 'hover', delay: {show: 50, hide: 0}, offset: '4px', }", style="width: 60px; height: auto;")
-                            img(src="@/assets/webpack-logo.svg", alt="", v-tooltip="{content: 'Webpack', placement: 'bottom', trigger: 'hover', delay: {show: 50, hide: 0}, offset: '4px', }",)
-                            img(src="@/assets/babel-logo.png", alt="", v-tooltip="{content: 'Babel', placement: 'bottom', trigger: 'hover', delay: {show: 50, hide: 0}, offset: '4px', }",)
-                            img(src="@/assets/netlify.png", alt="", v-tooltip="{content: 'Netlify', placement: 'bottom', trigger: 'hover', delay: {show: 50, hide: 0}, offset: '4px', }",)
-        .comingsoon
+                            img(:data-src="require(`@/assets/js_es6.png`)", alt="JavaScript (ES6+)", v-tooltip="{content: 'JavaScript (ES6+)', placement: 'bottom', trigger: 'hover', delay: {show: 50, hide: 0}, offset: '4px', }",).lazyload
+                            img(:data-src="require(`@/assets/vue-logo.png`)", alt="Vue", v-tooltip="{content: 'Vue', placement: 'bottom', trigger: 'hover', delay: {show: 50, hide: 0}, offset: '4px', }",).lazyload
+                            .smallwrap: img(:data-src="require(`@/assets/bulma-logo-crop.png`)", alt="Bulma", v-tooltip="{content: 'Bulma', placement: 'bottom', trigger: 'hover', delay: {show: 50, hide: 0}, offset: '4px', }",).lazyload
+                            img(:data-src="require(`@/assets/sass.png`)", alt="Sass", v-tooltip="{content: 'Sass', placement: 'bottom', trigger: 'hover', delay: {show: 50, hide: 0}, offset: '4px', }",).lazyload
+                            img(:data-src="require(`@/assets/pug.svg`)", alt="Pug", v-tooltip="{content: 'Pug', placement: 'bottom', trigger: 'hover', delay: {show: 50, hide: 0}, offset: '4px', }",).lazyload
+                            img(:data-src="require(`@/assets/npm.png`)", alt="npm", v-tooltip="{content: 'npm', placement: 'bottom', trigger: 'hover', delay: {show: 50, hide: 0}, offset: '4px', }", style="width: 60px; height: auto;").lazyload
+                            img(:data-src="require(`@/assets/webpack-logo.svg`)", alt="Webpack", v-tooltip="{content: 'Webpack', placement: 'bottom', trigger: 'hover', delay: {show: 50, hide: 0}, offset: '4px', }",).lazyload
+                            img(:data-src="require(`@/assets/babel-logo.png`)", alt="Babel", v-tooltip="{content: 'Babel', placement: 'bottom', trigger: 'hover', delay: {show: 50, hide: 0}, offset: '4px', }",).lazyload
+                            img(:data-src="require(`@/assets/netlify.png`)", alt="Netlify", v-tooltip="{content: 'Netlify', placement: 'bottom', trigger: 'hover', delay: {show: 50, hide: 0}, offset: '4px', }",).lazyload
+        .comingsoon.scrollio-immediate
             h3.subtitle.is-4
                 | More projects (and a 
                 strong.magic-highlight: em blog
@@ -198,7 +198,7 @@ export default {
                     padding: 0 6px;
 
                 .smallwrap
-                    width: 32px;
+                    width: 35px;
                     padding: 0 3px;
                     margin: 3px 0;
 

@@ -3,13 +3,6 @@
       .foot-wrap
         .content.has-text-centered.is-size-5
             .foot-middle
-                .contact-mail
-                    a.email.is-inline-block(href="mailto:howdy@macbaler.me", target="_blank")
-                        span.icon.is-large
-                            i.fas.fa-envelope.fa-2x
-                        p howdy@macbaler.me
-                    p 💬 Feel free to reach out and slide a message my way. 🙂
-                
                 .link-wrapper
                     .links
                         a.icon.is-large(href="https://github.com/mbaler", alt="GitHub", target="_blank", rel="noopener")
@@ -18,6 +11,12 @@
                             i.fab.fa-linkedin.fa-2x
                         a.icon.is-large(href="https://twitter.com/Mackles93", alt="Twitter", target="_blank", rel="noopener")
                             i.fab.fa-twitter.fa-2x
+                .tagline: p 💬 Feel free to reach out and slide a message my way. 🙂
+                .contact-mail.scrollio
+                    a.email.is-inline-block(href="mailto:howdy@macbaler.me", target="_blank")
+                        span.icon.is-large
+                            i.fas.fa-envelope.fa-2x
+                        p howdy@macbaler.me
             .foot-bottom
                 .built-by
                     p Built with my own 
@@ -30,7 +29,7 @@
                         target="_blank",
                         rel="noopener"
                     )
-                        img.is-inline(src="@/assets/vue-logo.png")
+                        img.is-inline(:data-src="require(`@/assets/vue-logo.png`)").lazyload
                     | · 
                     a(
                         href="https://bulma.io/",
@@ -39,7 +38,7 @@
                         target="_blank",
                         rel="noopener"
                     )
-                        img.is-inline(src="@/assets/bulma-logo-crop.png")
+                        img.is-inline(:data-src="require(`@/assets/bulma-logo-crop.png`)").lazyload
                     | ·
                     a(
                         href="https://babeljs.io/",
@@ -48,7 +47,7 @@
                         target="_blank",
                         rel="noopener"
                     )
-                        img.is-inline(src="@/assets/babel-logo.png", style="margin-bottom: -1px;")
+                        img.is-inline(:data-src="require(`@/assets/babel-logo.png`)", style="margin-bottom: -1px;").lazyload
                     | · 
                     a(
                         href="https://webpack.js.org/",
@@ -57,7 +56,7 @@
                         target="_blank",
                         rel="noopener"
                     )
-                        img.is-inline(src="@/assets/webpack-logo.svg")
+                        img.is-inline(:data-src="require(`@/assets/webpack-logo.svg`)").lazyload
 </template>
 
 <script>
@@ -108,8 +107,13 @@ export default {
                     justify-content: center;
                     flex-direction: column;
 
+                    .tagline
+                        margin: 40px 0 80px 0;
+                        @media screen and (max-width: 1024px)
+                            margin: 10px 0 50px 0;
+
                     .contact-mail
-                        padding-bottom: 100px;
+                        padding-bottom: 60px;
                         @media screen and (max-width: 1024px)
                             padding-bottom: 50px;
                     

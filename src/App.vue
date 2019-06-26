@@ -9,6 +9,8 @@
   import Nav from "@/components/Nav.vue";
   import Footer from "@/components/Footer.vue";
 
+  import ScrollReveal from 'scrollreveal'
+
   export default {
     name: "App",
     components: {
@@ -17,41 +19,117 @@
     },
 
     mounted() {
-      // ensure correct top and bottom backgrounds for mobile overscrolling
-      const topColor = "white";
-      const bottomColor = "#2f0000";
-      let ticking = false;
+      this.scrollio();
+      this.overscrollFix();
+    },
 
-      window.addEventListener("scroll", _checkScroll, { passive: true });
-      window.addEventListener("resize", _checkScroll, { passive: true });
+    methods: {
+      scrollio() {
+        // TODO: need to use less instances -- is lagging stuff up
 
-      _checkScroll();
+        // defaults
+        ScrollReveal({
+          delay: 100,
+          distance: "50px",
+          duration: 1000,
+          interval: 400,
+        });
+
+        ScrollReveal().reveal(".scrollio");
+
+        // presets
+        ScrollReveal().reveal(".scrollio-reset", {
+          reset: true,
+        });
+        ScrollReveal().reveal(".scrollio-immediate", {
+          delay: 0,
+          interval: 200,
+        });
+        ScrollReveal().reveal(".scrollio-stagger", {
+          interval: 400,  
+        });
+        ScrollReveal().reveal(".scrollio-delayed", {
+          delay: 200,
+        });
+        ScrollReveal().reveal(".scrollio-top", {
+          origin: "top",
+        });
+
+        // targeted
+        ScrollReveal().reveal(".scrollio.proj", {
+          interval: 160,
+          delay: 250,
+        });
+        ScrollReveal().reveal(".scrollio-about", {
+          interval: 160,
+          delay: 100,
+        });
+        ScrollReveal().reveal(".scrollio-hand", {
+          origin: "top",
+          delay: 2500,
+        });
+        ScrollReveal().reveal(".scrollio-about-portrait", {
+          origin: "top",
+          disatance: "70px",
+          delay: 300,
+        });
+        ScrollReveal().reveal(".scrollio-callig", {
+          distance: "70px",
+          delay: 300,
+        });
+      },
+
+      overscrollFix() {
+        // ensure correct top and bottom backgrounds for mobile overscrolling
+        const topColor = "white";
+        const bottomColor = "#2f0000";
+        let ticking = false;
+
+        window.addEventListener("scroll", _checkScroll, { passive: true });
+        window.addEventListener("resize", _checkScroll, { passive: true });
+
+        _checkScroll();
 
 
-      function _checkScroll() {
-        if (!ticking) {
-          window.requestAnimationFrame(() => {
-            const scrollHeight = document.body.scrollHeight;
-            const innerHeight = window.innerHeight;
-            if (scrollHeight === innerHeight) {
-              _setBgColor(bottomColor);
-            } else {
-              _setBgColor(innerHeight - scrollHeight + 2 * window.scrollY < 0 ? topColor : bottomColor);
-            }
-            ticking = false;
-          });
-          ticking = true;
+        function _checkScroll() {
+          if (!ticking) {
+            window.requestAnimationFrame(() => {
+              const scrollHeight = document.body.scrollHeight;
+              const innerHeight = window.innerHeight;
+              if (scrollHeight === innerHeight) {
+                _setBgColor(bottomColor);
+              } else {
+                _setBgColor(innerHeight - scrollHeight + 2 * window.scrollY < 0 ? topColor : bottomColor);
+              }
+              ticking = false;
+            });
+            ticking = true;
+          }
         }
-      }
 
-      function _setBgColor(color) {
-        document.documentElement.style.background = color;
+        function _setBgColor(color) {
+          document.documentElement.style.background = color;
+        }
       }
     }
 }
 </script>
 
 <style lang="sass">
+  .jarallax
+    position: relative;
+    z-index: 0;
+  .jarallax > .jarallax-img
+      position: absolute;
+      object-fit: cover;
+      /* support for plugin https://github.com/bfred-it/object-fit-images */
+      font-family: 'object-fit: cover;';
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100%;
+      z-index: -1;
+
   html
     overscroll-behavior: none;
     overflow-y: auto !important;
@@ -62,6 +140,13 @@
     // cursor: url("./assets/custom-cursor1.png") 25 25, auto; // custom image
     // a:hover
       // cursor: url("./assets/custom-cursor2.png") 25 25, auto; // larger
+
+  html.sr .load-hidden
+    visibility: hidden;
+
+  // prevent broken image on lazy loads
+  img.lazyload:not([src])
+    visibility: hidden;
 
   // medium zoom
   .medium-zoom-image--opened, .medium-zoom-overlay

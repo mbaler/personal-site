@@ -4,6 +4,9 @@ import router from "./router";
 
 Vue.config.productionTip = false;
 
+// lazyload
+import "lazysizes";
+
 // tooltips
 import VTooltip from "v-tooltip";
 Vue.use(VTooltip);

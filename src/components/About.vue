@@ -1,23 +1,23 @@
 <template lang="pug">
     .container#about
-        h2.title.is-2 About
-        h3.subtitle.is-4 Learn 'bout me.
+        h2.title.is-2.scrollio-about About
+        h3.subtitle.is-4.scrollio-about Learn 'bout me.
         .columns.aboutwrap
             .column.selftext.is-half
-                h3.title.is-3 Mac Baler
-                .blurb1
+                h3.title.is-3.scrollio-stagger Mac Baler
+                .blurb1.scrollio-stagger
                     span Just a knowledge-hungry bilingual Software Engineer floating through space-time.
                     span Spent a handful of years working in Japan, but am now back in the states, looking for work in the Boston area.
                     span Curious, precise, adaptable, communicative, collaborative, and reliable.
-                figure.d20
-                    img(src="@/assets/d20.png")
+                figure.d20.scrollio-d20
+                    img(:data-src="require(`@/assets/d20.png`)").lazyload.scrollio
             .column.photos.is-half
-                figure.portrait
-                    img(src="@/assets/portrait.jpg")
-                figure.calligraphy
-                    img(src="@/assets/calligraphy_vertical.gif").vertical
-                    img(src="@/assets/calligraphy.gif").horizontal
-        .timeline.is-centered
+                figure.portrait.scrollio-about-portrait
+                    img(:data-src="require(`@/assets/portrait.jpg`)").lazyload.scrollio-about-portrait
+                figure.calligraphy.scrollio-callig
+                    img.vertical(:data-src="require(`@/assets/calligraphy_vertical.gif`)", alt="米良").lazyload.scrollio-callig
+                    img.horizontal(:data-src="require(`@/assets/calligraphy.gif`)", alt="米良").lazyload.scrollio-reset
+        .timeline.is-centered.scrollio-delayed.load-hidden
             header.timeline-header
                 span.tag.is-medium.is-danger 1993
             .timeline-item
@@ -43,12 +43,11 @@
                     p.is-size-7 Summa Cum Laude, Phi Beta Kappa (ΦΒΚ) Honor Society
             .timeline-item
                 .timeline-marker.is-image.is-32x32.flag
-                    img(src="@/assets/japan_flag.png", alt="Japanese Flag")
+                    img(:data-src="require(`@/assets/japan_flag.png`)", alt="Japanese Flag").lazyload
                 .timeline-content
                     p.heading July
                     p 
                         | ✈️ Move to Japan
-                        //- img(src="@/assets/japan_flag.png", alt="Japanese Flag").jflag
                     p English Teacher @ Komatsu Meihou High School (JET Program) 👨‍🏫
                     p.is-size-7 Komatsu, Ishikawa Prefecture
             header.timeline-header
@@ -64,7 +63,7 @@
                 span.tag.is-medium.is-danger 2018
             .timeline-item
                 .timeline-marker.is-image.is-32x32.flag
-                    img(src="@/assets/usa_flag.png", alt="Japanese Flag")
+                    img(:data-src="require(`@/assets/usa_flag.png`)", alt="USA Flag").lazyload
                 .timeline-content
                     p.heading June
                     p ✈️ Move back to the US of A
@@ -96,16 +95,16 @@
                     p ???
             .timeline-header
                 span.tag.is-medium.is-danger 💀 ⚰️
-        .jobtext
+        .jobtext.scrollio
             p Looking for a job that allows me to make a difference,
                 br
                 | as the onus is upon 
                 em us 
                 | as engineers to help shape our cosmos for the better.
-        h3.subtitle.is-3(style="margin-top: 25px;") Check me out!
-        .resumewrap
+        h3.subtitle.is-3(style="margin-top: 25px;").scrollio Check me out!
+        .resumewrap.scrollio
             a.resume.button.is-large(href="/resume.pdf", alt="Resume", target="_blank") Resume
-        .about-buttons
+        .about-buttons.scrollio
             a.linkedin.button.is-link.is-large(href="https://www.linkedin.com/in/macbaler/", alt="LinkedIn", target="_blank", rel="noopener")
                 span.icon: i.fab.fa-linkedin
                 span LinkedIn
@@ -192,6 +191,8 @@
                     display: inline-block;
 
                 .portrait
+                    @media screen and (min-width: 1025px)
+                        float: left;
                     img
                         border-radius: 50%;
                         width: 350px;
@@ -205,6 +206,8 @@
                     margin-left: 40px;
                     height: 400px;
                     width: auto;
+                    @media screen and (min-width: 1025px)
+                        float: right;
 
                     .horizontal
                         display: none;
@@ -324,13 +327,44 @@
             a.resume.button
                 font-size: 2em;
                 background-color: #34af3c !important;
-                border-color: #34af3c !important;
+                // border-color: #34af3c !important;
                 color: #fff;
                 box-shadow: 0px 3px 5px 0px rgba(0, 0, 0, 0.5);
                 transition: all 0.25s ease-in-out;
 
+                position: relative
+                outline: none;
+                border: none;
+
                 &:hover
                     background-color: #fff !important;
-                    border-color: #fff !important;
+                    // border-color: #fff !important;
                     color: #34af3c !important;
+
+                &::before
+                    content: "";
+                    z-index: -1;
+                    position: absolute;
+                    top: 0;
+                    bottom: 0;
+                    left: 0;
+                    right: 0;
+                    border: 4px solid #33af3b7a;
+                    border-radius: 4px;
+                    transform-origin: center;
+                    transform: scale(1);
+                    animation: 2s cubic-bezier(.57,.06,.27,.84) 0.75s infinite pulse;
+
+                    @keyframes pulse
+                        0%
+                            border-color: #33af3b7a;
+                        70%
+                            border-color:  #33af3b;
+                        85%
+                            opacity: 0;
+                        100%
+                            // transition: all 0.75s ease-in-out;
+                            transform-origin: center;
+                            transform: scale(1.25, 1.5);
+                            opacity: 0;
 </style>

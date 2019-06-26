@@ -6,10 +6,10 @@
                 .typingsignature
             .imageoutside.column.is-5
                 figure.inner
-                    img.splash(src="@/assets/circled.png")
-        .hello
+                    img.splash(:data-src="require(`@/assets/circled.png`)").lazyload
+        .hello.scrollio-hand
             router-link(to="/#about")#scrollbutton
-                i.fa-3x.fas.fa-hand-point-down
+                i.fas.fa-hand-point-down
 </template>
 
 <script>
@@ -19,6 +19,7 @@ export default {
     name: "Splash",
 
     mounted() {
+
         this.typing();
 
 
@@ -26,6 +27,13 @@ export default {
 
         // prevent no image boxshadow flash on mobile
         const splashImage = document.querySelector("img.splash");
+
+        splashImage.style.opacity = "0";
+        splashImage.style.marginTop = "100px"
+        splashImage.addEventListener("load", function () {
+            this.style.opacity = "1";
+            this.style.marginTop = "0";
+        })
 
         setTimeout(() => {
             splashImage.style.boxShadow = "0 0 0 0 rgba(0, 0, 0, 0), 10px 20px 4px 1px #ff000082 inset";
@@ -91,13 +99,13 @@ export default {
             const upDown = 5;
             const leftRight = 5;
 
-            const rect = container.getBoundingClientRect();
+            // const rect = container.getBoundingClientRect();
             const mouse = {
                 // Track the mouse position relative to the center of the container.
-                // _x: container.offsetLeft + (160) + Math.floor(container.offsetWidth / 2),
-                // _y: container.offsetTop + (57) + Math.floor(container.offsetHeight / 2),
-                _x: rect.left + Math.floor(container.offsetWidth / 2),
-                _y: rect.top + Math.floor(container.offsetHeight / 2),
+                _x: container.offsetLeft + (160) + Math.floor(container.offsetWidth / 2),
+                _y: container.offsetTop + (57) + Math.floor(container.offsetHeight / 2),
+                // _x: rect.left + Math.floor(container.offsetWidth / 2),
+                // _y: rect.top + Math.floor(container.offsetHeight / 2),
                 x: 0,
                 y: 0,
                 updatePosition: function(event) {
@@ -142,12 +150,14 @@ export default {
         .topwrap
             height: 80%;
 
-            padding-top: 50px;
+            padding-top: 0px;
             @media screen and (max-width: 1024px)
                 padding-top: 60px;
             
             #typingwrap
                 flex-direction: column;
+                height: 600px;
+                line-height: 90px;
                 @media screen and (max-width: 1024px)
                     height: 120px !important;
                     line-height: 50px !important;
@@ -173,6 +183,7 @@ export default {
                     width: 91% !important;
                     // text-align: left !important;
                     text-align: right !important;
+                    padding-top: 20px
                     @media screen and (max-width: 1024px)
                         padding-top: 10px;
 
@@ -181,11 +192,16 @@ export default {
                     vertical-align: middle;
 
             .imageoutside
-                display: inline-block;
-                padding: 60px 0 40px 0;
+                display: inline-flex;
+                align-items: center;
+                justify-content: center;
+                // display: inline-block;
+                padding-top: 65px;
+                padding-left: 50px;
                 perspective: 30px;
                 @media screen and (max-width: 1024px)
-                    padding-top: 75px;
+                    padding-top: 70px;
+                    padding-left: 10px;
 
                 figure
                     transition: transform 0.5s;
@@ -212,7 +228,7 @@ export default {
                         border: 2px solid #ff000000;
                         transform-origin: center;
                         transform: scale(1);
-                        animation: 2s cubic-bezier(.57,.06,.27,.84) 1s infinite pulse;
+                        animation: 2s cubic-bezier(.57,.06,.27,.84) 1.75s infinite pulse;
 
                         @keyframes pulse
                             0%
@@ -220,7 +236,7 @@ export default {
                             70%
                                 border-color:  #ff000096;
                             100%
-                                transition: all 0.75s ease-in-out;
+                                // transition: all 0.75s ease-in-out;
                                 transform-origin: center;
                                 transform: scale(1.30);
                                 opacity: 0;
@@ -229,14 +245,16 @@ export default {
                         border-radius: 50%;
 
                         transform: perspective(1px) translateZ(0);
-                        transition-duration: 0.3s;
-                        transition-property: transform, box-shadow;
+                        // transition-duration: 0.3s, 0.3s, 0.75s, 0.50s;
+                        // transition-property: transform, box-shadow, opacity, margin-top;
+
+                        transition: transform 0.3s, box-shadow 0.3s, opacity 0.75s, margin-top 0.65s;
                         &:hover
                             transform: scale(1.05);
                             box-shadow: 0px 2px 20px 1px rgba(0, 0, 0, 0.35), 10px 20px 4px 1px #ff000082 inset !important;
         .hello
             position: absolute;
-            bottom: 40px;
+            bottom: 60px;
 
             left: 0;
             right: 0;
@@ -245,6 +263,10 @@ export default {
             // margin-top: 30px;
 
             height: 15%;
+            i
+                font-size: 60px;
+                @media screen and (max-width: 1024px)
+                    font-size: 50px;
                 
             @media screen and (max-width: 1024px)
                 // margin-top: 5px;
@@ -256,18 +278,20 @@ export default {
                 align-items: center;
                 justify-content: center;
                 // bottom: 25px;
-                // @media screen and (max-width: 1024px)
-                //     bottom: 0;
+                @media screen and (max-width: 1024px)
+                    width: 3.5rem
+                    height: 3.5rem
+                    margin-left: -1.75rem;
                 // cursor: pointer;
                 left: 50%;
-                width: 3rem;
-                height: 3rem;
-                margin-left: -1.5rem;
+                width: 4rem;
+                height: 4rem;
+                margin-left: -2.0rem;
                 margin-top: 80px;
                 color: #ff771e !important;
                 border: none;
                 padding: .5rem;
-                animation: scrollButton 1s cubic-bezier(.175,.885,.32,1.4) infinite alternate;
+                animation: scrollButton 1s cubic-bezier(.175,.885,.32,1.4) 1.4s infinite alternate;
 
                 &:hover
                     color: #ff1e00 !important;
@@ -276,8 +300,8 @@ export default {
                     content: "";
                     display: block;
                     position: absolute;
-                    width: 150%;
-                    height: 150%;
+                    width: 140%;
+                    height: 140%;
                     background-color: rgba(255, 0, 198, 0.11);
                     border-radius: 50%;
                     transform: scale(0);
@@ -291,5 +315,5 @@ export default {
                         transform: translateY(0)
 
                     to
-                        transform: translateY(-20%)
+                        transform: translateY(-30%)
 </style>
