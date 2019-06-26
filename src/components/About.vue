@@ -106,10 +106,10 @@
             a.resume.button.is-large(href="/resume.pdf", alt="Resume", target="_blank") Resume
         .about-buttons.scrollio
             a.linkedin.button.is-link.is-large(href="https://www.linkedin.com/in/macbaler/", alt="LinkedIn", target="_blank", rel="noopener")
-                span.icon: i.fab.fa-linkedin
+                span.icon: font-awesome-icon(:icon="['fab', 'linkedin']")
                 span LinkedIn
             a.github.button.is-black.is-large(href="https://github.com/mbaler", alt="GitHub", target="_blank", rel="noopener")
-                span.icon: i.fab.fa-github
+                span.icon: font-awesome-icon(:icon="['fab', 'github']")
                 span GitHub
 </template>
 

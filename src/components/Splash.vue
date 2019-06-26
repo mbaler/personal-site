@@ -9,7 +9,7 @@
                     img.splash(:data-src="require(`@/assets/circled.png`)").lazyload
         .hello.scrollio-hand
             router-link(to="/#about")#scrollbutton
-                i.fas.fa-hand-point-down
+                font-awesome-icon(:icon="['fas', 'hand-point-down']").hand
 </template>
 
 <script>
@@ -242,7 +242,7 @@ export default {
             flex: 1;
             height: 15%;
 
-            i
+            .hand
                 font-size: 60px;
                 @media screen and (max-width: 1024px)
                     font-size: 50px;

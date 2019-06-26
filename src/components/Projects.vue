@@ -17,9 +17,11 @@
                     p.description.smidgeUp {{ wrtcdcDesc }}
                     .projlinks
                         a(href="https://eikaiwa.weblio.jp/device_checker?bandwidth", alt="Live Example", target="_blank", rel="noopener")
-                            span.icon.is-large.has-text-link: i.fas.fa-external-link-alt.fa-2x
+                            span.icon.is-large.has-text-link
+                                font-awesome-icon(:icon="['fas', 'external-link-alt']", size="2x")
                         a(href="https://github.com/mbaler/webrtc-kun", alt="GitHub Repo", target="_blank", rel="noopener", style="display: inline-flex;")
-                            span.icon.is-large: i.fab.fa-github.fa-3x
+                            span.icon.is-large
+                                font-awesome-icon(:icon="['fab', 'github']", size="3x")
                     span.tech Tech Used:
                     .techwrap
                         .images
@@ -43,7 +45,8 @@
                         a(href="https://chrome.google.com/webstore/detail/medium-code-highlighter/apdaagmhepellbjjbnaljaocodjjjjfd", alt="Chrome Web Store", target="_blank", rel="noopener")
                             img(:data-src="require(`@/assets/mch/ChromeWebStore.png`)").lazyload
                         a(href="https://github.com/mbaler/Medium-Code-Highlighter", alt="GitHub Repo", target="_blank", rel="noopener", style="display: inline-flex;")
-                            span.icon.is-large: i.fab.fa-github.fa-3x
+                            span.icon.is-large
+                                font-awesome-icon(:icon="['fab', 'github']", size="3x")
                     span.tech Tech Used:
                     .techwrap
                         .images.few
@@ -59,7 +62,8 @@
                         span.wink(style="text-shadow: 0px 5px 10px rgba(0, 0, 0, 0.35);") 😉
                     .projlinks
                         a(href="https://github.com/mbaler/personal-site", alt="GitHub Repo", target="_blank", rel="noopener", style="display: inline-flex;")
-                            span.icon.is-large: i.fab.fa-github.fa-3x
+                            span.icon.is-large
+                                font-awesome-icon(:icon="['fab', 'github']", size="3x")
                     span.tech Tech Used:
                     .techwrap(style="margin: 10px auto;")
                         .images.many

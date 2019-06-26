@@ -66,7 +66,7 @@
         });
         ScrollReveal().reveal(".scrollio-hand", {
           origin: "top",
-          delay: 2500,
+          delay: 1500,
         });
         ScrollReveal().reveal(".scrollio-about-portrait", {
           origin: "top",

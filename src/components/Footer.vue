@@ -5,17 +5,17 @@
             .foot-middle
                 .link-wrapper
                     .links
-                        a.icon.is-large(href="https://github.com/mbaler", alt="GitHub", target="_blank", rel="noopener")
-                            i.fab.fa-github.fa-2x
-                        a.icon.is-large(href="https://www.linkedin.com/in/macbaler/", alt="LinkedIn", target="_blank", rel="noopener")
-                            i.fab.fa-linkedin.fa-2x
-                        a.icon.is-large(href="https://twitter.com/Mackles93", alt="Twitter", target="_blank", rel="noopener")
-                            i.fab.fa-twitter.fa-2x
+                        a.icon.is-large(href="https://github.com/mbaler", alt="GitHub", target="_blank", rel="noopener").gh
+                            font-awesome-icon(:icon="['fab', 'github']", size="2x")
+                        a.icon.is-large(href="https://www.linkedin.com/in/macbaler/", alt="LinkedIn", target="_blank", rel="noopener").li
+                            font-awesome-icon(:icon="['fab', 'linkedin']", size="2x")
+                        a.icon.is-large(href="https://twitter.com/Mackles93", alt="Twitter", target="_blank", rel="noopener").tw
+                            font-awesome-icon(:icon="['fab', 'twitter']", size="2x")
                 .tagline: p 💬 Feel free to reach out and slide a message my way. 🙂
                 .contact-mail.scrollio
                     a.email.is-inline-block(href="mailto:howdy@macbaler.me", target="_blank")
                         span.icon.is-large
-                            i.fas.fa-envelope.fa-2x
+                            font-awesome-icon(:icon="['fas', 'envelope']", size="2x")
                         p howdy@macbaler.me
             .foot-bottom
                 .built-by
@@ -134,6 +134,12 @@ export default {
                             &:hover
                                 background-color: #fff;
                                 color: #7d0000;
+
+                                svg
+                                    filter: none;
+                            
+                            svg
+                                filter: drop-shadow(0px 2px 5px #000);
                                 
                     .link-wrapper
                         margin: 28px 0 40px 0;
@@ -142,9 +148,42 @@ export default {
                             a.icon
                                 padding: 2px 31px;
                                 color: #32bdff;
+                                transform: perspective(1px) translateZ(0);
 
                                 &:hover
                                     color: #0092d8;
+                                    animation-name: hvr-wobble-vertical;
+                                    animation-duration: 1s;
+                                    animation-timing-function: ease-in-out;
+                                    animation-iteration-count: 1;
+
+                                    @keyframes hvr-wobble-vertical
+                                      16.65%
+                                        transform: translateY(-8px);
+                                      33.3%
+                                        transform: translateY(6px);
+                                      49.95%
+                                        transform: translateY(-4px);
+                                      66.6%
+                                        transform: translateY(2px);
+                                      83.25%
+                                        transform: translateY(-1px);
+                                      100%
+                                        transform: translateY(0);
+                                
+                                svg
+                                    filter: drop-shadow(0px 2px 5px #000);
+
+                                &.gh
+                                    color: #24292e;
+                                    svg
+                                        background-color: #e4e4e4;
+                                        border-radius: 48%;
+                                &.li
+                                    color: #165ce2;
+                                &.tw
+                                    color: #1da1f2;
+
 
                 .foot-bottom
                     position: absolute;
