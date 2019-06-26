@@ -138,6 +138,32 @@ export default {
                                 svg
                                     filter: none;
                             
+                            &::before
+                                content: "";
+                                z-index: -1;
+                                position: absolute;
+                                top: 0;
+                                bottom: 0;
+                                left: 0;
+                                right: 0;
+                                border: 4px solid #ffffff00;
+                                border-radius: 10px;
+                                transform-origin: center;
+                                transform: scale(1);
+                                animation: 2s cubic-bezier(.57,.06,.27,.84) 0.75s infinite pulse;
+
+                                @keyframes pulse
+                                    0%
+                                        border-color: #ffffff00;
+                                    70%
+                                        border-color:  #fff;
+                                    85%
+                                        opacity: 0;
+                                    100%
+                                        transform-origin: center;
+                                        transform: scale(1.20, 1.55);
+                                        opacity: 0;
+
                             svg
                                 filter: drop-shadow(0px 2px 5px #000);
                                 @media screen and (max-width: 1024px)
@@ -183,6 +209,8 @@ export default {
                                         border-radius: 48%;
                                 &.li
                                     color: #165ce2;
+                                    svg
+                                        width: 0.9em;
                                 &.tw
                                     color: #1da1f2;
 
