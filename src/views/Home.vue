@@ -1,7 +1,5 @@
 <template lang="pug">
   .main-wrapper
-    //- parallax(:speedFactor="0.2", :direction="'up'")
-    //- img(src="@/assets/sakewall.jpg").macpar
     section.section.sec1
       Splash
     section.section.sec2
@@ -29,29 +27,6 @@ export default {
 
 <style lang="sass">
   .main-wrapper
-    .Masthead
-      position: absolute;
-    .Masthead__image
-      position: static !important;
-    .macpar
-      // position: absolute;
-      // top: 0;
-      // bottom: 0;
-      // right: 0;
-      // left: 0;
-      width: 100%;
-      height: 101%;
-      // z-index: -5;
-    // background-image: url("../assets/sakewall.jpg");
-    // background-size: contain;
-    // height: 1900px;
-    // background-attachment: fixed;
-    // background-position: center;
-    // background-repeat: no-repeat;
-    // background-size: cover;
-    // background-size: cover;
-    // background-size: 1920px 1280px;
-
     margin: auto;
     padding-top: 5.0em;
     text-align: center;

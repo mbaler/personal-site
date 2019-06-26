@@ -44,7 +44,6 @@ export default {
     methods: {
         typing() {
             const signature = new TypeIt(".typingsignature", {
-                // strings: ["Mac Baler."],
                 speed: 125,
                 startDelay: 1500,
                 cursorChar: "<span style='color: #a50000; font-weight: 400;'>|</span>"
@@ -56,7 +55,7 @@ export default {
               waitUntilVisible: true,
               startDelay: 1500,
               speed: 100,
-              cursorChar: "<span style='color: #a50000; font-weight: 400;'>|</span>" // #a50000, #2f0000, #650000, #fff, #000
+              cursorChar: "<span style='color: #a50000; font-weight: 400;'>|</span>"
             //   loop: true,
             //   loopDelay: 5000,
             })
@@ -75,10 +74,6 @@ export default {
             .options({cursorChar: "<span style='color: #fff; font-weight: 400;'>|</span>"})
             .exec(async () => {
                 await new Promise((resolve) => {
-                    // const wrap = document.querySelector(".typingdescription");
-                    // console.log("hi");
-                    // console.log(wrap);
-                    // wrap.style.textAlign = "right";
                     const parent = document.querySelector(".typingdescription");
                     const elt = parent.getElementsByTagName("span")[2];
                     elt.parentNode.removeChild(elt);
@@ -86,7 +81,6 @@ export default {
                     return resolve();
                 });
             })
-            // .type("Mac Baler.")
             .go();
         },
 
@@ -99,13 +93,10 @@ export default {
             const upDown = 5;
             const leftRight = 5;
 
-            // const rect = container.getBoundingClientRect();
             const mouse = {
                 // Track the mouse position relative to the center of the container.
                 _x: container.offsetLeft + (160) + Math.floor(container.offsetWidth / 2),
                 _y: container.offsetTop + (57) + Math.floor(container.offsetHeight / 2),
-                // _x: rect.left + Math.floor(container.offsetWidth / 2),
-                // _y: rect.top + Math.floor(container.offsetHeight / 2),
                 x: 0,
                 y: 0,
                 updatePosition: function(event) {
@@ -167,21 +158,18 @@ export default {
                 align-items: center;
 
                 text-align: left;
-                // text-align: right;
 
                 .typingdescription, .typingsignature
                     width: 100%;
                     font-family: "Poppins";
                     font-size: 70px;
                     font-weight: 600;
-                    // font-variant: small-caps;
                     text-transform: uppercase;
                     @media screen and (max-width: 1024px)
                         font-size: 30px;
                         line-height: 33px;
                 .typingsignature
                     width: 91% !important;
-                    // text-align: left !important;
                     text-align: right !important;
                     padding-top: 20px
                     @media screen and (max-width: 1024px)
@@ -195,7 +183,6 @@ export default {
                 display: inline-flex;
                 align-items: center;
                 justify-content: center;
-                // display: inline-block;
                 padding-top: 65px;
                 padding-left: 50px;
                 perspective: 30px;
@@ -236,18 +223,13 @@ export default {
                             70%
                                 border-color:  #ff000096;
                             100%
-                                // transition: all 0.75s ease-in-out;
                                 transform-origin: center;
                                 transform: scale(1.30);
                                 opacity: 0;
 
                     img.splash
                         border-radius: 50%;
-
                         transform: perspective(1px) translateZ(0);
-                        // transition-duration: 0.3s, 0.3s, 0.75s, 0.50s;
-                        // transition-property: transform, box-shadow, opacity, margin-top;
-
                         transition: transform 0.3s, box-shadow 0.3s, opacity 0.75s, margin-top 0.65s;
                         &:hover
                             transform: scale(1.05);
@@ -255,21 +237,17 @@ export default {
         .hello
             position: absolute;
             bottom: 60px;
-
             left: 0;
             right: 0;
-            // margin: auto;
             flex: 1;
-            // margin-top: 30px;
-
             height: 15%;
+
             i
                 font-size: 60px;
                 @media screen and (max-width: 1024px)
                     font-size: 50px;
                 
             @media screen and (max-width: 1024px)
-                // margin-top: 5px;
                 bottom: 40px;
 
             #scrollbutton
@@ -277,12 +255,11 @@ export default {
                 display: flex;
                 align-items: center;
                 justify-content: center;
-                // bottom: 25px;
                 @media screen and (max-width: 1024px)
                     width: 3.5rem
                     height: 3.5rem
                     margin-left: -1.75rem;
-                // cursor: pointer;
+                cursor: pointer;
                 left: 50%;
                 width: 4rem;
                 height: 4rem;

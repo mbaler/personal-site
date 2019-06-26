@@ -13,7 +13,6 @@ Vue.use(VTooltip);
 import "./css/tooltip.css";
 
 // fonts
-import "./css/fonts.css";
 import "typeface-poppins";
 import "typeface-roboto";
 

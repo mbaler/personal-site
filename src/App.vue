@@ -116,30 +116,11 @@
 </script>
 
 <style lang="sass">
-  .jarallax
-    position: relative;
-    z-index: 0;
-  .jarallax > .jarallax-img
-      position: absolute;
-      object-fit: cover;
-      /* support for plugin https://github.com/bfred-it/object-fit-images */
-      font-family: 'object-fit: cover;';
-      top: 0;
-      left: 0;
-      width: 100%;
-      height: 100%;
-      z-index: -1;
-
   html
     overscroll-behavior: none;
     overflow-y: auto !important;
     scroll-behavior: smooth;
     min-width: 350px !important
-
-    // custom cursor
-    // cursor: url("./assets/custom-cursor1.png") 25 25, auto; // custom image
-    // a:hover
-      // cursor: url("./assets/custom-cursor2.png") 25 25, auto; // larger
 
   html.sr .load-hidden
     visibility: hidden;
@@ -151,7 +132,6 @@
   // medium zoom
   .medium-zoom-image--opened, .medium-zoom-overlay
     z-index: 9999999999999;
-
   .medium-zoom-image--opened
     padding: 6px;
 
@@ -177,7 +157,6 @@
 
       //////// GRADIENT
       background-image: linear-gradient(180deg, rgba(255,252,0,0.5690651260504201) 0%, rgba(255,205,0,0.6250875350140056) 100%);
-      // background-image: linear-gradient(180deg, rgba(255,255,255,1) 0%, rgba(249,255,0,1) 0%);
       background-repeat: no-repeat;
       background-size: 100% 0.25em;
       background-position: 0 96%;

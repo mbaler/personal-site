@@ -134,32 +134,7 @@ export default {
                             &:hover
                                 background-color: #fff;
                                 color: #7d0000;
-
-                            // &::before, &::after
-                            //     content: '';
-                            //     position: absolute;
-                            //     left: 0;
-                            //     right: 0;
-                            //     height: 2px;
-                            //     background-color: #ff0000;
-                            //     transform: scaleX(0);
-                            //     transition: transform 0.5s ease;
-                            // &::before
-                            //     top: 0;
-                            //     transform-origin: center right;
-                            
-                            // &:hover::before
-                            //     transform-origin: center left;
-                            //     transform: scaleX(1);
-                            
-                            // &::after
-                            //     bottom: 0;
-                            //     transform-origin: center left;
-
-                            // &:hover::after
-                            //     transform-origin: center right;
-                            //     transform: scaleX(1);
-
+                                
                     .link-wrapper
                         margin: 28px 0 40px 0;
 

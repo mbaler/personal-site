@@ -78,59 +78,57 @@ export default {
 </script>
 
 <style lang="sass" scoped>
-#nav
-  padding: 3px 20px 3px 25px;
-  @media screen and (max-width: 1024px)
-    padding: 3px 10px 3px 15px;
-  // background-color: transparent !important;
-  // background-color: #ffffffe6;
-  background-color: #ffffff;
-
-  a 
-    font-weight: bold;
-    color: #2c3e50;
-    &.router-link-exact-active 
-      color: #42b983;
-    
-    &:hover
-      color: #0089ff;
-
-  .navbar-menu
-    font-family: "Poppins";
-  
+  #nav
+    background-color: #ffffff;
+    padding: 3px 20px 3px 25px;
     @media screen and (max-width: 1024px)
-      width: 55%;
-      z-index: 9999;
-      position: absolute;
-      right: 15px;
+      padding: 3px 10px 3px 15px;
 
-  .navbar-brand .logo
-    font-size: 28px;
-    font-weight: bold;
-    color: #ff0000;
-    padding: 0;
+    a 
+      font-weight: bold;
+      color: #2c3e50;
+      &.router-link-exact-active 
+        color: #42b983;
+      
+      &:hover
+        color: #0089ff;
 
-    span.rest
-      font-size: 18px;
-      animation: 8s cubic-bezier(.57,.06,.27,.84) 1s infinite alternate-reverse nameappear;
+    .navbar-menu
+      font-family: "Poppins";
     
-      @keyframes nameappear
-        0%, 30%
-          font-size: 0;
-          opacity: 0;
-        38%
-          opacity: 0;
-        50%, 100%
-          font-size: 18px;
-          opacity: 1;
-  
-    span.squished
-      margin-left: 0;
-      animation: 8s cubic-bezier(.57,.06,.27,.84) 1s infinite alternate-reverse squishing;
+      @media screen and (max-width: 1024px)
+        width: 55%;
+        z-index: 9999;
+        position: absolute;
+        right: 15px;
+
+    .navbar-brand .logo
+      font-size: 28px;
+      font-weight: bold;
+      color: #ff0000;
+      padding: 0;
+
+      span.rest
+        font-size: 18px;
+        animation: 8s cubic-bezier(.57,.06,.27,.84) 1s infinite alternate-reverse nameappear;
+      
+        @keyframes nameappear
+          0%, 30%
+            font-size: 0;
+            opacity: 0;
+          38%
+            opacity: 0;
+          50%, 100%
+            font-size: 18px;
+            opacity: 1;
     
-      @keyframes squishing
-        0%, 30%
-          margin-left: -0.28em;
-        50%, 100%
-          margin-left: 0;
+      span.squished
+        margin-left: 0;
+        animation: 8s cubic-bezier(.57,.06,.27,.84) 1s infinite alternate-reverse squishing;
+      
+        @keyframes squishing
+          0%, 30%
+            margin-left: -0.28em;
+          50%, 100%
+            margin-left: 0;
 </style>

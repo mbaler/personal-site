@@ -305,10 +305,7 @@
                     font-size: 1.30em !important;
 
             .linkedin
-                // position: relative;
-                // z-index: 1;
                 transition: all 0.25s ease-in-out;
-                // margin-top: 20px;
 
                 &:hover
                     background-color: #fff;
@@ -327,7 +324,6 @@
             a.resume.button
                 font-size: 2em;
                 background-color: #34af3c !important;
-                // border-color: #34af3c !important;
                 color: #fff;
                 box-shadow: 0px 3px 5px 0px rgba(0, 0, 0, 0.5);
                 transition: all 0.25s ease-in-out;
@@ -338,7 +334,6 @@
 
                 &:hover
                     background-color: #fff !important;
-                    // border-color: #fff !important;
                     color: #34af3c !important;
 
                 &::before
@@ -363,7 +358,6 @@
                         85%
                             opacity: 0;
                         100%
-                            // transition: all 0.75s ease-in-out;
                             transform-origin: center;
                             transform: scale(1.25, 1.5);
                             opacity: 0;

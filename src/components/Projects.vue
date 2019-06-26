@@ -112,8 +112,6 @@ export default {
         width: 100%;
         margin: auto;
         padding-top: 10px;
-        // display: flex;
-        // align-items: center;
 
         .proj
             @media screen and (max-width: 1024px)
@@ -140,7 +138,6 @@ export default {
             margin: 15px 0;
             font-size: 15px;
             display: inline-block;
-            // white-space: pre-line;
             &.smidgeUp
                 margin-top: 0;
         
