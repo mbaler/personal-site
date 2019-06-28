@@ -68,7 +68,7 @@
       overscrollFix() {
         // ensure correct top and bottom backgrounds for mobile overscrolling
         const topColor = "white";
-        const bottomColor = "#2f0000";
+        const bottomColor = "$redDark";
         let ticking = false;
 
         window.addEventListener("scroll", _checkScroll, { passive: true });
@@ -142,11 +142,11 @@
       //   box-shadow: inset 0 -2em 0 0 #2eec96;
 
       //////// GRADIENT
-      background-image: linear-gradient(180deg, rgba(255,252,0,0.5690651260504201) 0%, rgba(255,205,0,0.6250875350140056) 100%);
+      background-image: $magicHighlight;
       background-repeat: no-repeat;
-      background-size: 100% 0.25em;
-      background-position: 0 96%;
+      background-size: 100% 0.35em;
+      background-position: 0 85%;
       transition: background-size 0.2s ease-in-out;
       &:hover
-        background-size: 100% 105%;
+        background-size: 100% 100%;
 </style>

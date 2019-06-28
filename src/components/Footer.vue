@@ -136,12 +136,12 @@ export default {
                     
                         .email
                             width: 300px;
-                            background-color: #7d0000;
+                            background-color: $redLight;
                             color: #fff;
                             @media screen and (max-width: 1024px)
                                 width: 230px;
                                 background-color: #fff;
-                                color: #7d0000;
+                                color: $redLight;
                                 line-height: 22px;
                                 padding-bottom: 12px;
                             border-radius: 10px;
@@ -153,7 +153,7 @@ export default {
                             transition: all 0.2s ease-in-out;
                             &:hover
                                 background-color: #fff;
-                                color: #7d0000;
+                                color: $redLight;
 
                                 svg
                                     filter: none;
@@ -248,7 +248,7 @@ export default {
                     @media screen and (max-width: 1024px)
                         padding: 10px 0 14px 0;
                     width: 100%;
-                    background-color: #2f0000;
+                    background-color: $redDark;
 
                     .built-by img
                         vertical-align: bottom;

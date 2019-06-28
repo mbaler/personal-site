@@ -114,7 +114,7 @@ export default {
 #projects
     .head
         color: #fff;
-        text-shadow: 0px 2px 1px #000;
+        text-shadow: $textShadow;
     .showcase-wrapper
         width: 100%;
         margin: auto;
@@ -251,12 +251,16 @@ export default {
         line-height: 1.5;
 
         h3
-            display: inline-block;
-            background: #ffffffe0;
-            border-radius: 6px;
-            width: 35vw;
-            height: 40px;
+            // display: inline-block;
+            // background: #ffffffe0;
+            // border-radius: 6px;
+            // width: 35vw;
+            // height: 40px;
             line-height: 40px;
+            text-shadow: $textShadow;
+            color: #fff;
+            em
+                color: #fff;
 
 
 </style>

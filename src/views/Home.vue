@@ -38,7 +38,7 @@ export default {
       padding-top: 0;
     
     .sec1
-      height: 93vh;
+      height: 94vh;
       background-color: #ffffff;
       background-image: url("../assets/circuit.svg");
 

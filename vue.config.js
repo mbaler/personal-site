@@ -7,5 +7,12 @@ module.exports = {
       .use("pug-plain-loader")
         .loader("pug-plain-loader")
         .end()
+  },
+  css: {
+    loaderOptions: {
+      sass: {
+        data: `@import "@/styles/_variables.sass";`
+      }
+    }
   }
-}
+};

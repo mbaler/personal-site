@@ -8,7 +8,9 @@
                     span Just a knowledge-hungry bilingual Software Engineer floating through space-time.
                     span 
                         | Spent a handful of years working in Japan, garnering experience spanning full-stack; 
-                        | but am now back in the states, looking for work in the Boston area.
+                        | but am now back in the states, looking for work in the 
+                        span.magic-highlight Boston
+                        | &nbsp;area.
                     span Capable, efficient, inquisitive, precise, adaptable, collaborative, trustworthy, and a quick learner, with solid interpersonal skills.
                     figure.d20.scrollio-d20
                         img(:data-src="require(`@/assets/d20.png`)").lazyload.scrollio
@@ -355,13 +357,13 @@
 
             .linkedin
                 color: #fff;
-                background-color: #0000ff;
+                background-color: #165ce2;
                 transition: all 0.25s ease-in-out;
-                border-color: #0000ff;
+                border-color: #165ce2;
 
                 &:hover
                     background-color: #fff;
-                    color: #0000ff !important;
+                    color: #165ce2 !important;
             
             .github
                 transition: all 0.25s ease-in-out;
@@ -409,6 +411,7 @@
                     @keyframes pulse
                         0%
                             border-color: #33af3b7a;
+                            transform: scale(1);
                         70%
                             border-color:  #33af3b;
                         85%

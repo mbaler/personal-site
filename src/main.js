@@ -21,7 +21,7 @@ import "lazysizes";
 // tooltips
 import VTooltip from "v-tooltip";
 Vue.use(VTooltip);
-import "./css/tooltip.css";
+import "./styles/tooltip.css";
 
 // fonts
 import "typeface-poppins";
