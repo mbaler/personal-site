@@ -1,8 +1,11 @@
 <template lang="pug">
   #app
-    Nav
-    router-view
-    Footer
+    template(v-if="loading")
+      span.loading LOADING...
+    template(v-else)
+      Nav
+      router-view
+      Footer
 </template>
 
 <script>
@@ -18,15 +21,25 @@
       Footer,
     },
 
+    data() {
+      return {
+        loading: false,
+      };
+    },
+
     mounted() {
-      // this.scrollio();
+      this.scrollio();
       this.overscrollFix();
+
+      // document.fonts.ready.then(() => {
+      //   // fonts are loaded
+      //   console.log("fonts loaded");
+      //   this.loading = false;
+      // });
     },
 
     methods: {
       scrollio() {
-        // TODO: need to use less instances -- is lagging stuff up
-
         // defaults
         ScrollReveal({
           delay: 100,
@@ -37,33 +50,7 @@
 
         ScrollReveal().reveal(".scrollio");
 
-        // presets
-        ScrollReveal().reveal(".scrollio-reset", {
-          reset: true,
-        });
-        ScrollReveal().reveal(".scrollio-immediate", {
-          delay: 0,
-          interval: 200,
-        });
-        ScrollReveal().reveal(".scrollio-stagger", {
-          interval: 400,  
-        });
-        ScrollReveal().reveal(".scrollio-delayed", {
-          delay: 200,
-        });
-        ScrollReveal().reveal(".scrollio-top", {
-          origin: "top",
-        });
-
         // targeted
-        ScrollReveal().reveal(".scrollio.proj", {
-          interval: 160,
-          delay: 250,
-        });
-        ScrollReveal().reveal(".scrollio-about", {
-          interval: 160,
-          delay: 100,
-        });
         ScrollReveal().reveal(".scrollio-hand", {
           origin: "top",
           distance: "10px",
@@ -71,12 +58,10 @@
         });
         ScrollReveal().reveal(".scrollio-about-portrait", {
           origin: "top",
-          disatance: "70px",
-          delay: 300,
         });
-        ScrollReveal().reveal(".scrollio-callig", {
-          distance: "70px",
-          delay: 300,
+        ScrollReveal().reveal(".scrollio.proj", {
+          interval: 160,
+          delay: 250,
         });
       },
 

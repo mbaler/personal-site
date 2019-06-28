@@ -1,7 +1,7 @@
 <template lang="pug">
     .container#projects
-        h2.title.is-2.scrollio-immediate.head Projects
-        h3.subtitle.is-4.scrollio-immediate.head
+        h2.title.is-2.scrollio.head Projects
+        h3.subtitle.is-4.scrollio.head
             | Some little 
             span.magic-highlight ditties
             | &nbsp;of mine.
@@ -76,7 +76,7 @@
                             img(:data-src="require(`@/assets/webpack-logo.svg`)", alt="Webpack", v-tooltip="{content: 'Webpack', placement: 'bottom', trigger: 'hover', delay: {show: 50, hide: 0}, offset: '4px', }",).lazyload
                             img(:data-src="require(`@/assets/babel-logo.png`)", alt="Babel", v-tooltip="{content: 'Babel', placement: 'bottom', trigger: 'hover', delay: {show: 50, hide: 0}, offset: '4px', }",).lazyload
                             img(:data-src="require(`@/assets/netlify.png`)", alt="Netlify", v-tooltip="{content: 'Netlify', placement: 'bottom', trigger: 'hover', delay: {show: 50, hide: 0}, offset: '4px', }",).lazyload
-        .comingsoon.scrollio-immediate
+        .comingsoon.scrollio
             h3.subtitle.is-4
                 | More projects (and a 
                 strong.magic-highlight: em blog

@@ -1,11 +1,10 @@
 <template lang="pug">
     .container#about
-        h2.title.is-2.scrollio-about About
-        h3.subtitle.is-4.scrollio-about Hi. I'm Mac Baler. Learn 'bout me.
+        h2.title.is-2.scrollio About
+        h3.subtitle.is-4.scrollio Hi. I'm Mac Baler. Learn 'bout me.
         .columns.aboutwrap
             .column.selftext.is-half
-                //- h3.title.is-3.scrollio-stagger Mac Baler
-                .blurb1.scrollio-stagger
+                .blurb1.scrollio
                     span Just a knowledge-hungry bilingual Software Engineer floating through space-time.
                     span 
                         | Spent a handful of years working in Japan, garnering experience spanning full-stack; 
@@ -25,11 +24,11 @@
             .column.photos.is-half
                 figure.portrait.scrollio-about-portrait
                     img(:data-src="require(`@/assets/portrait.jpg`)").lazyload.scrollio-about-portrait
-                figure.calligraphy.scrollio-callig
-                    img.vertical(:data-src="require(`@/assets/calligraphy_vertical.gif`)", alt="米良").lazyload.scrollio-callig
-                    img.horizontal(:data-src="require(`@/assets/calligraphy.gif`)", alt="米良").lazyload.scrollio-reset
+                figure.calligraphy.scrollio.scrollio
+                    img.vertical(:data-src="require(`@/assets/calligraphy_vertical.gif`)", alt="米良").lazyload.scrollio
+                    img.horizontal(:data-src="require(`@/assets/calligraphy.gif`)", alt="米良").lazyload.scrollio
         //- .load-hidden
-        .timeline.is-centered.scrollio-delayed
+        .timeline.is-centered.scrollio
             header.timeline-header
                 span.tag.is-medium.is-danger 1993
             .timeline-item

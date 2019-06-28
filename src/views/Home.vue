@@ -41,8 +41,6 @@ export default {
       height: 93vh;
       background-color: #ffffff;
       background-image: url("../assets/circuit.svg");
-      // clip-path: polygon(0 0,  100% 0,  100% calc(100% - 5vw),  0 100%);
-      // margin-bottom: -5vw;
 
       .container
         height: 100%;
@@ -51,8 +49,6 @@ export default {
     
     .sec2
       position: relative;
-      clip-path: polygon(0 0,  100% 0,  100% 100%,  0 calc(100% - 5vw));
-      // margin-bottom: -5vw;
 
       svg.triangles
         position: absolute;
@@ -65,7 +61,6 @@ export default {
         width: 100%;
     
     .sec3
-      margin-top: -5vw;
       background-color: #521200;
       background-image: url("../assets/clouds.svg");
 </style>
