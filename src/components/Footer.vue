@@ -67,12 +67,21 @@ export default {
 
 <style lang="sass" scoped>
     footer
-        background-color: #650000;
+        background-image: url("../assets/kzcastle.jpg");
+        background-size: contain;
+        background-position: 100% 0%;
+        background-color: #000;
+        background-repeat: no-repeat;
+
+        @media screen and (max-width: 1024px)
+            background-size: 165%;
+            background-position: 50% 18vh;
+            height: 78vh;
+            padding-top: 0;
+
         color: white;
         padding: 2rem 0 0 0;
         height: 93vh;
-        @media screen and (max-width: 1024px)
-            height: 80vh;
         width: 100%;
         z-index: 0;
         position: sticky;
@@ -96,8 +105,14 @@ export default {
                 flex-direction: column;
 
                 .foot-middle
+                    position: absolute;
+                    top: 0;
                     margin-bottom: 100px;
+                    margin-top: -1.5vh
                     @media screen and (max-width: 1024px)
+                        margin-top: -3.5vh;
+                        position: absolute;
+                        top: 0;
                         margin-bottom: 70px;
                     padding: 5px 0;
                     height: 450px;
@@ -108,9 +123,11 @@ export default {
                     flex-direction: column;
 
                     .tagline
-                        margin: 40px 0 80px 0;
+                        margin: -20px 0 30px 0;
                         @media screen and (max-width: 1024px)
-                            margin: 10px 0 50px 0;
+                            margin: 8px 0 20px 0;
+                            font-size: 17px;
+                            width: 80%
 
                     .contact-mail
                         padding-bottom: 60px;
@@ -122,8 +139,11 @@ export default {
                             background-color: #7d0000;
                             color: #fff;
                             @media screen and (max-width: 1024px)
+                                width: 230px;
                                 background-color: #fff;
                                 color: #7d0000;
+                                line-height: 22px;
+                                padding-bottom: 12px;
                             border-radius: 10px;
                             box-shadow: 0px 3px 5px 0px rgba(0, 0, 0, 0.5);
 
@@ -157,11 +177,11 @@ export default {
                                         border-color: #ffffff00;
                                     70%
                                         border-color:  #fff;
-                                    85%
+                                    80%
                                         opacity: 0;
                                     100%
                                         transform-origin: center;
-                                        transform: scale(1.20, 1.55);
+                                        transform: scale(1.20, 1.50);
                                         opacity: 0;
 
                             svg
@@ -171,6 +191,9 @@ export default {
                                 
                     .link-wrapper
                         margin: 28px 0 40px 0;
+                        @media screen and (max-width: 1024px)
+                            margin-top: 0;
+                            margin-bottom: 0;
 
                         .links
                             a.icon
@@ -221,7 +244,9 @@ export default {
                     left: 0;
                     right: 0;
                     font-size: 16px;
-                    padding: 20px 0 23px 0;
+                    padding: 10px 0 15px 0;
+                    @media screen and (max-width: 1024px)
+                        padding: 10px 0 14px 0;
                     width: 100%;
                     background-color: #2f0000;
 
@@ -229,4 +254,11 @@ export default {
                         vertical-align: bottom;
                         height: 30px;
                         margin: 0 5px;
+                        @media screen and (max-width: 1024px)
+                            height: 20px;
+                        
+                    .built-by p
+                        margin-bottom: 10px;
+                        @media screen and (max-width: 1024px)
+                            margin-bottom: 0;
 </style>

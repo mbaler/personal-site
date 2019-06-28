@@ -1,7 +1,7 @@
 <template lang="pug">
     .container#projects
-        h2.title.is-2.scrollio-immediate Projects
-        h3.subtitle.is-4.scrollio-immediate
+        h2.title.is-2.scrollio-immediate.head Projects
+        h3.subtitle.is-4.scrollio-immediate.head
             | Some little 
             span.magic-highlight ditties
             | &nbsp;of mine.
@@ -112,6 +112,9 @@ export default {
 
 <style lang="sass" scoped>
 #projects
+    .head
+        color: #fff;
+        text-shadow: 0px 2px 1px #000;
     .showcase-wrapper
         width: 100%;
         margin: auto;
@@ -246,5 +249,14 @@ export default {
     .comingsoon
         margin-top: 60px;
         line-height: 1.5;
+
+        h3
+            display: inline-block;
+            background: #ffffffe0;
+            border-radius: 6px;
+            width: 35vw;
+            height: 40px;
+            line-height: 40px;
+
 
 </style>

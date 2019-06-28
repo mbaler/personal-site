@@ -19,7 +19,7 @@
     },
 
     mounted() {
-      this.scrollio();
+      // this.scrollio();
       this.overscrollFix();
     },
 

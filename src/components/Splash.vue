@@ -148,10 +148,12 @@ export default {
             #typingwrap
                 flex-direction: column;
                 height: 600px;
-                line-height: 90px;
+                line-height: 80px;
+                margin-top: 40px;
                 @media screen and (max-width: 1024px)
+                    margin-top: 30px;
                     height: 120px !important;
-                    line-height: 50px !important;
+                    line-height: 55px !important;
                 padding: 0px 0 10px 0;
                 display: flex;
                 justify-content: center;
@@ -168,12 +170,18 @@ export default {
                     @media screen and (max-width: 1024px)
                         font-size: 30px;
                         line-height: 33px;
+                .typingdescription
+                    min-height: 48vh;
+                    @media screen and (max-width: 1024px)
+                        min-height: 16vh;
                 .typingsignature
+                    min-height: 14vh;
                     width: 91% !important;
                     text-align: right !important;
-                    padding-top: 20px
+                    padding-top: 0px
                     @media screen and (max-width: 1024px)
-                        padding-top: 10px;
+                        padding-top: 18px;
+                        min-height: 3vh;
 
                 span
                     display: inline-block;
@@ -236,7 +244,7 @@ export default {
                             box-shadow: 0px 2px 20px 1px rgba(0, 0, 0, 0.35), 10px 20px 4px 1px #ff000082 inset !important;
         .hello
             position: absolute;
-            bottom: 60px;
+            bottom: 40px;
             left: 0;
             right: 0;
             flex: 1;
