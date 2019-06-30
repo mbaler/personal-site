@@ -11,7 +11,7 @@
                     a.projhead(href="https://github.com/mbaler/webrtc-kun", alt="WebRTC Device Checker", target="_blank", rel="noopener")
                         figure.iconpreview
                             img(:data-src="require(`@/assets/wrtcdc/webrtclogocropW.png`)").lazyload
-                        h4.title.is-5 WebRTC Device Checker
+                        h4.title.is-4 WebRTC Device Checker
                     figure.screenshot
                         img(:data-src="require(`@/assets/wrtcdc/ss.png`)", data-zoomable).lazyload
                     p.description.smidgeUp {{ wrtcdcDesc }}
@@ -22,8 +22,8 @@
                         a(href="https://github.com/mbaler/webrtc-kun", alt="GitHub Repo", target="_blank", rel="noopener", style="display: inline-flex;")
                             span.icon.is-large
                                 font-awesome-icon(:icon="['fab', 'github']", size="3x")
-                    span.tech Tech Used:
-                    .techwrap
+                    h6.tech Tech Used:
+                    .techwrap(style="margin-top: -6px;")
                         .images
                             img(:data-src="require(`@/assets/js_es6.png`)", alt="JavaScript (ES6+)", v-tooltip="{content: 'JavaScript (ES6+)', placement: 'bottom', trigger: 'hover click', delay: {show: 50, hide: 0}, offset: '4px', }",).lazyload
                             img(:data-src="require(`@/assets/peerjs.png`)", alt="PeerJS", v-tooltip="{content: 'PeerJS', placement: 'bottom', trigger: 'hover', delay: {show: 50, hide: 0}, offset: '4px', }",).lazyload
@@ -37,7 +37,7 @@
                     a.projhead(href="https://github.com/mbaler/Medium-Code-Highlighter", alt="Medium Code Highlighter - Chrome Extension", target="_blank", rel="noopener")
                         figure.iconpreview
                             img(:data-src="require(`@/assets/mch/mchicon.png`)").lazyload
-                        h4.title.is-5 Medium Code Highlighter
+                        h4.title.is-4 Medium Code Highlighter
                     figure.screenshot
                         img(:data-src="require(`@/assets/mch/promo_gif.gif`)", data-zoomable).lazyload
                     p.description {{ mchDesc }}
@@ -47,8 +47,8 @@
                         a(href="https://github.com/mbaler/Medium-Code-Highlighter", alt="GitHub Repo", target="_blank", rel="noopener", style="display: inline-flex;")
                             span.icon.is-large
                                 font-awesome-icon(:icon="['fab', 'github']", size="3x")
-                    span.tech Tech Used:
-                    .techwrap
+                    h6.tech Tech Used:
+                    .techwrap(style="margin-top: -6px;")
                         .images.few
                             img(:data-src="require(`@/assets/js_es6.png`)", alt="JavaScript (ES6+)", v-tooltip="{content: 'JavaScript (ES6+)', placement: 'bottom', trigger: 'hover', delay: {show: 50, hide: 0}, offset: '4px', }",).lazyload
                             img(:data-src="require(`@/assets/hljs.png`)", alt="highlight.js", v-tooltip="{content: 'highlight.js', placement: 'bottom', trigger: 'hover', delay: {show: 50, hide: 0}, offset: '4px', }",).lazyload
@@ -57,15 +57,15 @@
                     .projhead
                         figure.iconpreview
                             img(:data-src="require(`@/assets/circled.png`)").lazyload
-                        h4.title.is-5 This Website!
+                        h4.title.is-4 This Website!
                     figure.screenshot
                         span.wink(style="text-shadow: 0px 5px 10px rgba(0, 0, 0, 0.35);") 😉
                     .projlinks
                         a(href="https://github.com/mbaler/personal-site", alt="GitHub Repo", target="_blank", rel="noopener", style="display: inline-flex;")
                             span.icon.is-large
                                 font-awesome-icon(:icon="['fab', 'github']", size="3x")
-                    span.tech Tech Used:
-                    .techwrap(style="margin: 10px auto;")
+                    h6.tech Tech Used:
+                    .techwrap(style="margin: 5px auto 10px auto;")
                         .images.many
                             img(:data-src="require(`@/assets/js_es6.png`)", alt="JavaScript (ES6+)", v-tooltip="{content: 'JavaScript (ES6+)', placement: 'bottom', trigger: 'hover', delay: {show: 50, hide: 0}, offset: '4px', }",).lazyload
                             img(:data-src="require(`@/assets/vue-logo.png`)", alt="Vue", v-tooltip="{content: 'Vue', placement: 'bottom', trigger: 'hover', delay: {show: 50, hide: 0}, offset: '4px', }",).lazyload
@@ -77,9 +77,9 @@
                             img(:data-src="require(`@/assets/babel-logo.png`)", alt="Babel", v-tooltip="{content: 'Babel', placement: 'bottom', trigger: 'hover', delay: {show: 50, hide: 0}, offset: '4px', }",).lazyload
                             img(:data-src="require(`@/assets/netlify.png`)", alt="Netlify", v-tooltip="{content: 'Netlify', placement: 'bottom', trigger: 'hover', delay: {show: 50, hide: 0}, offset: '4px', }",).lazyload
         .comingsoon.scrollio
-            h3.subtitle.is-4
+            span.subtitle
                 | More projects (and a 
-                strong.magic-highlight: em blog
+                strong.magic-highlight2: em blog
                 | ) Coming Soon™ 🕑
 </template>
 
@@ -115,6 +115,11 @@ export default {
     .head
         color: #fff;
         text-shadow: $textShadow;
+    h2
+        font-size: 48px;
+        line-height: 42px;
+    h3
+        font-size: 24px;
     .showcase-wrapper
         width: 100%;
         margin: auto;
@@ -140,11 +145,17 @@ export default {
         .projhead
             display: block;
             margin-bottom: 10px;
+            
+            h4
+                color: $textDarkBlue;
+                text-shadow: 0px 1px 1px #00224552;
 
         .description
             margin: 15px 0;
             font-size: 15px;
             display: inline-block;
+            color: $textDark;
+            text-shadow: 0px 1px 1px #e0e0e0;
             &.smidgeUp
                 margin-top: 0;
         
@@ -175,14 +186,15 @@ export default {
         .tech
             padding-top: 20px;
             border-top: 1px solid #cacaca;
-            font-size: 18px;
+            font-size: 24px;
             display: inline-block;
             width: 80%
-            font-weight: bold;
+            color: $textDark;
 
         .techwrap
             font-size: 15px;
             margin: auto;
+            margin-top: 0px;
             height: 75px;
             display: flex;
             align-items: center;
@@ -250,12 +262,15 @@ export default {
         margin-top: 60px;
         line-height: 1.5;
 
-        h3
+        span
             // display: inline-block;
             // background: #ffffffe0;
             // border-radius: 6px;
             // width: 35vw;
             // height: 40px;
+            font-size: 28px;
+            @media screen and (max-width: 1024px)
+                font-size: 26px;
             line-height: 40px;
             text-shadow: $textShadow;
             color: #fff;

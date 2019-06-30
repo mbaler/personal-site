@@ -18,6 +18,7 @@
     "bulma": "^0.7.5",
     "bulma-timeline": "^3.0.4",
     "core-js": "^2.6.5",
+    "fontfaceobserver": "^2.1.0",
     "lazysizes": "^5.1.0",
     "medium-zoom": "^1.0.4",
     "scrollreveal": "^4.0.5",
@@ -38,8 +39,6 @@
     "pug": "^2.0.4",
     "pug-plain-loader": "^1.0.0",
     "sass-loader": "^7.1.0",
-    "typeface-poppins": "0.0.72",
-    "typeface-roboto": "0.0.54",
     "vue-template-compiler": "^2.6.10"
   }
 }

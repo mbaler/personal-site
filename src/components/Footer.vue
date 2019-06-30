@@ -123,6 +123,7 @@ export default {
                     flex-direction: column;
 
                     .tagline
+                        font-size: 22px;
                         margin: -20px 0 30px 0;
                         @media screen and (max-width: 1024px)
                             margin: 8px 0 20px 0;
@@ -136,12 +137,12 @@ export default {
                     
                         .email
                             width: 300px;
-                            background-color: $redLight;
+                            background-color: $redMid;
                             color: #fff;
                             @media screen and (max-width: 1024px)
                                 width: 230px;
                                 background-color: #fff;
-                                color: $redLight;
+                                color: $redMid;
                                 line-height: 22px;
                                 padding-bottom: 12px;
                             border-radius: 10px;
@@ -153,7 +154,7 @@ export default {
                             transition: all 0.2s ease-in-out;
                             &:hover
                                 background-color: #fff;
-                                color: $redLight;
+                                color: $redMid;
 
                                 svg
                                     filter: none;

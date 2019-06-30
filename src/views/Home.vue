@@ -37,6 +37,10 @@ export default {
     section:first-of-type
       padding-top: 0;
     
+    @media screen and (max-width: 1024px)
+      section:not(:first-of-type)
+        padding: 3.5rem 0.5rem;
+    
     .sec1
       height: 94vh;
       background-color: #ffffff;
@@ -61,6 +65,7 @@ export default {
         width: 100%;
     
     .sec3
-      background-color: #521200;
+      background-color: $redDark;
       background-image: url("../assets/clouds.svg");
+      margin-bottom: -1px;
 </style>

@@ -1,7 +1,10 @@
 <template lang="pug">
     .container#about
         h2.title.is-2.scrollio About
-        h3.subtitle.is-4.scrollio Hi. I'm Mac Baler. Learn 'bout me.
+        h3.subtitle.is-4.scrollio 
+            | Hi. I'm Mac Baler. 
+            br
+            | Learn 'bout me.
         .columns.aboutwrap
             .column.selftext.is-half
                 .blurb1.scrollio
@@ -51,18 +54,17 @@
                 .timeline-content
                     p.heading May
                     p 🎓 Colgate University 🎉
-                    p.is-size-7 Hamilton, NY
-                    p.is-size-7 Double Major: Computer Science, Japanese
-                    p.is-size-7 Summa Cum Laude, Phi Beta Kappa (ΦΒΚ) Honor Society
+                    p.subtext Hamilton, NY
+                    p.subtext Double Major: Computer Science, Japanese
+                    p.subtext Summa Cum Laude, Phi Beta Kappa (ΦΒΚ) Honor Society
             .timeline-item
                 .timeline-marker.is-image.is-32x32.flag
                     img(:data-src="require(`@/assets/japan_flag.png`)", alt="Japanese Flag").lazyload
                 .timeline-content
                     p.heading July
-                    p 
-                        | ✈️ Move to Japan
+                    p ✈️ Move to Japan
                     p English Teacher @ Komatsu Meihou High School (JET Program) 👨‍🏫
-                    p.is-size-7 Komatsu, Ishikawa Prefecture
+                    p.subtext Komatsu, Ishikawa Prefecture
             header.timeline-header
                 span.tag.is-medium.is-danger 2016
             .timeline-item
@@ -71,7 +73,7 @@
                     p.heading August
                     p ⛩️ Move to Kyoto
                     p Software &amp; Web Engineer @ Weblio 💻
-                    p.is-size-7 Kyoto, Kyoto Prefecture
+                    p.subtext Kyoto, Kyoto Prefecture
             header.timeline-header
                 span.tag.is-medium.is-danger 2018
             .timeline-item
@@ -84,7 +86,7 @@
                 .timeline-marker
                 .timeline-content
                     p.heading July ~
-                    p 👋 Reuniting with friends/family 👪
+                    p 👋 Reuniting w/ friends &amp; family 👪
                     p 🚄 Travel
             header.timeline-header
                 span.tag.is-medium.is-danger 2019
@@ -114,9 +116,9 @@
                 | as the onus is upon 
                 em us 
                 | as engineers to help shape our cosmos for the better.
-        h3.subtitle.is-3(style="margin-top: 25px;").scrollio Check me out!
+        span.subtitle.check(style="margin-top: 25px;").scrollio Check me out!
         .resumewrap.scrollio
-            a.resume.button.is-large(href="/resume.pdf", alt="Resume", target="_blank") Resume
+            a.resume.button.is-large(href="/resume.pdf", alt="Résumé", target="_blank") Résumé
         .about-buttons.scrollio
             a.linkedin.button.is-large(href="https://www.linkedin.com/in/macbaler/", alt="LinkedIn", target="_blank", rel="noopener")
                 span.icon: font-awesome-icon(:icon="['fab', 'linkedin']")
@@ -146,8 +148,13 @@
                     height: sec2.clientHeight + 100,
                     cell_size: 90,
                     variance: 0.95,
-                    x_colors: ["#800026","#bd0026","#e31a1c","#fc4e2a","#fd8d3c","#feb24c","#fd8d3c","#feb24c","#800026"], //"YlOrRd",
-                    y_colors: ["#d73027","#f46d43","#f19943","#fdae61","#4310c4","#74add1","#4575b4","#225ead","#0038c9"], //"RdYlBu",
+                    seed: "3",
+                    x_colors: ["#800026","#bd0026","#eb2d2f","#ff6705","#ff8505","#ff9c05","#f0529d","#a501c3","#4c02a1"],
+                    y_colors: ["#4d006d","#bd0026","#eb2d2f","#ff6705","#ff6705","#ff6705","#eb2d2f","#bd0026","#4d006d"],
+                    // y_colors: ["#800026","#bd0026","#e31a1c","#fc4e2a","#fd8d3c","#feb24c","#fed976","#ffeda0","#ffffcc"],
+                    // y_colors: ["#d53e4f","#f46d43","#fdae61","#fee08b","#ffffbf","#e6f598","#abdda4","#66c2a5","#3288bd"],
+                    // x_colors: ["#800026","#bd0026","#e31a1c","#fc4e2a","#fd8d3c","#feb24c","#fd8d3c","#feb24c","#800026"], //"YlOrRd",
+                    // y_colors: ["#d73027","#f46d43","#f19943","#fdae61","#4310c4","#74add1","#4575b4","#225ead","#0038c9"], //"RdYlBu",
 
                 });
                 const result = pattern.svg();
@@ -169,7 +176,7 @@
                   nextStringDelay: 2500,
                   waitUntilVisible: true,
                   speed: 135,
-                  cursorChar: "<span style='color: white; font-style: normal !important; font-weight: 400;'>|</span>"
+                  cursorChar: `<span style="color: white; font-style: normal !important; font-weight: 400;">|</span>`
                 }).go();
             }
         }
@@ -180,13 +187,24 @@
     #about
         @media screen and (max-width: 1024px)
             padding-top: 5px !important;
+            // h3
+            //     width: 60vw;
+            //     margin: -10px auto 0 auto;
+        h2
+            font-size: 48px;
+            line-height: 42px;
+        h3
+            margin-left: 2px;
+            margin-bottom: 16px !important;
+            font-size: 24px;
         h2, h3, p
             color: #fff;
+            text-shadow: $textShadow;
 
         .aboutwrap
             display: flex;
             
-            margin: 25px 0 40px 0;
+            margin: 16px 0 40px 0;
             padding-top: 40px;
             @media screen and (max-width: 1024px)
                 flex-direction: column-reverse;
@@ -201,21 +219,22 @@
 
                 .blurb1
                     font-size: 16px;
-                    text-shadow: 0px 1px 4px black;
+                    line-height: 23px;
+                    text-shadow: 0px 1.5px 4px #000000;
                     margin: auto;
                     color: white;
                     @media screen and (min-width: 1025px)
-                        width: 90%
+                        width: 92%
                     
-                    span
+                    &> span
                         display: inline-block;
-                        padding: 2px 0;
+                        padding: 6px 0;
 
                     .d20
-                        height: 160px;
+                        height: 130px;
                         margin-top: 10px;
                         img
-                            height: 160px;
+                            height: 130px;
 
             .photos
                 @media screen and (min-width: 1025px)
@@ -279,31 +298,41 @@
                             width: 100%;
 
         .timeline
-            font-family: "Roboto";
-
             text-align: left;
             margin: 60px 0;
             @media screen and (min-width: 1025px)
                 margin-top: 140px;
 
             .tag
+                font-family: "Viga";
+                font-weight: 400;
                 pointer-events: none;
-                background-color: #bd0000 !important;
+                line-height: 20px;
+                background-color: $redLight !important;
                 // background: linear-gradient(180deg, rgba(255,68,0,1) 0%, rgba(189,0,0,1) 50%);
 
             .timeline-item
                 padding-bottom: 1.5em !important;
+                font-size: 18px;
                 
                 &::before
                     background-color: #c1004f !important;
+                    // background-color: $redLight !important;
 
                 &.yourcomapny_item
                     @media screen and (max-width: 1024px)
-                        height: 180px;
+                        height: 23vh;
+                
+                .subtext
+                    font-size: 14px;
+                
+                .heading
+                    // font-size: 12px;
+                    font-weight: 400;
 
             .timeline-marker
-                background-color: #8fffd4 !important;
-                border-color: #8fffd4 !important;
+                background-color: $blueLight !important;
+                border-color: $blueLight !important;
 
             .flag
                 height: 36px;
@@ -313,6 +342,7 @@
 
             
             .sengwrap
+                text-shadow: $textShadow;
                 height: 30px;
                 @media screen and (max-width: 1024px)
                     display: inline;
@@ -333,11 +363,12 @@
 
                     padding-left: 5px;
                     font-size: 20px;
-                    font-weight: 500;
+                    font-weight: 400;
                     @media screen and (max-width: 1024px)
                         font-size: 18px;
                         padding-left: 0
                     em
+                        // color: $blueLight;
                         color: #52feff;
                 
                     @media screen and (max-width: 1024px)
@@ -373,12 +404,17 @@
                     color: #000 !important;
                     border-color: #000;
 
+        .check
+            color: #fff;
+            font-size: 32px;
+            text-shadow: $textShadow;
+
         .resumewrap
             margin: 35px 0 45px 0;
             
             a.resume.button
                 font-size: 2em;
-                background-color: #34af3c !important;
+                background-color: $greenLight !important;
                 // background: linear-gradient(180deg, rgba(52,175,60,1) 0%, rgba(0,156,10,1) 50%) !important;
                 color: #fff;
                 box-shadow: 0px 3px 5px 0px rgba(0, 0, 0, 0.5);
@@ -390,8 +426,8 @@
 
                 &:hover
                     background: #fff !important;
-                    color: #34af3c !important;
-                    border: 1px solid #34af3c;
+                    color: $greenLight !important;
+                    border: 1px solid $greenLight;
                     border-radius: 4px;
 
                 &::before
@@ -402,7 +438,7 @@
                     bottom: 0;
                     left: 0;
                     right: 0;
-                    border: 4px solid #33af3b7a;
+                    border: 4px solid $greenLightTransparent; // 
                     border-radius: 4px;
                     transform-origin: center;
                     transform: scale(1);
@@ -410,14 +446,14 @@
 
                     @keyframes pulse
                         0%
-                            border-color: #33af3b7a;
+                            border-color: $greenLightTransparent; // 
                             transform: scale(1);
-                        70%
-                            border-color:  #33af3b;
+                        50%
+                            border-color:  $greenLight;
                         85%
                             opacity: 0;
                         100%
                             transform-origin: center;
-                            transform: scale(1.25, 1.5);
+                            transform: scale(1.23, 1.55);
                             opacity: 0;
 </style>

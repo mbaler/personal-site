@@ -12,7 +12,8 @@
   import Nav from "@/components/Nav.vue";
   import Footer from "@/components/Footer.vue";
 
-  import ScrollReveal from 'scrollreveal'
+  import FontFaceObserver from "fontfaceobserver";
+  import ScrollReveal from "scrollreveal";
 
   export default {
     name: "App",
@@ -28,21 +29,51 @@
     },
 
     mounted() {
+      this.fontLoad();
       this.scrollio();
       this.overscrollFix();
-
-      // document.fonts.ready.then(() => {
-      //   // fonts are loaded
-      //   console.log("fonts loaded");
-      //   this.loading = false;
-      // });
     },
 
     methods: {
+      fontLoad() {
+        // load fonts progressively
+        const fontA = new FontFaceObserver("Raleway");
+        const fontB = new FontFaceObserver("Viga");
+        const fontC = new FontFaceObserver("Josefin Sans");
+        const fontD = new FontFaceObserver("K2D");
+
+        // all at once
+        Promise.all([
+          fontA.load(),
+          fontB.load(),
+          fontC.load(),
+          fontD.load(),
+        ]).then(() => {
+          console.log("All fonts loaded.");
+        });
+
+        // prioritized load
+        // primary.load().then(function () {
+        //   console.log('Primary font has loaded.')
+
+        //   secondary.load().then(function () {
+        //     console.log('Secondary font has loaded.')
+        //   });
+        // });
+        
+
+
+        // document.fonts.ready.then(() => {
+        //   // fonts are loaded
+        //   console.log("fonts loaded");
+        //   this.loading = false;
+        // });
+      },
+
       scrollio() {
         // defaults
         ScrollReveal({
-          delay: 100,
+          delay: 0,
           distance: "50px",
           duration: 1000,
           interval: 400,
@@ -122,7 +153,9 @@
     padding: 6px;
 
   #app
-    font-family: "Avenir", Helvetica, Arial, sans-serif;
+    font-family: "K2D", Helvetica, Arial, sans-serif;
+    font-weight: 400;
+
     -webkit-font-smoothing: antialiased;
     -moz-osx-font-smoothing: grayscale;
     color: #2c3e50;
@@ -134,7 +167,7 @@
       padding-top: 30px;
       padding-bottom: 30px;
 
-    .magic-highlight
+    .magic-highlight, .magic-highlight2
       //////// SIMPLE
       // transition: all .2s ease-in-out;
       // box-shadow: inset 0 -0.2em 0 0 #2eec96;	
@@ -142,11 +175,19 @@
       //   box-shadow: inset 0 -2em 0 0 #2eec96;
 
       //////// GRADIENT
-      background-image: $magicHighlight;
       background-repeat: no-repeat;
       background-size: 100% 0.35em;
-      background-position: 0 85%;
+      background-position: 0 92%;
       transition: background-size 0.2s ease-in-out;
       &:hover
         background-size: 100% 100%;
+    .magic-highlight
+      background-image: $magicHighlight;
+    .magic-highlight2
+      background-image: $magicHighlight2;
+    
+    h1, h2, h3, h4, h5, h6
+      font-family: "Raleway";
+      font-weight: 700;
+      font-variant: small-caps;
 </style>

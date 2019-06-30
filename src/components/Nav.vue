@@ -33,7 +33,7 @@
           .navbar-item
             router-link.rlink(to="/#contact") Contact
           .navbar-item
-            a.rlink(href="/resume.pdf", target="_blank") Resume
+            a.rlink(href="/resume.pdf", target="_blank") Résumé
 </template>
 
 <script>
@@ -86,15 +86,20 @@ export default {
 
     a 
       font-weight: bold;
-      color: #2c3e50;
+      color: $textDarkBlue;
       &.router-link-exact-active 
-        color: #bd0000;
+        // color: $redMid;
+        color: $redLight;
       
       &:hover
-        color: #0089ff;
+        // color: $redLight;
+        color: $redTrue;
 
     .navbar-menu
-      font-family: "Poppins";
+      .navbar-end .navbar-item a
+        font-family: "Raleway";
+        font-weight: 700 !important;
+        font-size: 20px;
     
       @media screen and (max-width: 1024px)
         width: 55%;
@@ -103,8 +108,12 @@ export default {
         right: 15px;
 
     .navbar-brand .logo
-      font-size: 28px;
-      font-weight: bold;
+      font-family: "Viga";
+      font-weight: 400;
+      // @media screen and (max-width: 1024px)
+      //   font-family: "Raleway";
+      //   font-weight: 700;
+      font-size: 30px;
       color: #ff0000;
       padding: 0;
 

@@ -24,8 +24,7 @@ Vue.use(VTooltip);
 import "./styles/tooltip.css";
 
 // fonts
-import "typeface-poppins";
-import "typeface-roboto";
+import "./fonts/fonts.css";
 
 // bulma
 import "bulma/css/bulma.css";

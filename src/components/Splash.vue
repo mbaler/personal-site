@@ -46,7 +46,7 @@ export default {
             const signature = new TypeIt(".typingsignature", {
                 speed: 125,
                 startDelay: 1500,
-                cursorChar: "<span style='color: #a50000; font-weight: 400;'>|</span>"
+                cursorChar: `<span style="color: #bd0000; text-shadow: 0px 1px 2px #bd0000cc;">▁</span>`, // ▏OR▁
             })
             .type("Mac Baler.");
 
@@ -55,7 +55,7 @@ export default {
               waitUntilVisible: true,
               startDelay: 1500,
               speed: 100,
-              cursorChar: "<span style='color: #a50000; font-weight: 400;'>|</span>"
+              cursorChar: `<span style="color: #bd0000; text-shadow: 0px 1px 2px #bd0000cc;">▁</span>`,
             //   loop: true,
             //   loopDelay: 5000,
             })
@@ -64,14 +64,13 @@ export default {
             .delete(19)
             .type("a software engi")
             .delete()
-            .type("a stellar softwa")
-            .delete(15)
+            .type("an insanely stellar softwa")
+            .delete(25)
             .options({speed: 65})
-            .type("n intelligent, warm, communicative, reliable, curious software engineer.")
+            .type(" curious, reliable, intelligent, warm, communicative software engineer.")
             // .break()
             // .pause(1000)
             // .options({speed: 125})
-            .options({cursorChar: "<span style='color: #fff; font-weight: 400;'>|</span>"})
             .exec(async () => {
                 await new Promise((resolve) => {
                     const parent = document.querySelector(".typingdescription");
@@ -95,8 +94,8 @@ export default {
 
             const mouse = {
                 // Track the mouse position relative to the center of the container.
-                _x: container.offsetLeft + (160) + Math.floor(container.offsetWidth / 2),
-                _y: container.offsetTop + (57) + Math.floor(container.offsetHeight / 2),
+                _x: container.offsetLeft + (137) + Math.floor(container.offsetWidth / 2),
+                _y: container.offsetTop + (90) + Math.floor(container.offsetHeight / 2),
                 x: 0,
                 y: 0,
                 updatePosition: function(event) {
@@ -136,6 +135,12 @@ export default {
 }
 </script>
 
+<style lang="sass">
+.ti-wrapper, ti-container
+    // font-size: 40px !important;
+    vertical-align: text-bottom !important;
+</style>
+
 <style lang="sass" scoped>
     #splash
         .topwrap
@@ -146,6 +151,8 @@ export default {
                 padding-top: 60px;
             
             #typingwrap
+                text-shadow: 0px 1px 2px #002245b3;
+                color: $textDarkBlue;
                 flex-direction: column;
                 height: 600px;
                 line-height: 80px;
@@ -154,6 +161,7 @@ export default {
                     margin-top: 30px;
                     height: 120px !important;
                     line-height: 55px !important;
+                    text-shadow:
                 padding: 0px 0 10px 0;
                 display: flex;
                 justify-content: center;
@@ -162,16 +170,19 @@ export default {
                 text-align: left;
 
                 .typingdescription, .typingsignature
+                    font-family: "Josefin Sans";
+                    font-weight: 700;
                     width: 100%;
-                    font-family: "Poppins";
-                    font-size: 70px;
-                    font-weight: 600;
+                    font-size: 62px;
                     text-transform: uppercase;
                     @media screen and (max-width: 1024px)
-                        font-size: 30px;
+                        font-size: 27px;
                         line-height: 33px;
                 .typingdescription
                     min-height: 48vh;
+                    @media screen and (min-width: 1025px)
+                        width: 109%;
+                        margin-left: 5%;
                     @media screen and (max-width: 1024px)
                         min-height: 16vh;
                 .typingsignature
@@ -180,12 +191,8 @@ export default {
                     text-align: right !important;
                     padding-top: 0px
                     @media screen and (max-width: 1024px)
-                        padding-top: 18px;
-                        min-height: 3vh;
-
-                span
-                    display: inline-block;
-                    vertical-align: middle;
+                        padding-top: 24px;
+                        min-height: 4vh;
 
             .imageoutside
                 display: inline-flex;
@@ -273,13 +280,13 @@ export default {
                 height: 4rem;
                 margin-left: -2.0rem;
                 margin-top: 80px;
-                color: #ff771e !important;
+                color: $orangeLight !important;
                 border: none;
                 padding: .5rem;
                 animation: scrollButton 1s cubic-bezier(.175,.885,.32,1.4) 0s infinite alternate;
 
                 &:hover
-                    color: #ff1e00 !important;
+                    color: $redTrue !important;
 
                 &:after
                     content: "";
