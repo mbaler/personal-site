@@ -3,7 +3,7 @@
         h2.title.is-2.scrollio.head Projects
         h3.subtitle.is-4.scrollio.head
             | Some little 
-            span.magic-highlight.mh1 ditties
+            span.magic-highlight.mh2 ditties
             | &nbsp;of mine.
         .showcase-wrapper.columns.is-centered.is-variable.is-7
             .proj.proj1.column.is-one-third.scrollio

@@ -95,7 +95,7 @@ export default {
             const mouse = {
                 // Track the mouse position relative to the center of the container.
                 _x: container.offsetLeft + (137) + Math.floor(container.offsetWidth / 2),
-                _y: container.offsetTop + (90) + Math.floor(container.offsetHeight / 2),
+                _y: container.offsetTop + (70) + Math.floor(container.offsetHeight / 2),
                 x: 0,
                 y: 0,
                 updatePosition: function(event) {
@@ -144,7 +144,7 @@ export default {
 <style lang="sass" scoped>
     #splash
         .topwrap
-            height: 80%;
+            height: 100%;
 
             padding-top: 0px;
             @media screen and (max-width: 1024px)
@@ -154,9 +154,9 @@ export default {
                 text-shadow: 0px 1px 2px #002245b3;
                 color: $textDarkBlue;
                 flex-direction: column;
-                height: 600px;
-                line-height: 80px;
-                margin-top: 40px;
+                height: 100%;
+                line-height: 75px;
+                // margin-top: 40px;
                 @media screen and (max-width: 1024px)
                     margin-top: 30px;
                     height: 120px !important;
@@ -177,7 +177,7 @@ export default {
                     text-transform: uppercase;
                     @media screen and (max-width: 1024px)
                         font-size: 27px;
-                        line-height: 33px;
+                        line-height: 30px;
                 .typingdescription
                     min-height: 48vh;
                     @media screen and (min-width: 1025px)
@@ -191,14 +191,14 @@ export default {
                     text-align: right !important;
                     padding-top: 0px
                     @media screen and (max-width: 1024px)
-                        padding-top: 24px;
+                        padding-top: 26px;
                         min-height: 4vh;
 
             .imageoutside
                 display: inline-flex;
                 align-items: center;
                 justify-content: center;
-                padding-top: 65px;
+                // padding-top: 65px;
                 padding-left: 50px;
                 perspective: 30px;
                 @media screen and (max-width: 1024px)

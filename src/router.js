@@ -35,7 +35,7 @@ export default new Router({
 
       return {
         selector: to.hash,
-        offset: {x: 0, y: 60}
+        offset: {x: 0, y: 55}
       };
     }
 

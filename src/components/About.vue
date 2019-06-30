@@ -56,13 +56,18 @@
                     p 🎓 Colgate University 🎉
                     p.subtext Hamilton, NY
                     p.subtext Double Major: Computer Science, Japanese
-                    p.subtext Summa Cum Laude, Phi Beta Kappa (ΦΒΚ) Honor Society
+                    p.subtext 
+                        | Summa Cum Laude,&nbsp;
+                        span.magic-highlight.mh1 Phi Beta Kappa (ΦΒΚ)
+                        | &nbsp;Honor Society
             .timeline-item
                 .timeline-marker.is-image.is-32x32.flag
                     img(:data-src="require(`@/assets/japan_flag.png`)", alt="Japanese Flag").lazyload
                 .timeline-content
                     p.heading July
-                    p ✈️ Move to Japan
+                    p
+                        | ✈️ Move to&nbsp;
+                        span.magic-highlight.mh1 Japan
                     p English Teacher @ Komatsu Meihou High School (JET Program) 👨‍🏫
                     p.subtext Komatsu, Ishikawa Prefecture
             header.timeline-header
@@ -72,7 +77,10 @@
                 .timeline-content
                     p.heading August
                     p ⛩️ Move to Kyoto
-                    p Software &amp; Web Engineer @ Weblio 💻
+                    p 
+                        | Software &amp; Web Engineer @&nbsp;
+                        span.magic-highlight.mh1 Weblio
+                        | &nbsp;💻
                     p.subtext Kyoto, Kyoto Prefecture
             header.timeline-header
                 span.tag.is-medium.is-danger 2018
@@ -93,7 +101,9 @@
             .timeline-item
                 .timeline-marker
                 .timeline-content
-                    p Boston bound 
+                    p 
+                        span.magic-highlight.mh1 Boston
+                        | &nbsp;bound 
                         span(style="vertical-align: text-bottom;").is-inline-block 👍
             .timeline-item.yourcomapny_item
                 .timeline-marker
@@ -111,11 +121,15 @@
             .timeline-header
                 span.tag.is-medium.is-danger 💀 ⚰️
         .jobtext.scrollio
-            p Looking for a software engineering job that allows me to make a difference,
+            p 
+                span.magic-highlight.mh1 Looking for a software engineering job
+                | &nbsp;that allows me to make a difference,
                 br
                 | as the onus is upon 
                 em us 
-                | as engineers to help shape our cosmos for the better.
+                | as engineers to help&nbsp;
+                span.magic-highlight.mh1 shape our cosmos for the better
+                | .
         span.subtitle.check(style="margin-top: 25px;").scrollio Check me out!
         .resumewrap.scrollio
             a.resume.button.is-large(href="/resume.pdf", alt="Résumé", target="_blank") Résumé
