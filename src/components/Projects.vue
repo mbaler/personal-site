@@ -3,7 +3,7 @@
         h2.title.is-2.scrollio.head Projects
         h3.subtitle.is-4.scrollio.head
             | Some little 
-            span.magic-highlight ditties
+            span.magic-highlight.mh1 ditties
             | &nbsp;of mine.
         .showcase-wrapper.columns.is-centered.is-variable.is-7
             .proj.proj1.column.is-one-third.scrollio
@@ -14,7 +14,7 @@
                         h4.title.is-4 WebRTC Device Checker
                     figure.screenshot
                         img(:data-src="require(`@/assets/wrtcdc/ss.png`)", data-zoomable).lazyload
-                    p.description.smidgeUp {{ wrtcdcDesc }}
+                    p.description.smidgeUp(v-html="wrtcdcDesc")
                     .projlinks
                         a(href="https://eikaiwa.weblio.jp/device_checker?bandwidth", alt="Live Example", target="_blank", rel="noopener")
                             span.icon.is-large.has-text-link
@@ -40,7 +40,7 @@
                         h4.title.is-4 Medium Code Highlighter
                     figure.screenshot
                         img(:data-src="require(`@/assets/mch/promo_gif.gif`)", data-zoomable).lazyload
-                    p.description {{ mchDesc }}
+                    p.description(v-html="mchDesc")
                     .projlinks(style="margin-left: -10px;")
                         a(href="https://chrome.google.com/webstore/detail/medium-code-highlighter/apdaagmhepellbjjbnaljaocodjjjjfd", alt="Chrome Web Store", target="_blank", rel="noopener")
                             img(:data-src="require(`@/assets/mch/ChromeWebStore.png`)").lazyload
@@ -79,7 +79,7 @@
         .comingsoon.scrollio
             span.subtitle
                 | More projects (and a 
-                strong.magic-highlight2: em blog
+                strong.magic-highlight.mh2: em blog
                 | ) Coming Soon™ 🕑
 </template>
 
@@ -92,10 +92,10 @@ export default {
     data() {
         return {
             wrtcdcDesc: `Created while working at Weblio in Japan. Helps users test & troubleshoot their video/audio devices, as well as video/audio bandwidth settings.
-            Allowed pre-emptive test of setup before entering online lesson room.
-            Utilized a fork of PeerJS and manipulated the MediaStream API to create a WebRTC video call with oneself.`,
-            mchDesc: `Chrome extension for adding simple and easy code syntax highlighting to Medium articles.
-            Highlight theme can be changed on-the-fly, via popup UI, from a handful of popular themes.
+            Allowed preemptive test of setup before entering online lesson room.
+            Utilized a fork of PeerJS and manipulated the <span class="magic-highlight mh2">MediaStream API</span> to create a WebRTC video call with oneself.`,
+            mchDesc: `<span class="magic-highlight mh2">Chrome extension</span> for adding simple and easy code syntax highlighting to Medium articles.
+            Highlight theme can be changed on-the-fly, via popup UI, from a handful of popular <span class="magic-highlight mh2">themes</span>.
             Works on all Medium articles, regardless of domain.`,
             mchTech: `JS (ES6+), highlight.js`,
             websiteTech: `JS (ES6+), Vue, Bulma, SASS, Pug, NPM, Webpack, Babel, Netlify`,
@@ -151,7 +151,7 @@ export default {
                 text-shadow: 0px 1px 1px #00224552;
 
         .description
-            margin: 15px 0;
+            margin: 15px 0 25px 0;
             font-size: 15px;
             display: inline-block;
             color: $textDark;

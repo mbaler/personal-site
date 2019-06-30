@@ -12,7 +12,7 @@
                     span 
                         | Spent a handful of years working in Japan, garnering experience spanning full-stack; 
                         | but am now back in the states, looking for work in the 
-                        span.magic-highlight Boston
+                        span.magic-highlight.mh1 Boston
                         | &nbsp;area.
                     span Capable, efficient, inquisitive, precise, adaptable, collaborative, trustworthy, and a quick learner, with solid interpersonal skills.
                     figure.d20.scrollio-d20

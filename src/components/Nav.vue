@@ -23,7 +23,7 @@
           //-     hr.navbar-divider
           //-     a.navbar-item Test3
           .navbar-item
-            router-link.rlink(to="/") Home
+            router-link.rlink(to="/", @click.native="scrollToTop") Home
           //- .navbar-item
           //-   router-link.rlink(to="/test") Test
           .navbar-item

@@ -42,25 +42,26 @@
         const fontC = new FontFaceObserver("Josefin Sans");
         const fontD = new FontFaceObserver("K2D");
 
-        // all at once
-        Promise.all([
-          fontA.load(),
-          fontB.load(),
-          fontC.load(),
-          fontD.load(),
-        ]).then(() => {
-          console.log("All fonts loaded.");
-        });
+        // prioritized, ordered load
+        _prioritized();
 
-        // prioritized load
-        // primary.load().then(function () {
-        //   console.log('Primary font has loaded.')
+        function _prioritized() {
+          fontA.load().then(() => {
+            console.log("A font loaded.");
 
-        //   secondary.load().then(function () {
-        //     console.log('Secondary font has loaded.')
-        //   });
-        // });
-        
+            fontB.load().then(() => {
+              console.log("B font loaded.");
+
+              fontC.load().then(() => {
+                console.log("C font loaded.");
+
+                fontD.load().then(() => {
+                  console.log("D font loaded.");
+                });
+              });
+            });
+          });
+        }
 
 
         // document.fonts.ready.then(() => {
@@ -167,7 +168,7 @@
       padding-top: 30px;
       padding-bottom: 30px;
 
-    .magic-highlight, .magic-highlight2
+    .magic-highlight,
       //////// SIMPLE
       // transition: all .2s ease-in-out;
       // box-shadow: inset 0 -0.2em 0 0 #2eec96;	
@@ -181,9 +182,9 @@
       transition: background-size 0.2s ease-in-out;
       &:hover
         background-size: 100% 100%;
-    .magic-highlight
+    .mh1
       background-image: $magicHighlight;
-    .magic-highlight2
+    .mh2
       background-image: $magicHighlight2;
     
     h1, h2, h3, h4, h5, h6

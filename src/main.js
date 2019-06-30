@@ -15,6 +15,9 @@ library.add(
 );
 Vue.component("font-awesome-icon", FontAwesomeIcon);
 
+// fonts
+import "./fonts/fonts.css";
+
 // lazyload
 import "lazysizes";
 
@@ -22,9 +25,6 @@ import "lazysizes";
 import VTooltip from "v-tooltip";
 Vue.use(VTooltip);
 import "./styles/tooltip.css";
-
-// fonts
-import "./fonts/fonts.css";
 
 // bulma
 import "bulma/css/bulma.css";
