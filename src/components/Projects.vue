@@ -91,10 +91,10 @@ export default {
 
     data() {
         return {
-            wrtcdcDesc: `Created while working at Weblio in Japan. Helps users test & troubleshoot their video/audio devices, as well as video/audio bandwidth settings.
+            wrtcdcDesc: `Created while working at Weblio in Japan. Helps users test & troubleshoot their <span class="magic-highlight mh2">video/audio</span> devices, as well as video/audio <span class="magic-highlight mh2">bandwidth</span> settings.
             Allowed preemptive test of setup before entering online lesson room.
             Utilized a fork of PeerJS and manipulated the <span class="magic-highlight mh2">MediaStream API</span> to create a WebRTC video call with oneself.`,
-            mchDesc: `<span class="magic-highlight mh2">Chrome extension</span> for adding simple and easy code syntax highlighting to Medium articles.
+            mchDesc: `<span class="magic-highlight mh2">Chrome extension</span> for adding simple and easy code <span class="magic-highlight mh2">syntax highlighting</span> to Medium articles.
             Highlight theme can be changed on-the-fly, via popup UI, from a handful of popular <span class="magic-highlight mh2">themes</span>.
             Works on all Medium articles, regardless of domain.`,
             mchTech: `JS (ES6+), highlight.js`,
