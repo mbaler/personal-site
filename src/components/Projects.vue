@@ -1,10 +1,7 @@
 <template lang="pug">
     .container#projects
         h2.title.is-2.scrollio.head Projects
-        h3.subtitle.is-4.scrollio.head
-            | Some little 
-            span.magic-highlight.mh2 ditties
-            | &nbsp;of mine.
+        h3.subtitle.is-4.scrollio.head Some little ditties of mine.
         .showcase-wrapper.columns.is-centered.is-variable.is-7
             .proj.proj1.column.is-one-third.scrollio
                 .box
@@ -79,7 +76,7 @@
         .comingsoon.scrollio
             span.subtitle
                 | More projects (and a 
-                strong.magic-highlight.mh2: em blog
+                strong: em blog
                 | ) Coming Soon™ 🕑
 </template>
 

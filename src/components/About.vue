@@ -8,23 +8,39 @@
         .columns.aboutwrap
             .column.selftext.is-half
                 .blurb1.scrollio
-                    span Just a knowledge-hungry bilingual Software Engineer floating through space-time.
                     span 
-                        | Spent a handful of years working in Japan, garnering experience spanning full-stack; 
-                        | but am now back in the states, looking for work in the 
-                        span.magic-highlight.mh1 Boston
-                        | &nbsp;area.
-                    span Capable, efficient, inquisitive, precise, adaptable, collaborative, trustworthy, and a quick learner, with solid interpersonal skills.
+                        | Just a&nbsp;
+                        span.magic-highlight.mh1 knowledge-hungry bilingual Software Engineer
+                        | &nbsp;floating through space-time.
+                    span 
+                        | Spent a handful of&nbsp;
+                        span.magic-highlight.mh1 years working in Japan
+                        | , garnering experience spanning full-stack; 
+                        | but am now back in the states,&nbsp;
+                        span.magic-highlight.mh1 looking for work in the Boston area
+                        | .
+                    span Capable, efficient, inquisitive, precise, adaptable, collaborative, trustworthy, and a&nbsp;
+                        span.magic-highlight.mh1 quick learner
+                        | , with solid interpersonal skills.
                     figure.d20.scrollio-d20
                         img(:data-src="require(`@/assets/d20.png`)").lazyload.scrollio
                     span
-                        | Technical skills result from having been thrown right into the deep end for two years. 
+                        span.magic-highlight.mh1 Full-stack technical skills
+                        | &nbsp;result from having been thrown right into the deep end for two years. 
                         | Proficiences include (but not limited to) 
-                        | server-side jazz: Node.js, Express, REST API, Java/Spring, Perl, &amp; NGINX; 
-                        | frameworks: React.js, Vue.js, &amp; Redux; build tools: Webpack, Babel, &amp; Jenkins; 
-                        | front-facing elements: JS (ES6+), HTML/Pug, SASS/CSS Modules, &amp; Bootstrap; 
-                        | testing tools: Jest, Mocha, Sinon, &amp; Enzyme; 
-                        | and everything in between: SQL, Docker, Socket.io, npm, Git/GitHub, WebRTC/MediaStream API, &amp; Firebase Realtime DB. 
+                        span.magic-highlight.mh1 server-side jazz
+                        | : Node.js, Express, REST API, Java, bit of Spring &amp; NGINX; 
+                        span.magic-highlight.mh1 frameworks
+                        | : React.js, Vue.js, &amp; Redux;&nbsp;
+                        span.magic-highlight.mh1 build tools
+                        | : Webpack, Babel, Gulp, &amp; Jenkins;&nbsp;
+                        span.magic-highlight.mh1 front-facing elements
+                        |: JavaScript (ES6+), HTML/Pug, SASS/CSS Modules, &amp; Bootstrap;&nbsp;
+                        span.magic-highlight.mh1 testing tools
+                        | : Jest, Mocha, Sinon, Jasmine, &amp; Enzyme; 
+                        | and&nbsp;
+                        span.magic-highlight.mh1 everything in between
+                        | : SQL, Docker, Socket.io, npm, Git/GitHub, WebRTC/MediaStream API, &amp; Firebase Realtime DB. 
                     span I’m eager to both deepen existing proficiencies &amp; fill in the cracks with new ones!
             .column.photos.is-half
                 figure.portrait.scrollio-about-portrait
@@ -199,8 +215,8 @@
 
 <style lang="sass" scoped>
     #about
-        @media screen and (max-width: 1024px)
-            padding-top: 5px !important;
+        // @media screen and (max-width: 1024px)
+        //     padding-top: 5px !important;
             // h3
             //     width: 60vw;
             //     margin: -10px auto 0 auto;
@@ -362,6 +378,7 @@
                     display: inline;
 
                 .seng
+                    vertical-align: middle;
                     color: white;
                     @media screen and (min-width: 1025px)
                         display: inline-block;
@@ -383,11 +400,17 @@
                         padding-left: 0
                     em
                         // color: $blueLight;
-                        color: #52feff;
-                
-                    @media screen and (max-width: 1024px)
-                        .yourcompanyheretyping
+                        color: #37ffe1;                     
+                    
+                    .yourcompanyheretyping
+                        @media screen and (max-width: 1024px)
                             display: inline;
+                        .ti-container
+                            background-size: 100% 0.30em;
+                            background-position: 0 100%;
+                            transition: background-size 0.2s ease-in-out;
+                            &:hover
+                                background-size: 100% 98%;
 
         .jobtext
             margin: 75px 0;
@@ -424,21 +447,25 @@
             text-shadow: $textShadow;
 
         .resumewrap
-            margin: 35px 0 45px 0;
+            margin: 45px 0 45px 0;
             
             a.resume.button
-                font-size: 2em;
+                font-size: 2.5em;
+                text-shadow: $textShadow;
+                // font-weight: bold;
                 background-color: $greenLight !important;
                 // background: linear-gradient(180deg, rgba(52,175,60,1) 0%, rgba(0,156,10,1) 50%) !important;
                 color: #fff;
                 box-shadow: 0px 3px 5px 0px rgba(0, 0, 0, 0.5);
                 transition: all 0.25s ease-in-out;
+                padding-top: 0.2em;
 
                 position: relative
                 outline: none;
                 border: none;
 
                 &:hover
+                    text-shadow: none;
                     background: #fff !important;
                     color: $greenLight !important;
                     border: 1px solid $greenLight;
@@ -470,4 +497,14 @@
                             transform-origin: center;
                             transform: scale(1.23, 1.55);
                             opacity: 0;
+</style>
+<style lang="sass">
+.yourcompanyheretyping .ti-container
+    background-image: $magicHighlight;
+    background-repeat: no-repeat;
+    background-size: 100% 0.30em;
+    background-position: 0 100%;
+    transition: background-size 0.2s ease-in-out;
+    &:hover
+        background-size: 100% 98%;
 </style>

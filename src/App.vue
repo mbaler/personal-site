@@ -93,14 +93,14 @@
         });
         ScrollReveal().reveal(".scrollio.proj", {
           interval: 160,
-          delay: 250,
+          delay: 125,
         });
       },
 
       overscrollFix() {
         // ensure correct top and bottom backgrounds for mobile overscrolling
         const topColor = "white";
-        const bottomColor = "$redDark";
+        const bottomColor = "#2f0000";
         let ticking = false;
 
         window.addEventListener("scroll", _checkScroll, { passive: true });

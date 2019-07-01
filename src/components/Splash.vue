@@ -45,7 +45,7 @@ export default {
         typing() {
             const signature = new TypeIt(".typingsignature", {
                 speed: 125,
-                startDelay: 1500,
+                startDelay: 850,
                 cursorChar: `<span style="color: #bd0000; text-shadow: 0px 1px 2px #bd0000cc;">▁</span>`, // ▏OR▁
             })
             .type("Mac Baler.");
