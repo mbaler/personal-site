@@ -51,9 +51,9 @@ import "./fonts/fonts.css";
 import "lazysizes";
 
 // tooltips
-import VTooltip from "v-tooltip";
+import { VTooltip } from "v-tooltip";
 import "./styles/tooltip.css";
-Vue.use(VTooltip);
+Vue.directive("tooltip", VTooltip);
 
 // bulma
 import "bulma/css/bulma.css";

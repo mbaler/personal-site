@@ -50,7 +50,7 @@
             fontB.load().then(() => {
               fontC.load().then(() => {
                 fontD.load().then(() => {
-                  console.log("All fonts loaded.");
+                  // console.log("All fonts loaded.");
                 });
               });
             });
