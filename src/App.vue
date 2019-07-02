@@ -1,122 +1,113 @@
 <template lang="pug">
   #app
-    template(v-if="loading")
-      span.loading LOADING...
-    template(v-else)
-      Nav
-      router-view
-      Footer
+    Nav
+    router-view
+    Footer
 </template>
 
 <script>
-  import Nav from "@/components/Nav.vue";
-  import Footer from "@/components/Footer.vue";
+import Nav from "@/components/Nav.vue";
+import Footer from "@/components/Footer.vue";
 
-  import FontFaceObserver from "fontfaceobserver";
-  import ScrollReveal from "scrollreveal";
+import FontFaceObserver from "fontfaceobserver";
+import ScrollReveal from "scrollreveal";
 
-  export default {
-    name: "App",
-    components: {
-      Nav,
-      Footer,
-    },
+export default {
+  name: "App",
+  components: {
+    Nav,
+    Footer,
+  },
 
-    data() {
-      return {
-        loading: false,
-      };
-    },
+  mounted() {
+    this.fontLoad();
+    this.scrollio();
+    this.overscrollFix();
+  },
 
-    mounted() {
-      this.fontLoad();
-      this.scrollio();
-      this.overscrollFix();
-    },
+  methods: {
+    fontLoad() {
+      // load fonts progressively
+      const fontA = new FontFaceObserver("Raleway");
+      const fontB = new FontFaceObserver("Viga");
+      const fontC = new FontFaceObserver("Josefin Sans");
+      const fontD = new FontFaceObserver("K2D");
 
-    methods: {
-      fontLoad() {
-        // load fonts progressively
-        const fontA = new FontFaceObserver("Raleway");
-        const fontB = new FontFaceObserver("Viga");
-        const fontC = new FontFaceObserver("Josefin Sans");
-        const fontD = new FontFaceObserver("K2D");
+      // prioritized, ordered load
+      _prioritized();
 
-        // prioritized, ordered load
-        _prioritized();
-
-        function _prioritized() {
-          fontA.load().then(() => {
-            fontB.load().then(() => {
-              fontC.load().then(() => {
-                fontD.load().then(() => {
-                  // console.log("All fonts loaded.");
-                });
+      function _prioritized() {
+        fontA.load().then(() => {
+          fontB.load().then(() => {
+            fontC.load().then(() => {
+              fontD.load().then(() => {
+                // console.log("All fonts loaded.");
               });
             });
           });
-        }
-      },
-
-      scrollio() {
-        // defaults
-        ScrollReveal({
-          delay: 0,
-          distance: "50px",
-          duration: 1000,
-          interval: 400,
         });
+      }
+    },
 
-        ScrollReveal().reveal(".scrollio");
+    scrollio() {
+      // defaults
+      ScrollReveal({
+        delay: 0,
+        distance: "50px",
+        duration: 1000,
+        interval: 400,
+      });
 
-        // targeted
-        ScrollReveal().reveal(".scrollio-hand", {
-          origin: "top",
-          distance: "10px",
-          delay: 1500,
-        });
-        ScrollReveal().reveal(".scrollio-about-portrait", {
-          origin: "top",
-        });
-        ScrollReveal().reveal(".scrollio.proj", {
-          interval: 160,
-          delay: 125,
-        });
-      },
+      ScrollReveal().reveal(".scrollio");
 
-      overscrollFix() {
-        // ensure correct top and bottom backgrounds for mobile overscrolling
-        const topColor = "white";
-        const bottomColor = "#2f0000";
-        let ticking = false;
+      // targeted
+      ScrollReveal().reveal(".scrollio-hand", {
+        origin: "top",
+        distance: "10px",
+        delay: 1500,
+      });
+      ScrollReveal().reveal(".scrollio-about-portrait", {
+        origin: "top",
+      });
+      ScrollReveal().reveal(".scrollio.proj", {
+        interval: 160,
+        delay: 125,
+      });
+    },
 
-        window.addEventListener("scroll", _checkScroll, { passive: true });
-        window.addEventListener("resize", _checkScroll, { passive: true });
+    overscrollFix() {
+      // ensure correct top and bottom backgrounds for mobile overscrolling
+      const topColor = "white";
+      const bottomColor = "#2f0000";
+      let ticking = false;
 
-        _checkScroll();
+      window.addEventListener("scroll", _checkScroll, { passive: true });
+      window.addEventListener("resize", _checkScroll, { passive: true });
+
+      _checkScroll();
 
 
-        function _checkScroll() {
-          if (!ticking) {
-            window.requestAnimationFrame(() => {
-              const scrollHeight = document.body.scrollHeight;
-              const innerHeight = window.innerHeight;
-              if (scrollHeight === innerHeight) {
-                _setBgColor(bottomColor);
-              } else {
-                _setBgColor(innerHeight - scrollHeight + 2 * window.scrollY < 0 ? topColor : bottomColor);
-              }
-              ticking = false;
-            });
-            ticking = true;
-          }
-        }
-
-        function _setBgColor(color) {
-          document.documentElement.style.background = color;
+      function _checkScroll() {
+        if (!ticking) {
+          window.requestAnimationFrame(() => {
+            const scrollHeight = document.body.scrollHeight;
+            const innerHeight = window.innerHeight;
+            if (scrollHeight === innerHeight) {
+              _setBgColor(bottomColor);
+            } else {
+              _setBgColor(innerHeight - scrollHeight + 2 * window.scrollY < 0 ? topColor : bottomColor);
+            }
+            ticking = false;
+          });
+          ticking = true;
         }
       }
+
+      function _setBgColor(color) {
+        document.documentElement.style.background = color;
+      }
     }
+  }
 }
 </script>
 
