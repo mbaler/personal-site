@@ -5,15 +5,15 @@
             .foot-middle
                 .link-wrapper
                     .links
-                        a.icon.is-large(href="https://github.com/mbaler", alt="GitHub", target="_blank", rel="noopener").gh
+                        a.icon.is-large(href="https://github.com/mbaler", alt="GitHub", target="_blank", rel="noopener", @click="gaSendEvent('GitHub', 'Footer')").gh
                             font-awesome-icon(:icon="['fab', 'github']", size="2x")
-                        a.icon.is-large(href="https://www.linkedin.com/in/macbaler/", alt="LinkedIn", target="_blank", rel="noopener").li
+                        a.icon.is-large(href="https://www.linkedin.com/in/macbaler/", alt="LinkedIn", target="_blank", rel="noopener", @click="gaSendEvent('LinkedIn', 'Footer')").li
                             font-awesome-icon(:icon="['fab', 'linkedin']", size="2x")
-                        a.icon.is-large(href="https://twitter.com/Mackles93", alt="Twitter", target="_blank", rel="noopener").tw
+                        a.icon.is-large(href="https://twitter.com/Mackles93", alt="Twitter", target="_blank", rel="noopener", @click="gaSendEvent('Twitter', 'Footer')").tw
                             font-awesome-icon(:icon="['fab', 'twitter']", size="2x")
                 .tagline: p 💬 Feel free to reach out and slide a message my way. 🙂
                 .contact-mail.scrollio
-                    a.email.is-inline-block(href="mailto:howdy@macbaler.me", target="_blank")
+                    a.email.is-inline-block(href="mailto:howdy@macbaler.me", target="_blank", @click="gaSendEvent('Email', 'Footer')")
                         span.icon.is-large
                             font-awesome-icon(:icon="['fas', 'envelope']", size="2x")
                         p howdy@macbaler.me

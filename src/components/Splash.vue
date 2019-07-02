@@ -85,7 +85,6 @@ export default {
 
         logo3D() {
             const container = document.querySelector(".imageoutside");
-            // const container = document.querySelector(".topwrap");
             const inner = document.querySelector("figure.inner");
             const refreshRate = 10;
             let counter = 0;
@@ -137,7 +136,6 @@ export default {
 
 <style lang="sass">
 .ti-wrapper, ti-container
-    // font-size: 40px !important;
     vertical-align: text-bottom !important;
 </style>
 
@@ -156,7 +154,6 @@ export default {
                 flex-direction: column;
                 height: 100%;
                 line-height: 75px;
-                // margin-top: 40px;
                 @media screen and (max-width: 1024px)
                     margin-top: 30px;
                     height: 120px !important;
@@ -198,7 +195,6 @@ export default {
                 display: inline-flex;
                 align-items: center;
                 justify-content: center;
-                // padding-top: 65px;
                 padding-left: 50px;
                 perspective: 30px;
                 @media screen and (max-width: 1024px)

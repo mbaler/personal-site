@@ -47,28 +47,15 @@
 
         function _prioritized() {
           fontA.load().then(() => {
-            console.log("A font loaded.");
-
             fontB.load().then(() => {
-              console.log("B font loaded.");
-
               fontC.load().then(() => {
-                console.log("C font loaded.");
-
                 fontD.load().then(() => {
-                  console.log("D font loaded.");
+                  console.log("All fonts loaded.");
                 });
               });
             });
           });
         }
-
-
-        // document.fonts.ready.then(() => {
-        //   // fonts are loaded
-        //   console.log("fonts loaded");
-        //   this.loading = false;
-        // });
       },
 
       scrollio() {

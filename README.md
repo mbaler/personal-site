@@ -1,21 +1,23 @@
 # Personal Site
 
+Built with JS(ES6+), Vue, Bulma, Sass, Pug, npm, Webpack, Babel, Netlify, etc.
+
 ## Project setup
 ```
 npm install
 ```
 
-### Compiles and hot-reloads for development
+### Compile and hot-reload for development
 ```
 npm run serve
 ```
 
-### Compiles and minifies for production
+### Compile and minify for production
 ```
 npm run build
 ```
 
-### Lints and fixes files
+### Lint
 ```
 npm run lint
 ```

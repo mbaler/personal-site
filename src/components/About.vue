@@ -148,12 +148,12 @@
                 | .
         span.subtitle.check(style="margin-top: 25px;").scrollio Check me out!
         .resumewrap.scrollio
-            a.resume.button.is-large(href="/resume.pdf", alt="Résumé", target="_blank") Résumé
+            a.resume.button.is-large(href="/resume.pdf", alt="Résumé", target="_blank", @click="gaSendEvent('Resume', 'Button')") Résumé
         .about-buttons.scrollio
-            a.linkedin.button.is-large(href="https://www.linkedin.com/in/macbaler/", alt="LinkedIn", target="_blank", rel="noopener")
+            a.linkedin.button.is-large(href="https://www.linkedin.com/in/macbaler/", alt="LinkedIn", target="_blank", rel="noopener", @click="gaSendEvent('LinkedIn', 'Button')")
                 span.icon: font-awesome-icon(:icon="['fab', 'linkedin']")
                 span LinkedIn
-            a.github.button.is-black.is-large(href="https://github.com/mbaler", alt="GitHub", target="_blank", rel="noopener")
+            a.github.button.is-black.is-large(href="https://github.com/mbaler", alt="GitHub", target="_blank", rel="noopener", @click="gaSendEvent('GitHub', 'Button')")
                 span.icon: font-awesome-icon(:icon="['fab', 'github']")
                 span GitHub
 </template>
@@ -181,11 +181,6 @@
                     seed: "3",
                     x_colors: ["#800026","#bd0026","#eb2d2f","#ff6705","#ff8505","#ff9c05","#f0529d","#a501c3","#4c02a1"],
                     y_colors: ["#4d006d","#bd0026","#eb2d2f","#ff6705","#ff6705","#ff6705","#eb2d2f","#bd0026","#4d006d"],
-                    // y_colors: ["#800026","#bd0026","#e31a1c","#fc4e2a","#fd8d3c","#feb24c","#fed976","#ffeda0","#ffffcc"],
-                    // y_colors: ["#d53e4f","#f46d43","#fdae61","#fee08b","#ffffbf","#e6f598","#abdda4","#66c2a5","#3288bd"],
-                    // x_colors: ["#800026","#bd0026","#e31a1c","#fc4e2a","#fd8d3c","#feb24c","#fd8d3c","#feb24c","#800026"], //"YlOrRd",
-                    // y_colors: ["#d73027","#f46d43","#f19943","#fdae61","#4310c4","#74add1","#4575b4","#225ead","#0038c9"], //"RdYlBu",
-
                 });
                 const result = pattern.svg();
                 result.setAttribute("class", "triangles");
@@ -215,11 +210,6 @@
 
 <style lang="sass" scoped>
     #about
-        // @media screen and (max-width: 1024px)
-        //     padding-top: 5px !important;
-            // h3
-            //     width: 60vw;
-            //     margin: -10px auto 0 auto;
         h2
             font-size: 48px;
             line-height: 42px;
@@ -339,7 +329,6 @@
                 pointer-events: none;
                 line-height: 20px;
                 background-color: $redLight !important;
-                // background: linear-gradient(180deg, rgba(255,68,0,1) 0%, rgba(189,0,0,1) 50%);
 
             .timeline-item
                 padding-bottom: 1.5em !important;
@@ -347,7 +336,6 @@
                 
                 &::before
                     background-color: #c1004f !important;
-                    // background-color: $redLight !important;
 
                 &.yourcomapny_item
                     @media screen and (max-width: 1024px)
@@ -357,7 +345,6 @@
                     font-size: 14px;
                 
                 .heading
-                    // font-size: 12px;
                     font-weight: 400;
 
             .timeline-marker
@@ -399,7 +386,6 @@
                         font-size: 18px;
                         padding-left: 0
                     em
-                        // color: $blueLight;
                         color: #37ffe1;                     
                     
                     .yourcompanyheretyping
@@ -452,9 +438,7 @@
             a.resume.button
                 font-size: 2.5em;
                 text-shadow: $textShadow;
-                // font-weight: bold;
                 background-color: $greenLight !important;
-                // background: linear-gradient(180deg, rgba(52,175,60,1) 0%, rgba(0,156,10,1) 50%) !important;
                 color: #fff;
                 box-shadow: 0px 3px 5px 0px rgba(0, 0, 0, 0.5);
                 transition: all 0.25s ease-in-out;
@@ -479,7 +463,7 @@
                     bottom: 0;
                     left: 0;
                     right: 0;
-                    border: 4px solid $greenLightTransparent; // 
+                    border: 4px solid $greenLightTransparent;
                     border-radius: 4px;
                     transform-origin: center;
                     transform: scale(1);
@@ -487,7 +471,7 @@
 
                     @keyframes pulse
                         0%
-                            border-color: $greenLightTransparent; // 
+                            border-color: $greenLightTransparent;
                             transform: scale(1);
                         50%
                             border-color:  $greenLight;

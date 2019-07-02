@@ -22,11 +22,11 @@
     "lazysizes": "^5.1.0",
     "medium-zoom": "^1.0.4",
     "scrollreveal": "^4.0.5",
-    "terser": "^4.0.0",
     "trianglify": "^2.0.0",
     "typeit": "^6.0.3",
     "v-tooltip": "^2.0.2",
     "vue": "^2.6.10",
+    "vue-analytics": "^5.17.0",
     "vue-router": "^3.0.3"
   },
   "devDependencies": {

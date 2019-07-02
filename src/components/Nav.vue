@@ -33,7 +33,7 @@
           .navbar-item
             router-link.rlink(to="/#contact") Contact
           .navbar-item
-            a.rlink(href="/resume.pdf", target="_blank") Résumé
+            a.rlink(href="/resume.pdf", target="_blank", @click="gaSendEvent('Resume', 'Nav')") Résumé
 </template>
 
 <script>
@@ -88,11 +88,9 @@ export default {
       font-weight: bold;
       color: $textDarkBlue;
       &.router-link-exact-active 
-        // color: $redMid;
         color: $redLight;
       
       &:hover
-        // color: $redLight;
         color: $redTrue;
 
     .navbar-menu
@@ -110,9 +108,6 @@ export default {
     .navbar-brand .logo
       font-family: "Viga";
       font-weight: 400;
-      // @media screen and (max-width: 1024px)
-      //   font-family: "Raleway";
-      //   font-weight: 700;
       font-size: 30px;
       color: #ff0000;
       padding: 0;

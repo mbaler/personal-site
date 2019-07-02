@@ -5,7 +5,7 @@
         .showcase-wrapper.columns.is-centered.is-variable.is-7
             .proj.proj1.column.is-one-third.scrollio
                 .box
-                    a.projhead(href="https://github.com/mbaler/webrtc-kun", alt="WebRTC Device Checker", target="_blank", rel="noopener")
+                    a.projhead(href="https://github.com/mbaler/webrtc-kun", alt="WebRTC Device Checker", target="_blank", rel="noopener", @click="gaSendEvent('WRTCDC GitHub', 'Title Logo')")
                         figure.iconpreview
                             img(:data-src="require(`@/assets/wrtcdc/webrtclogocropW.png`)").lazyload
                         h4.title.is-4 WebRTC Device Checker
@@ -13,10 +13,10 @@
                         img(:data-src="require(`@/assets/wrtcdc/ss.png`)", data-zoomable).lazyload
                     p.description.smidgeUp(v-html="wrtcdcDesc")
                     .projlinks
-                        a(href="https://eikaiwa.weblio.jp/device_checker?bandwidth", alt="Live Example", target="_blank", rel="noopener")
+                        a(href="https://eikaiwa.weblio.jp/device_checker?bandwidth", alt="Live Example", target="_blank", rel="noopener", @click="gaSendEvent('WRTCDC Website', 'Description Button')")
                             span.icon.is-large.has-text-link
                                 font-awesome-icon(:icon="['fas', 'external-link-alt']", size="2x")
-                        a(href="https://github.com/mbaler/webrtc-kun", alt="GitHub Repo", target="_blank", rel="noopener", style="display: inline-flex;")
+                        a(href="https://github.com/mbaler/webrtc-kun", alt="GitHub Repo", target="_blank", rel="noopener", style="display: inline-flex;", @click="gaSendEvent('WRTCDC GitHub', 'Description Button')")
                             span.icon.is-large
                                 font-awesome-icon(:icon="['fab', 'github']", size="3x")
                     h6.tech Tech Used:
@@ -31,7 +31,7 @@
                             img(:data-src="require(`@/assets/jquery.gif`)", alt="jQuery", v-tooltip="{content: 'jQuery', placement: 'bottom', trigger: 'hover', delay: {show: 50, hide: 0}, offset: '4px', }",).lazyload
             .proj.proj2.column.is-one-third.scrollio
                 .box
-                    a.projhead(href="https://github.com/mbaler/Medium-Code-Highlighter", alt="Medium Code Highlighter - Chrome Extension", target="_blank", rel="noopener")
+                    a.projhead(href="https://github.com/mbaler/Medium-Code-Highlighter", alt="Medium Code Highlighter - Chrome Extension", target="_blank", rel="noopener", @click="gaSendEvent('MCH GitHub', 'Title Logo')")
                         figure.iconpreview
                             img(:data-src="require(`@/assets/mch/mchicon.png`)").lazyload
                         h4.title.is-4 Medium Code Highlighter
@@ -39,9 +39,9 @@
                         img(:data-src="require(`@/assets/mch/promo_gif.gif`)", data-zoomable).lazyload
                     p.description(v-html="mchDesc")
                     .projlinks(style="margin-left: -10px;")
-                        a(href="https://chrome.google.com/webstore/detail/medium-code-highlighter/apdaagmhepellbjjbnaljaocodjjjjfd", alt="Chrome Web Store", target="_blank", rel="noopener")
+                        a(href="https://chrome.google.com/webstore/detail/medium-code-highlighter/apdaagmhepellbjjbnaljaocodjjjjfd", alt="Chrome Web Store", target="_blank", rel="noopener", @click="gaSendEvent('MCH Chrome Webstore', 'Description Button')")
                             img(:data-src="require(`@/assets/mch/ChromeWebStore.png`)").lazyload
-                        a(href="https://github.com/mbaler/Medium-Code-Highlighter", alt="GitHub Repo", target="_blank", rel="noopener", style="display: inline-flex;")
+                        a(href="https://github.com/mbaler/Medium-Code-Highlighter", alt="GitHub Repo", target="_blank", rel="noopener", style="display: inline-flex;", @click="gaSendEvent('MCH GitHub', 'Description Button')")
                             span.icon.is-large
                                 font-awesome-icon(:icon="['fab', 'github']", size="3x")
                     h6.tech Tech Used:
@@ -58,7 +58,7 @@
                     figure.screenshot
                         span.wink(style="text-shadow: 0px 5px 10px rgba(0, 0, 0, 0.35);") 😉
                     .projlinks
-                        a(href="https://github.com/mbaler/personal-site", alt="GitHub Repo", target="_blank", rel="noopener", style="display: inline-flex;")
+                        a(href="https://github.com/mbaler/personal-site", alt="GitHub Repo", target="_blank", rel="noopener", style="display: inline-flex;", @click="gaSendEvent('Personal Site GitHub', 'Description Button')")
                             span.icon.is-large
                                 font-awesome-icon(:icon="['fab', 'github']", size="3x")
                     h6.tech Tech Used:
@@ -260,11 +260,6 @@ export default {
         line-height: 1.5;
 
         span
-            // display: inline-block;
-            // background: #ffffffe0;
-            // border-radius: 6px;
-            // width: 35vw;
-            // height: 40px;
             font-size: 28px;
             @media screen and (max-width: 1024px)
                 font-size: 26px;
@@ -273,6 +268,4 @@ export default {
             color: #fff;
             em
                 color: #fff;
-
-
 </style>
