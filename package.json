@@ -20,6 +20,7 @@
     "core-js": "^2.6.5",
     "fontfaceobserver": "^2.1.0",
     "lazysizes": "^5.1.0",
+    "lodash": "^4.17.14",
     "medium-zoom": "^1.0.4",
     "scrollreveal": "^4.0.5",
     "trianglify": "^2.0.0",
