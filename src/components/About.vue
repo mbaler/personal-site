@@ -17,7 +17,9 @@
             span.magic-highlight.mh1 years working in Japan
             | , garnering experience spanning full-stack; 
             | but am now back in the states,&nbsp;
-            span.magic-highlight.mh1 looking for work in the Boston area
+            span.magic-highlight.mh1 working @ 
+              span.hubspot HubSpot
+              | &nbsp;in the Boston area
             | .
           span Capable, efficient, inquisitive, precise, adaptable, collaborative, trustworthy, and a&nbsp;
             span.magic-highlight.mh1 quick learner
@@ -26,7 +28,7 @@
             img(:data-src="require(`@/assets/d20.png`)").lazyload.scrollio
           span
             span.magic-highlight.mh1 Full-stack technical skills
-            | &nbsp;result from having been thrown right into the deep end for two years. 
+            | &nbsp;result from having been thrown right into the deep end from the start. 
             | Proficiences include (but not limited to) 
             span.magic-highlight.mh1 server-side jazz
             | : Node.js, Express, REST API, Java, bit of Spring &amp; NGINX; 
@@ -41,7 +43,7 @@
             | and&nbsp;
             span.magic-highlight.mh1 everything in between
             | : SQL, Docker, Socket.io, npm, Git/GitHub, WebRTC/MediaStream API, &amp; Firebase Realtime DB. 
-          span I’m eager to both deepen existing proficiencies &amp; fill in the cracks with new ones!
+          span Eager to both deepen existing proficiencies &amp; fill in the cracks with new ones!
       .column.photos.is-half
         figure.portrait.scrollio-about-portrait
           img(:data-src="require(`@/assets/portrait.jpg`)").lazyload.scrollio-about-portrait
@@ -84,7 +86,8 @@
           p
             | ✈️ Move to&nbsp;
             span.magic-highlight.mh1 Japan
-          p English Teacher @ Komatsu Meihou High School (JET Program) 👨‍🏫
+            | .
+          p English Teacher @ Komatsu Meihou High School (JET Program). 👨‍🏫
           p.subtext Komatsu, Ishikawa Prefecture
       header.timeline-header
         span.tag.is-medium.is-danger 2016
@@ -92,11 +95,11 @@
         .timeline-marker
         .timeline-content
           p.heading August
-          p ⛩️ Move to Kyoto
+          p ⛩️ Move to Kyoto.
           p 
             | Software &amp; Web Engineer @&nbsp;
             span.magic-highlight.mh1 Weblio
-            | &nbsp;💻
+            | .&nbsp;💻
           p.subtext Kyoto, Kyoto Prefecture
       header.timeline-header
         span.tag.is-medium.is-danger 2018
@@ -105,13 +108,13 @@
           img(:data-src="require(`@/assets/usa_flag.png`)", alt="USA Flag").lazyload
         .timeline-content
           p.heading June
-          p ✈️ Move back to the US of A
+          p ✈️ Move back to the US of A.
       .timeline-item
         .timeline-marker
         .timeline-content
           p.heading July ~
-          p 👋 Reuniting w/ friends &amp; family 👪
-          p 🚄 Travel
+          p 👋 Reuniting w/ friends &amp; family. 👪
+          p 🚄 Travel.
       header.timeline-header
         span.tag.is-medium.is-danger 2019
       .timeline-item
@@ -119,7 +122,7 @@
         .timeline-content
           p 
             span.magic-highlight.mh1 Boston
-            | &nbsp;bound 
+            | &nbsp;bound. 
             span(style="vertical-align: text-bottom;").is-inline-block 👍
       .timeline-item.yourcomapny_item
         .timeline-marker
@@ -138,8 +141,8 @@
         span.tag.is-medium.is-danger 💀 ⚰️
     .jobtext.scrollio
       p 
-        span.magic-highlight.mh1 Looking for a software engineering job
-        | &nbsp;that allows me to make a difference,
+        span.magic-highlight.mh1 Being a proactive software engineer
+        | &nbsp;allows me to make a difference,
         br
         | as the onus is upon 
         em us 
@@ -189,18 +192,20 @@ export default {
     typing() {
       new TypeIt(".yourcompanyheretyping", {
         strings: [
-          "Your Company Here™",
+          "HubSpot",
           "a company of smart, respectful, fun folks™",
           "a place that helps people™",
-          "a company that works hard & plays hard™",
+          // "a company that works hard & plays hard™",
           "a place with diverse humans & ideas™",
-          "the coolest most bestest company ever™",
+          // "the coolest most bestest company ever™",
+          "HubSpot."
         ],
         breakLines: false,
-        loop: true,
-        nextStringDelay: 2500,
+        loop: false,
+        startDelay: 850,
+        nextStringDelay: 1500,
         waitUntilVisible: true,
-        speed: 135,
+        speed: 100,
         cursorChar: `<span style="color: white; font-style: normal !important; font-weight: 400;">|</span>`
       }).go();
     }
@@ -249,6 +254,10 @@ export default {
           &> span
             display: inline-block;
             padding: 6px 0;
+
+          .hubspot
+            color: #ffb42a;
+            font-weight: bold;
 
           .d20
             height: 130px;

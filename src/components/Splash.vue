@@ -147,7 +147,6 @@ export default {
           margin-top: 30px;
           height: 120px !important;
           line-height: 55px !important;
-          text-shadow:
         padding: 0px 0 10px 0;
         display: flex;
         justify-content: center;
@@ -268,7 +267,7 @@ export default {
         color: $orangeLight !important;
         border: none;
         padding: .5rem;
-        animation: scrollButton 1s cubic-bezier(.175,.885,.32,1.4) 0s infinite alternate;
+        animation: scrollButton 1s cubic-bezier(.175,.885,.32,1.4) 0s infinite alternate, fadein 1s;
 
         &:hover
           color: $redTrue !important;
@@ -289,10 +288,16 @@ export default {
 
         @keyframes scrollButton
           0%
-            transform: translateY(0)
+            transform: translateY(0);
 
           to
-            transform: translateY(-30%)
+            transform: translateY(-30%);
+        
+        @keyframes fadein
+          0%
+            opacity: 0;
+          to
+            opacity: 1;
 </style>
 <style lang="sass">
   .ti-wrapper, ti-container
